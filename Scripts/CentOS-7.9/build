@@ -127,6 +127,17 @@ def main(target = "CentOS-7.9", branch = "build"):
         'git', 'commit', 'version', '-m', 'Build version {}'.format(silico.__version__)
     ], universal_newlines = True, check = True)
 
+    tag = '{}-{}'.format(silico.__version__, target)
+    # Tag it.
+    subprocess.run([
+        'git', 'tag', '-a', tag, '-m', 'Build of version {} on {}'.format(silico.__version__, target)
+    ], universal_newlines = True, check = True)
+
+    # Upload to the server.
+    subprocess.run([
+        'git', 'push', 'origin', '--tags'
+    ], universal_newlines = True, check = True)
+
 # If we've been invoked as a program, call main().    
 if __name__ == '__main__':
     sys.exit(main())
