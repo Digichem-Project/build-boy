@@ -70,6 +70,12 @@ def build_silico(prattledir):
 def main():
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
+
+    # First, make sure we're up to date.
+    subprocess.run(['git', 'checkout', 'main'], universal_newlines = True, check = True)
+    subprocess.run(['git', 'pull', 'origin'], universal_newlines = True, check = True)
+
+
     oprattle_paths = build_oprattle()
     silico_paths = build_silico(oprattle_paths['dir'])
 
