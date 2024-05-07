@@ -61,10 +61,16 @@ def build_oprattle():
     """Build openprattle; a stand-in for openbabel"""
     return(build_target("~/openprattle"))
 
+def build_silico():
+    """Build openprattle; a stand-in for openbabel"""
+    build_target("~/openprattle")
+
 def main():
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
-    build_oprattle()
+    oprattle_paths = build_oprattle()
+
+
     pass
 
 # If we've been invoked as a program, call main().    
