@@ -78,6 +78,9 @@ def main(target = "CentOS-7.9", branch = "build"):
     #subprocess.run(['git', 'checkout', 'main'], universal_newlines = True, check = True)
     #subprocess.run(['git', 'pull', 'origin'], universal_newlines = True, check = True)
 
+    print("-----------------------------")
+    print("Checking for a new version...")
+    print("-----------------------------")
     # First, check if there's a new version to build.
     # Get the last version we did.
     with open(Path('../../Builds', target, 'version')) as v_file:
@@ -95,7 +98,7 @@ def main(target = "CentOS-7.9", branch = "build"):
     ], universal_newlines = True, check = True)
 
     import silico
-    if silico.__version__ == last_version:
+    if silico.__version__.strip() == last_version:
         # Nothing new.
         print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_version, silico.__version__))
         exit()
@@ -117,7 +120,7 @@ def main(target = "CentOS-7.9", branch = "build"):
 
     # Update the version.
     with open('version', 'wt') as v_file:
-        v_file.write(str(silico.__version__))
+        v_file.write("{}\n".format(silico.__version__))
 
 # If we've been invoked as a program, call main().    
 if __name__ == '__main__':
