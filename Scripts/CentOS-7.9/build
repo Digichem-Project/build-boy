@@ -135,7 +135,7 @@ def main(target = "CentOS-7.9", branch = "build"):
     ], universal_newlines = True, check = True)
 
     # Upload to the server.
-    subprocess.run(['git', 'push', 'origin', '--tags'],
+    subprocess.run(['git', 'push', 'origin'],
         universal_newlines = True, check = True)
     # Also the tag
     subprocess.run(['git', 'push', 'origin', tag],
