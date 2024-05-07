@@ -15,8 +15,10 @@ def expand_path(pth):
 def build_target(
     basedir,
     target = "CentOS-7.9",
-    branch = "main"
+    branch = "main",
+    freezeargs = None
 ):
+    freezeargs = freezeargs if freezeargs is not None else []
     basedir = expand_path(basedir)
 
     # Switch to the build dir.
@@ -38,8 +40,9 @@ def build_target(
 
     # Now build.
     subprocess.run([
-        './freeze.' + target
-    ], universal_newlines = True, check = True)
+            './freeze.' + target
+        ].extend(freezeargs),
+    universal_newlines = True, check = True)
 
     # We should have two files in the 'dist' dir, the build folder and the archive.
     _paths = list(Path("dist").glob("*"))
@@ -59,19 +62,17 @@ def build_target(
 
 def build_oprattle():
     """Build openprattle; a stand-in for openbabel"""
-    return(build_target("~/openprattle"))
+    return build_target("~/openprattle")
 
-def build_silico():
+def build_silico(prattledir):
     """Build openprattle; a stand-in for openbabel"""
-    build_target("~/openprattle")
+    return build_target("~/silico", freezeargs = [prattledir])
 
 def main():
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
     oprattle_paths = build_oprattle()
-
-
-    pass
+    silico_paths = build_silico(oprattle_paths['dir'])
 
 # If we've been invoked as a program, call main().    
 if __name__ == '__main__':
