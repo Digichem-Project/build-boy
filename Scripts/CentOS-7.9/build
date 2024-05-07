@@ -124,7 +124,7 @@ def main(target = "CentOS-7.9", branch = "build"):
 
     # Commit the new version.
     subprocess.run([
-        'git', 'commit', 'version', '-m', 'Build version {}'.format(silico.__version__)
+        'git', 'commit', 'version', '-m', 'Build version {} on {}'.format(silico.__version__, target)
     ], universal_newlines = True, check = True)
 
     tag = '{}-{}'.format(silico.__version__, target)
