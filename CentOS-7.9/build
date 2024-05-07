@@ -1,9 +1,51 @@
 #!/usr/bin/env python3
 
 import sys
+import os
+from pathlib import Path
+import shutil
+import subprocess
+
 import openprattle.program
 
+def expand_path(pth):
+    """Perform shell-like expansion on a path."""
+    pth = os.path.expanduser(pth)
+    pth = os.path.expandvars(pth)
+    return pth
+
+def build_oprattle(basedir = "~/openprattle", target = "CentOS-7.9", branch = "main"):
+    """Build openprattle; a stand-in for openbabel"""
+    basedir = expand_path(basedir)
+
+    # Switch to the build dir.
+    os.chdir(basedir / "freeze" / target)
+
+    # Cleanup any previous builds.
+    shutil.rmtree("build")
+    shutil.rmtree("dist")
+
+    # Change branches.
+    subprocess.run([
+        'git', 'checkout', branch
+    ], universal_newlines = True, check = True)
+
+    # Get the latest version from git.
+    subprocess.run([
+        'git', 'pull', 'origin'
+    ], universal_newlines = True, check = True)
+
+    # Now build.
+    subprocess.run([
+        './freeze.' + target
+    ], universal_newlines = True, check = True)
+
+
+
 def main():
+    # Disable git prompting.
+    os.environ['GIT_TERMINAL_PROMPT'] = "0"
+    build_oprattle()
     pass
 
 # If we've been invoked as a program, call main().    
