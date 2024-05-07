@@ -17,7 +17,7 @@ def build_oprattle(basedir = "~/openprattle", target = "CentOS-7.9", branch = "m
     basedir = expand_path(basedir)
 
     # Switch to the build dir.
-    os.chdir(basedir / "freeze" / target)
+    os.chdir(Path(basedir, "freeze", target))
 
     # Cleanup any previous builds.
     shutil.rmtree("build")
