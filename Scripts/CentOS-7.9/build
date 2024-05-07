@@ -98,6 +98,7 @@ def main(target = "CentOS-7.9", branch = "build"):
     ], universal_newlines = True, check = True)
 
     import silico
+    import openprattle
     if silico.__version__.strip() == last_version:
         # Nothing new.
         print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_version, silico.__version__))
@@ -141,7 +142,10 @@ def main(target = "CentOS-7.9", branch = "build"):
     # Now create a github release and attach the build.
     sig = [
         'gh', 'release', 'create', tag, silico_paths['archive'],
-        '--notes', 'Automated build of Digichem v{} for the {} system.\n\nBuilt by the hard-working Build-boy.'.format(silico.__version__, target),
+        '--notes',
+            'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
+            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__) +\
+            'Built by the hard-working Build-boy.',
         '--title', 'Digichem version {} for {}'.format(silico.__version__, target)
     ]
     # Add pre-release if necessary.
