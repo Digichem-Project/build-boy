@@ -122,6 +122,11 @@ def main(target = "CentOS-7.9", branch = "build"):
     with open('version', 'wt') as v_file:
         v_file.write("{}\n".format(silico.__version__))
 
+    # Commit the new version.
+    subprocess.run([
+        'git', 'commit', 'version', '-m', 'Build version {}'.format(silico.__version__)
+    ], universal_newlines = True, check = True)
+
 # If we've been invoked as a program, call main().    
 if __name__ == '__main__':
     sys.exit(main())
