@@ -14,7 +14,7 @@ def expand_path(pth):
 
 def build_target(
     basedir,
-    target = "CentOS-7.9",
+    target,
     branch = "main",
     freezeargs = None
 ):
@@ -59,15 +59,15 @@ def build_target(
     
     return paths
 
-def build_oprattle():
+def build_oprattle(target):
     """Build openprattle; a stand-in for openbabel"""
-    return build_target("~/openprattle")
+    return build_target("~/openprattle", target)
 
-def build_silico(prattledir):
-    """Build openprattle; a stand-in for openbabel"""
-    return build_target("~/silico", branch = "build", freezeargs = [prattledir])
+def build_silico(target, prattledir):
+    """Build silico"""
+    silico_paths = build_target("~/silico", target = target, branch = "build", freezeargs = [prattledir])
 
-def main():
+def main(target = "CentOS-7.9", branch = "build"):
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
 
@@ -78,15 +78,46 @@ def main():
     #subprocess.run(['git', 'checkout', 'main'], universal_newlines = True, check = True)
     #subprocess.run(['git', 'pull', 'origin'], universal_newlines = True, check = True)
 
+    # First, check if there's a new version to build.
+    # Get the last version we did.
+    with open(Path('../../Builds', target, 'version')) as v_file:
+        last_version = v_file.read().strip()
+
+    # Now get the latest version.
+    os.chdir(expand_path('~/silico'))
+    # Checkout.
+    subprocess.run([
+        'git', 'checkout', branch
+    ], universal_newlines = True, check = True)
+    # Get the latest version from git.
+    subprocess.run([
+        'git', 'pull', 'origin'
+    ], universal_newlines = True, check = True)
+
+    import silico
+    if silico.__version__ == last_version:
+        # Nothing new.
+        print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_version, silico.__version__))
+        exit()
+
+    # Work to be done.
+
     print("-----------------------")
     print("Building openprattle...")
     print("-----------------------")
-    oprattle_paths = build_oprattle()
+    oprattle_paths = build_oprattle(target)
 
     print("--------------------")
     print("Building digichem...")
     print("--------------------")
-    silico_paths = build_silico(oprattle_paths['dir'])
+    silico_paths = build_silico(target, oprattle_paths['dir'])
+
+    # Change back to build-boy's dir.
+    os.chdir(Path(expand_path("~/build-boy/Builds"), target))
+
+    # Update the version.
+    with open('version', 'wt') as v_file:
+        v_file.write(str(silico.__version__))
 
 # If we've been invoked as a program, call main().    
 if __name__ == '__main__':
