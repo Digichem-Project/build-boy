@@ -6,8 +6,6 @@ from pathlib import Path
 import shutil
 import subprocess
 
-import openprattle.program
-
 def expand_path(pth):
     """Perform shell-like expansion on a path."""
     pth = os.path.expanduser(pth)
