@@ -65,7 +65,7 @@ def build_oprattle():
 
 def build_silico(prattledir):
     """Build openprattle; a stand-in for openbabel"""
-    return build_target("~/silico", freezeargs = [prattledir])
+    return build_target("~/silico", branch = "build", freezeargs = [prattledir])
 
 def main():
     # Disable git prompting.
