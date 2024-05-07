@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+import sys
+import openprattle.program
+
+def main():
+    pass
+
+# If we've been invoked as a program, call main().    
+if __name__ == '__main__':
+    sys.exit(main())
+    
