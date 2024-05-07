@@ -12,12 +12,11 @@ def expand_path(pth):
     pth = os.path.expandvars(pth)
     return pth
 
-def build_oprattle(
-    basedir = "~/openprattle",
+def build_target(
+    basedir,
     target = "CentOS-7.9",
     branch = "main"
 ):
-    """Build openprattle; a stand-in for openbabel"""
     basedir = expand_path(basedir)
 
     # Switch to the build dir.
@@ -42,7 +41,25 @@ def build_oprattle(
         './freeze.' + target
     ], universal_newlines = True, check = True)
 
+    # We should have two files in the 'dist' dir, the build folder and the archive.
+    _paths = list(Path("dist").glob("*"))
+    paths = {}
 
+    for path in _paths:
+        if path.is_dir():
+            paths['dir'] = path.resolve()
+        
+        elif path.suffixes[-2:] == ['.tar', '.gz']:
+            paths['archive'] = path.resolve()
+    
+    if len(paths) != 2:
+        raise Exception("Build error, incorrect number of files in dist dir: {}".format(paths))
+    
+    return paths
+
+def build_oprattle():
+    """Build openprattle; a stand-in for openbabel"""
+    build_target("~/openprattle")
 
 def main():
     # Disable git prompting.
