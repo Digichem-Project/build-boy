@@ -12,7 +12,11 @@ def expand_path(pth):
     pth = os.path.expandvars(pth)
     return pth
 
-def build_oprattle(basedir = "~/openprattle", target = "CentOS-7.9", branch = "main"):
+def build_oprattle(
+    basedir = "~/openprattle",
+    target = "CentOS-7.9",
+    branch = "main"
+):
     """Build openprattle; a stand-in for openbabel"""
     basedir = expand_path(basedir)
 
