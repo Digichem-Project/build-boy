@@ -138,6 +138,14 @@ def main(target = "CentOS-7.9", branch = "build"):
         'git', 'push', 'origin', '--tags'
     ], universal_newlines = True, check = True)
 
+    # Now create a github release and attach the build.
+    subprocess.run([
+        'gh', 'release', 'create', tag, silico_paths['archive'],
+        '--notes', 'Foobar'
+    ], universal_newlines = True, check = True)
+
+    # All done.
+
 # If we've been invoked as a program, call main().    
 if __name__ == '__main__':
     sys.exit(main())
