@@ -72,11 +72,20 @@ def main():
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
 
     # First, make sure we're up to date.
-    subprocess.run(['git', 'checkout', 'main'], universal_newlines = True, check = True)
-    subprocess.run(['git', 'pull', 'origin'], universal_newlines = True, check = True)
+    #print("---------------------")
+    #print("Updating Build-boy...")
+    #print("---------------------")
+    #subprocess.run(['git', 'checkout', 'main'], universal_newlines = True, check = True)
+    #subprocess.run(['git', 'pull', 'origin'], universal_newlines = True, check = True)
 
-
+    print("-----------------------")
+    print("Building openprattle...")
+    print("-----------------------")
     oprattle_paths = build_oprattle()
+
+    print("--------------------")
+    print("Building digichem...")
+    print("--------------------")
     silico_paths = build_silico(oprattle_paths['dir'])
 
 # If we've been invoked as a program, call main().    
