@@ -39,10 +39,9 @@ def build_target(
     ], universal_newlines = True, check = True)
 
     # Now build.
-    subprocess.run([
-            './freeze.' + target
-        ].extend(freezeargs),
-    universal_newlines = True, check = True)
+    sig = ['./freeze.' + target]
+    sig.extend(freezeargs)
+    subprocess.run(sig, universal_newlines = True, check = True)
 
     # We should have two files in the 'dist' dir, the build folder and the archive.
     _paths = list(Path("dist").glob("*"))
