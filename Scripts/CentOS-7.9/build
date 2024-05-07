@@ -139,10 +139,15 @@ def main(target = "CentOS-7.9", branch = "build"):
     ], universal_newlines = True, check = True)
 
     # Now create a github release and attach the build.
-    subprocess.run([
+    sig = [
         'gh', 'release', 'create', tag, silico_paths['archive'],
-        '--notes', 'Foobar'
-    ], universal_newlines = True, check = True)
+        '--notes', 'Automated build of Digichem v{} for the {} system.\n\nBuilt by the hard-working Build-boy.'.format(silico.__version__, target),
+        '--title', 'Digichem version {} for {}'.format(silico.__version__, target)
+    ]
+    # Add pre-release if necessary.
+    if silico.development:
+        sig.append('-p')
+    subprocess.run(sig, universal_newlines = True, check = True)
 
     # All done.
 
