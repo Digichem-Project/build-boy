@@ -32,9 +32,16 @@ def build_target(
     ], universal_newlines = True, check = True)
 
     # Get the latest version from git.
+    # WARNING: This will forcibly update and remove local files.
     subprocess.run([
-        'git', 'pull', 'origin'
+       'git', 'fetch', 'origin'
     ], universal_newlines = True, check = True)
+    subprocess.run([
+       'git', 'reset', '--hard', 'origin/' + branch
+    ], universal_newlines = True, check = True)
+    #subprocess.run([
+    #    'git', 'pull', 'origin'
+    #], universal_newlines = True, check = True)
 
     # Now build.
     sig = ['./freeze', target]
@@ -92,7 +99,10 @@ def build(target, branch = "build"):
     ], universal_newlines = True, check = True)
     # Get the latest version from git.
     subprocess.run([
-        'git', 'pull', 'origin'
+       'git', 'fetch', 'origin'
+    ], universal_newlines = True, check = True)
+    subprocess.run([
+       'git', 'reset', '--hard', 'origin/' + branch
     ], universal_newlines = True, check = True)
 
     import silico

@@ -40,7 +40,7 @@ def do_build(vm_data):
         ) as ssh:
 
             # Check for updates to the local build-boy script.
-            ssh.run('cd build-boy && git pull origin')
+            ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
 
             # Call the local build-boy build script.
             ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
