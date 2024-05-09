@@ -34,7 +34,7 @@ def do_build(vm_data):
     ssh.run("sudo shutdown now", warn = True)
 
 def main():
-    for vm in vms:
+    for vm in vms.items():
         do_build(vm)
 
 
