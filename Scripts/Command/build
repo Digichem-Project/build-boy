@@ -50,15 +50,20 @@ def do_build(vm_data):
     
     except:
         # Kill the VM.
-        subprocess.run([
-            'vboxmanage', 'controlvm', vm_data['vm'], "poweroff"
-        ], universal_newlines = True, check = True)
+        #subprocess.run([
+        #    'vboxmanage', 'controlvm', vm_data['vm'], "poweroff"
+        #], universal_newlines = True, check = True)
 
         raise
 
 def main():
     for vm in vms.values():
-        do_build(vm)
+        try:
+            do_build(vm)
+        
+        except Exception as e:
+            print("Failed to build for VM: {}".format(vm['target']))
+            print(e)
 
 
 # If we've been invoked as a program, call main().    

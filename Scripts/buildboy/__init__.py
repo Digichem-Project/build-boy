@@ -20,7 +20,7 @@ def build_target(
     basedir = expand_path(basedir)
 
     # Switch to the build dir.
-    os.chdir(Path(basedir, "freeze", target))
+    os.chdir(Path(basedir, "freeze", 'general'))
 
     # Cleanup any previous builds.
     shutil.rmtree("build", ignore_errors=True)
@@ -37,7 +37,7 @@ def build_target(
     ], universal_newlines = True, check = True)
 
     # Now build.
-    sig = ['./freeze.' + target]
+    sig = ['./freeze', target]
     sig.extend(freezeargs)
     subprocess.run(sig, universal_newlines = True, check = True)
 
