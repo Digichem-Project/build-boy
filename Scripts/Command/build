@@ -28,7 +28,10 @@ def do_build(vm_data):
             user="digichem",
             port=vm_data['port'],
             # The PC just turned on, give it some time to wake-up:
-            connect_timeout = 300 # 5 mins.
+            connect_kwargs = {
+                "timeout": 300, # 5 mins.
+                "banner_timeout": 300
+            }
         ) as ssh:
 
             # Check for updates to the local build-boy script.
