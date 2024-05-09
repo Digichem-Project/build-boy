@@ -60,9 +60,10 @@ def main():
     for vm in vms.values():
         try:
             print("--------------------------------------")
-            print("-              BUILD-BOY              ")
+            print("-              BUILD-BOY             -")
             print("--------------------------------------")
             print("Starting build for {}".format(vm['target']))
+            print()
             do_build(vm)
         
         except Exception as e:
