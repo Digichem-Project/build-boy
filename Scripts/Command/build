@@ -11,6 +11,11 @@ vms = {
         'target': 'CentOS-7.9',
         'vm': '8bd62c88-86aa-4faa-9b6d-71d5305280d7',
         'port': '2222'
+    },
+    'CentOS-8.5': {
+        'target': 'CentOS-8.5',
+        'vm': '4509aa09-d428-429a-bcfd-290672dbe6f3',
+        'port': '2223'
     }
 }
 
