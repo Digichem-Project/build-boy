@@ -37,7 +37,7 @@ def build_target(
     ], universal_newlines = True, check = True)
 
     # Now build.
-    sig = ['./freeze.' + target]
+    sig = ['./freeze', target]
     sig.extend(freezeargs)
     subprocess.run(sig, universal_newlines = True, check = True)
 
