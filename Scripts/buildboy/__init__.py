@@ -20,7 +20,7 @@ def build_target(
     basedir = expand_path(basedir)
 
     # Switch to the build dir.
-    os.chdir(Path(basedir, "freeze", target))
+    os.chdir(Path(basedir, "freeze", 'general'))
 
     # Cleanup any previous builds.
     shutil.rmtree("build", ignore_errors=True)
