@@ -22,10 +22,16 @@ def do_build(vm_data):
     ], universal_newlines = True, check = True)
 
     # Next, connect with SSH.
-    ssh = fabric.Connection('localhost', username="digichem", port=vm_data['port'])
+    ssh = fabric.Connection('localhost', user="digichem", port=vm_data['port'])
+
+    # Check for updates to the local build-boy script.
+    ssh.run('cd build-boy && git pull origin')
 
     # Call the local build-boy build script.
-    ssh.run('')
+    ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
+
+    # All done, make the VM go to bed.
+    ssh.run("sudo shutdown now", warn = True)
 
 def main():
     for vm in vms:
