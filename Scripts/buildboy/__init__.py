@@ -65,7 +65,7 @@ def build_silico(target, prattledir):
     """Build silico"""
     return build_target("~/silico", target = target, branch = "build", freezeargs = [prattledir])
 
-def main(target = "CentOS-7.9", branch = "build"):
+def build(target, branch = "build"):
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
 
