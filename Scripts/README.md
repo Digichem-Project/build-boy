@@ -2,7 +2,7 @@ Codes and scripts for controlling the wretched Build-boy
 --------------------------------------------------------
 
 Layout
-______
+======
 
 Control scripts for each distro are available in `Scripts`. In most cases, each distro uses the same logic
 (available in `Scripts/buildboy`) just using a different target directory (to match the OS name). More difficult
