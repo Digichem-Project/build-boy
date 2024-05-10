@@ -1,0 +1,16 @@
+#/!bin/bash
+
+# We use an annoying mix of stdout and stderr which can get mixed up.
+# This might help.
+export PYTHONUNBUFFERED="1"
+
+# Update.
+git fetch origin
+git reset --hard origin/main
+
+# Run the build script.
+~/build-boy/Scripts/Command/build 2>&1 | multilog s1048576 n10 ~/Logs/
+
+# Go to bed.
+echo "Shutting down..."
+sudo shutdown now
