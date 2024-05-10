@@ -65,9 +65,9 @@ def do_build(vm_data):
     
     except:
         # Kill the VM.
-        #subprocess.run([
-        #    'vboxmanage', 'controlvm', vm_data['vm'], "poweroff"
-        #], universal_newlines = True, check = True)
+        subprocess.run([
+           'vboxmanage', 'controlvm', vm_data['vm'], "acpipowerbutton"
+        ], universal_newlines = True, check = False)
 
         raise
 
