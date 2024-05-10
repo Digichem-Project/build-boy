@@ -10,8 +10,12 @@ To download the latest version of Digichem, please select an option from the sup
 Please not that the operating system should match that of the machine where you intend to install Digichem.
 In most cases, this means the operating system of your computational server, not your personal machine.
 
-CentOS-7.9 (Redhat-7.9): https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-7.9/digichem.6.0.0-pre.3.CentOS-7.9.tar.gz
-CentOS-8.5 (Redhat-8.5): https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-8.5/digichem.6.0.0-pre.3.CentOS-8.5.tar.gz
+### CentOS/Redhat (Old versions, also called 'CentOS Linux Edition')
+CentOS-7.9 (Redhat-7.9): [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-7.9/digichem.6.0.0-pre.3.CentOS-7.9.tar.gz)
+CentOS-8.5 (Redhat-8.5): [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-8.5/digichem.6.0.0-pre.3.CentOS-8.5.tar.gz)
+
+### CentOS Stream
+CentOS-Stream-8: Coming-soon!
 
 
 ## My OS/version Isn't Supported!
