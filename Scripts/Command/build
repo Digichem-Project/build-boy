@@ -60,7 +60,7 @@ def do_build(vm_data):
             ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
 
             # All done, make the VM go to bed.
-            print("Shutting down...")
+            print("Shutting down VM...")
             ssh.run("sudo shutdown now", warn = True)
     
     except:
