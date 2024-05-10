@@ -175,6 +175,10 @@ def build(target, branch = "build"):
     # Add pre-release if necessary.
     if silico.development:
         sig.append('-p')
-    subprocess.run(sig, universal_newlines = True, check = True)
+
+    # Upload
+    proc = subprocess.run(sig, universal_newlines = True, check = True, capture_output = True)
+
+    # All done, update the main README with the latest version.
 
     # All done.
