@@ -178,6 +178,8 @@ def build(target, branch = "build"):
 
     # Upload
     proc = subprocess.run(sig, universal_newlines = True, check = True, capture_output = True)
+    print("stdout: {}".format(proc.stderr))
+    print("stderr: {}".format(proc.stderr))
 
     # All done, update the main README with the latest version.
 
