@@ -215,4 +215,10 @@ def build(target, branch = "build"):
     with open("../../README.md", "w") as readme_file:
         readme_file.write(readme_data)
 
+    # Upload.
+    subprocess.run(['git', 'commit', "../../README.md", '-m', "docs: updated download link for {}-{}".format(silico.__version__, target)],
+        universal_newlines = True, check = True)
+    subprocess.run(['git', 'push', 'origin'],
+        universal_newlines = True, check = True)
+
     # All done.
