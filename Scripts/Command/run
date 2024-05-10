@@ -1,5 +1,12 @@
 #/!bin/bash
 
+echo "--------------------------------------"
+echo "-      BUILD-BOY MASTER SCRIPT       -"
+echo "--------------------------------------"
+echo ""
+echo "Good-evening."
+echo "The time is:" $(date)
+
 # We use an annoying mix of stdout and stderr which can get mixed up.
 # This might help.
 export PYTHONUNBUFFERED="1"
@@ -12,5 +19,6 @@ git reset --hard origin/main
 ~/build-boy/Scripts/Command/build 2>&1 | multilog s1048576 n10 ~/Logs/
 
 # Go to bed.
+echo "Build-boy signing off..."
 echo "Shutting down..."
 sudo shutdown now
