@@ -133,7 +133,7 @@ def build(target, branch = "build"):
         v_file.write("{}\n".format(silico.__version__))
 
     # Copy the LICENSES folder for easier viewing.
-    shutil.rmtree(build_dir, 'LICENSES', ignore_errors = True)
+    shutil.rmtree(Path(build_dir, 'LICENSES'), ignore_errors = True)
     shutil.copytree(
         Path(silico_paths['dir'], '_internal', 'LICENSES'),
         Path(build_dir, 'LICENSES'),
