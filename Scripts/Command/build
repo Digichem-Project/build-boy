@@ -36,7 +36,7 @@ def do_build(vm_data):
 
         # Wait a little bit for the VM to start.
         print("Waiting for boot...")
-        time.sleep(15)
+        time.sleep(120)
 
         # Next, connect with SSH.
         print("Connecting to VM...")
