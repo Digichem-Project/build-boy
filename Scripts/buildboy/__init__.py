@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import re
 
 def expand_path(pth):
     """Perform shell-like expansion on a path."""
@@ -177,10 +178,30 @@ def build(target, branch = "build"):
         sig.append('-p')
 
     # Upload
-    proc = subprocess.run(sig, universal_newlines = True, check = True, capture_output = True)
-    print("stdout: {}".format(proc.stderr))
-    print("stderr: {}".format(proc.stderr))
+    subprocess.run(sig, universal_newlines = True, check = True)
+
+    #https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-Stream-8/digichem.6.0.0-pre.3.CentOS-Stream-8.tar.gz
+    download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/{}-{}.tar.gz".format(
+        silico.__version__,
+        target,
+        silico.__version__,
+        target
+    )
+    print(download_link)
 
     # All done, update the main README with the latest version.
+    with open("../../README.md", "r") as readme_file:
+        readme_data = readme_file.read()
+    
+    readme_data = re.sub(
+        r"<!-- " + re.escape(target) + r" -->.*",
+        "<!-- " + target + " --> [{}]({})".format(
+            silico.__version__,
+            download_link
+        ),
+        readme_data
+    )
+    with open("../../README.md", "w") as readme_file:
+        readme_file.write(readme_data)
 
     # All done.
