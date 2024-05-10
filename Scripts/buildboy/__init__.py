@@ -192,7 +192,7 @@ def build(target, branch = "build"):
     subprocess.run(sig, universal_newlines = True, check = True)
 
     #https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-Stream-8/digichem.6.0.0-pre.3.CentOS-Stream-8.tar.gz
-    download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}-{}.tar.gz".format(
+    download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}.tar.gz".format(
         silico.__version__,
         target,
         silico.__version__,
