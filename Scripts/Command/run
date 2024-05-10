@@ -1,5 +1,7 @@
 #/!bin/bash
 
+exec 2>&1 > >(multilog s1048576 n10 ~/Logs/)
+
 echo "--------------------------------------"
 echo "-      BUILD-BOY MASTER SCRIPT       -"
 echo "--------------------------------------"
@@ -16,7 +18,7 @@ git fetch origin
 git reset --hard origin/main
 
 # Run the build script.
-~/build-boy/Scripts/Command/build 2>&1 | multilog s1048576 n10 ~/Logs/
+~/build-boy/Scripts/Command/build
 
 # Go to bed.
 echo "Build-boy signing off..."
