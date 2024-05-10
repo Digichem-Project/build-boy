@@ -2,6 +2,7 @@
 import sys
 from pathlib import Path
 import subprocess
+import time
 
 import fabric
 
@@ -26,6 +27,10 @@ def do_build(vm_data):
         subprocess.run([
             'vboxmanage', 'startvm', vm_data['vm'], "--type=headless"
         ], universal_newlines = True, check = True)
+
+        # Wait a little bit for the VM to start.
+        print("Waiting for boot...")
+        time.sleep(15)
 
         # Next, connect with SSH.
         with fabric.Connection(
