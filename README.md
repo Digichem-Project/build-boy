@@ -1,10 +1,10 @@
-<img src="Banner.png" alt="logo" />
+<img src="Banner.png" alt="Banner" />
 
 # Welcome to Build-boy!
 
 This is the Digichem automated build server.
 
-If you're looking for Digichem downloads, you've come to the right place.
+If you're looking for <img src="Logo.png" alt="Banner" height=25 valign=middle /> Digichem downloads, you've come to the right place.
 
 ## Latest Versions
 
