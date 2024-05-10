@@ -1,3 +1,5 @@
+<img src="Banner.png" alt="logo" height="200"/>
+
 # Welcome to Build-boy!
 
 <img src="Logo.png" alt="logo" width="200"/>
