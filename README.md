@@ -1,8 +1,6 @@
-<img src="Banner.png" alt="logo" height="200"/>
+<img src="Banner.png" alt="logo" />
 
 # Welcome to Build-boy!
-
-<img src="Logo.png" alt="logo" width="200"/>
 
 This is the Digichem automated build server.
 
