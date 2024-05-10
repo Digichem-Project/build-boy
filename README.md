@@ -58,7 +58,7 @@ Digichem is proprietary software. However, it is currently being made available 
 Each build of Digichem has a license automatically included within it, with an expiry set to
 90 days from the build date. After this time, a new license must be acquired, or else the 
 program will cease to function. The easiest way to acquire a new license is to upgrade to the
-latest Digichemversion, which will automatically contain a new license.
+latest Digichem version, which will automatically contain a new license.
 
 Digichem reserves the right to change the license terms in the future, but we will never change the terms of, or seek to revoke,
 an already issued license.
