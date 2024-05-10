@@ -23,42 +23,6 @@ In most cases, this means the operating system of your computational server, not
 
 For historic builds of older versions, see the [releases page](https://github.com/Digichem-Project/build-boy/releases).
 
-## Licenses
-
-The Digichem project is split into two sections with their own licenses.
- - The Digichem program is proprietary software. It is currently available in binary form only under a free-to-use but timed license. 
- - Core components of the library (Digichem-core) are distributed separately under an open-source license.
-
-Additionally, Build-boy (the code in this repository) is available separately under an open-source license.
-
-### Digichem
-
-Digichem is proprietary software. The end-goal for the project is to become self-sufficient
-It is currently being made available free-of-charge under a timed-license.
-Each build of Digichem has a license automatically included within it.
-The expiry of each license is set to 90 days from the build date. After this time, a new license must be acquired,
-or else the program will cease to function. The easiest way to acquire a new license is to upgrade to the latest Digichem
-version, which will automatically contain a new license.
-
-Digichem reserves the right to change the license terms in the future, but we will never change the terms of, or seek to revoke,
-an already issued license.
-
-Your Digichem license will be included in your download. See the included LICENSE file for full details.
-See the DIGICHEM_LICENSE_TEMPLATE file for an example of such a license.
-
-### Digichem-core
-
-The Digichem-core library is licensed under the permissive, open-source BSD 3-clause license.
-See [Digichem-core](https://github.com/Digichem-Project/digichem-core) for more information.
-
-### Build-boy
-
-Build-boy itself is licensed under the permissive, open-source BSD 3-clause license (see LICENSE).
-In summary, you are free to do whatever you want to with the Build-boy code, but you cannot claim
-affiliation with Digichem.
-
-The Digichem logo and branding is Copyright Digichem 2024, you may not use them in any way (although you are welcome to look at them).
-
 ## My OS/version Isn't Supported!
 
 Don't panic. First of all, if your OS is Redhat based, simply pick the matching CentOS version instead.
@@ -79,3 +43,38 @@ If your OS isn't supported and you think it should be, please consider creating 
 [issue](https://github.com/Digichem-Project/build-boy/issues), and we'll see what we can do.
 
 If in doubt, the oldest available OS (currently CentOS-7.9) is the most likely to be compatible.
+
+## Licenses
+
+The Digichem project is split into two sections, each with their own license.
+ - The Digichem program is proprietary software. It is currently available in binary form only under a free-to-use but timed license. 
+ - Core components of the library (Digichem-core) are distributed separately under an open-source license.
+
+Additionally, Build-boy (the code in this repository) is available separately under an open-source license.
+
+### Digichem
+
+Digichem is proprietary software. However, it is currently being made available free-of-charge under a timed-license.
+Each build of Digichem has a license automatically included within it, with an expiry set to
+90 days from the build date. After this time, a new license must be acquired, or else the 
+program will cease to function. The easiest way to acquire a new license is to upgrade to the
+latest Digichemversion, which will automatically contain a new license.
+
+Digichem reserves the right to change the license terms in the future, but we will never change the terms of, or seek to revoke,
+an already issued license.
+
+Your Digichem license will be included in your download. See the included LICENSE file for full details.
+See the DIGICHEM_LICENSE_TEMPLATE file for an example of such a license.
+
+### Digichem-core
+
+The Digichem-core library is licensed under the permissive, open-source BSD 3-clause license.
+See [Digichem-core](https://github.com/Digichem-Project/digichem-core) for more information.
+
+### Build-boy
+
+Build-boy itself is licensed under the permissive, open-source BSD 3-clause license (see LICENSE).
+In summary, you are free to do whatever you want to with the Build-boy code, but you cannot claim
+affiliation with Digichem.
+
+The Digichem logo and branding is Copyright Digichem 2024, you may not use them in any way (although you are welcome to look at them).
