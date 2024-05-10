@@ -4,7 +4,7 @@
 
 This is the Digichem automated build server.
 
-If you're looking for <img src="Logo.png" alt="Banner" height=25 valign=middle /> Digichem downloads, you've come to the right place.
+If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /> Digichem downloads, you've come to the right place.
 
 ## Latest Versions
 
