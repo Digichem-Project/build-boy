@@ -144,7 +144,10 @@ def build(target, branch = "build"):
 
     # Commit the new version.
     subprocess.run([
-        'git', 'commit', 'version', '-m', 'Build version {} on {}'.format(silico.__version__, target)
+        "git", "add", "."
+    ], universal_newlines = True, check = True)
+    subprocess.run([
+        'git', 'commit', '-m', 'Build version {} on {}'.format(silico.__version__, target)
     ], universal_newlines = True, check = True)
 
     tag = '{}-{}'.format(silico.__version__, target)
