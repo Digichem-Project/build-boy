@@ -12,11 +12,11 @@ To download the latest version of Digichem, please select an option from the sup
 Please not that the operating system should match that of the machine where you intend to install Digichem.
 In most cases, this means the operating system of your computational server, not your personal machine.
 
-### CentOS/Redhat <= 8.5 (CentOS Linux)
+### CentOS Linux (Redhat <= 8.5)
 - CentOS-7.9: [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-7.9/digichem.6.0.0-pre.3.CentOS-7.9.tar.gz)
 - CentOS-8.5: [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-8.5/digichem.6.0.0-pre.3.CentOS-8.5.tar.gz)
 
-### CentOS/Redhat > 8.5 (CentOS Stream)
+### CentOS Stream (Redhat > 8.5)
 - CentOS-Stream-8: Coming-soon!
 
 ## All Builds
@@ -78,3 +78,10 @@ In summary, you are free to do whatever you want to with the Build-boy code, but
 affiliation with Digichem.
 
 The Digichem logo and branding is Copyright Digichem 2024, you may not use them in any way (although you are welcome to look at them).
+
+### External libraries
+
+Digichem and Digichem-core both use a number of 3rd party libraries and programs for certain functionality.
+As part of the build process, these libraries are included into the distributed archive automatically.
+Each program and library naturally retains its original license, which are separate from any of the Digichem licenses.
+See the `_internal/LICENSES` folder of each distribution to view these individual licenses.
