@@ -13,11 +13,11 @@ Please not that the operating system should match that of the machine where you 
 In most cases, this means the operating system of your computational server, not your personal machine.
 
 ### CentOS Linux (Redhat <= 8.5)
-- CentOS-7.9: [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-7.9/digichem.6.0.0-pre.3.CentOS-7.9.tar.gz)
-- CentOS-8.5: [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-8.5/digichem.6.0.0-pre.3.CentOS-8.5.tar.gz)
+- CentOS-7.9: <!-- CentOS-7.9 --> [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-7.9/digichem.6.0.0-pre.3.CentOS-7.9.tar.gz)
+- CentOS-8.5: <!-- CentOS-8.5 --> [6.0.0-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-8.5/digichem.6.0.0-pre.3.CentOS-8.5.tar.gz)
 
 ### CentOS Stream (Redhat > 8.5)
-- CentOS-Stream-8: Coming-soon!
+- CentOS-Stream-8: <!-- CentOS-Stream-8 --> Coming-soon!
 
 ## All Builds
 
@@ -64,7 +64,7 @@ Digichem reserves the right to change the license terms in the future, but we wi
 an already issued license.
 
 Your Digichem license will be included in your download. See the included LICENSE file for full details.
-See the DIGICHEM_LICENSE_TEMPLATE file for an example of such a license.
+See the [DIGICHEM_LICENSE_TEMPLATE](DIGICHEM_LICENSE_TEMPLATE.md) file for an example of such a license.
 
 ### Digichem-core
 
