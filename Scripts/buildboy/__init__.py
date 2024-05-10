@@ -125,11 +125,22 @@ def build(target, branch = "build"):
     silico_paths = build_silico(target, oprattle_paths['dir'])
 
     # Change back to build-boy's dir.
+    build_dir = Path(expand_path("~/build-boy/Builds"), target)
     os.chdir(Path(expand_path("~/build-boy/Builds"), target))
 
     # Update the version.
     with open('version', 'wt') as v_file:
         v_file.write("{}\n".format(silico.__version__))
+
+    # Copy the LICENSES folder for easier viewing.
+    shutil.rmtree(build_dir, 'LICENSES', ignore_errors = True)
+    shutil.copytree(
+        Path(silico_paths['dir'], '_internal', 'LICENSES'),
+        Path(build_dir, 'LICENSES'),
+        copy_function = shutil.copy)
+    
+    # And also the main Digichem license.
+    shutil.copy(Path(silico_paths['dir'], "LICENSE"), Path(build_dir))
 
     # Commit the new version.
     subprocess.run([
