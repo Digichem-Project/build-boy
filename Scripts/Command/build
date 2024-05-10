@@ -44,8 +44,8 @@ def do_build(vm_data):
             port=vm_data['port'],
             # The PC just turned on, give it some time to wake-up:
             connect_kwargs = {
-                "timeout": 600, # 10 mins.
-                "banner_timeout": 600
+                "timeout": 300, # 5 mins.
+                "banner_timeout": 300
             }
         ) as ssh:
 
