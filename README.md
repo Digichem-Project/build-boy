@@ -1,5 +1,7 @@
 # Welcome to Build-boy!
 
+<img src="Logo.png" alt="logo" width="200"/>
+
 This is the Digichem automated build server.
 
 If you're looking for Digichem downloads, you've come to the right place.
