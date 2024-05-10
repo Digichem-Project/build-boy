@@ -163,14 +163,25 @@ def build(target, branch = "build"):
     # Also the tag
     subprocess.run(['git', 'push', 'origin', tag],
         universal_newlines = True, check = True)
+    
+    notes = 'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
+            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__) +\
+    #        'Changes since version {}:\n'.format(last_version)
+    
+    # changes = subprocess.run([
+    #     'git', 'log', '--pretty=format:- %as: %s', '--ancestry-path', '{}..{}'.format(
+    #         # Old version.
+    #         "{}-{}".format(last_version, target)
+    #         # New version.
+    #     )
+    #     ], universal_newlines = True, check = True)
+    
+    notes += '\nBuilt by the hard-working Build-boy.'
 
     # Now create a github release and attach the build.
     sig = [
         'gh', 'release', 'create', tag, silico_paths['archive'],
-        '--notes',
-            'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
-            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__) +\
-            'Built by the hard-working Build-boy.',
+        '--notes', notes,
         '--title', 'Digichem version {} for {}'.format(silico.__version__, target)
     ]
     # Add pre-release if necessary.
@@ -181,7 +192,7 @@ def build(target, branch = "build"):
     subprocess.run(sig, universal_newlines = True, check = True)
 
     #https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-Stream-8/digichem.6.0.0-pre.3.CentOS-Stream-8.tar.gz
-    download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/{}-{}.tar.gz".format(
+    download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}-{}.tar.gz".format(
         silico.__version__,
         target,
         silico.__version__,
