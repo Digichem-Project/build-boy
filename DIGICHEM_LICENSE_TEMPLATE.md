@@ -1,0 +1,41 @@
+Copyright 2024 Digichem
+All Rights Reserved
+
+This software is proprietary. You (the user) have no permission to use or 
+distribute this software without those permissions being expressly granted by a 
+license agreement (such as this one).
+
+This license agreement is timed; it grants you a select number of permissions 
+in relation to this software (which are detailed below) only up until the 
+expiry date (below). Once the expiry date has been exceeded, these permissions 
+are automatically revoked and you must obtain another license to continue using 
+the software. If you do not, or cannot, obtain a new license, you must cease 
+using the software immediately and delete it from your system. Failure to do so 
+is in breach of copyright law.
+
+Digichem reserves the right to change the terms of any future licenses issued.
+
+This license will expire after midnight on dd-mm-yyyy.
+This date and time is relative to Coordinated Universal Time (UTC).
+
+This license agreement grants you a limited number of permissions in relation 
+to this software. Any permissions that are not explicitly described are not 
+granted. A list of disallowed permissions is also provided for your reference. 
+This list is not exhaustive.
+
+Under the terms of this license agreement, up until the expiry date, you MAY:
+ - Use the software, in binary form, free of charge for any purpose.
+ 
+You may NOT:
+ - Use or attempt to access any source code of the software.
+ - Redistribute the software in any form (including binary).
+ - Sell the software, in any part.
+ - Modify the software source code or binaries.
+ 
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.
