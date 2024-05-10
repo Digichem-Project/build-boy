@@ -64,9 +64,16 @@ def do_build(vm_data):
             ssh.run("sudo shutdown now", warn = True)
     
     except:
-        # Kill the VM.
+        # Ask the VM to stop.
         subprocess.run([
            'vboxmanage', 'controlvm', vm_data['vm'], "acpipowerbutton"
+        ], universal_newlines = True, check = False)
+
+        time.sleep(10)
+
+        # Make sure it is dead.
+        subprocess.run([
+           'vboxmanage', 'controlvm', vm_data['vm'], "poweroff"
         ], universal_newlines = True, check = False)
 
         raise
