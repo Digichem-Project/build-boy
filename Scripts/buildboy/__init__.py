@@ -165,7 +165,7 @@ def build(target, branch = "build"):
         universal_newlines = True, check = True)
     
     notes = 'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
-            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__) +\
+            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__)
     #        'Changes since version {}:\n'.format(last_version)
     
     # changes = subprocess.run([
