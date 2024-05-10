@@ -1,6 +1,7 @@
 #/!bin/bash
 
-exec 2>&1 > >(multilog s1048576 n10 ~/Logs/)
+exec > >(multilog s1048576 n10 ~/Logs/)
+exec 2>&1
 
 echo "--------------------------------------"
 echo "-      BUILD-BOY MASTER SCRIPT       -"
