@@ -19,6 +19,9 @@ In most cases, this means the operating system of your computational server, not
 ### CentOS/Redhat > 8.5 (CentOS Stream)
 - CentOS-Stream-8: Coming-soon!
 
+## All Builds
+
+For historic builds of older versions, see the [releases page](https://github.com/Digichem-Project/build-boy/releases).
 
 ## My OS/version Isn't Supported!
 
