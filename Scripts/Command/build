@@ -29,6 +29,7 @@ def do_build(vm_data):
     """"""
     try:
         # First, we need to wake up the VM.
+        print("Waking VM...")
         subprocess.run([
             'vboxmanage', 'startvm', vm_data['vm'], "--type=headless"
         ], universal_newlines = True, check = True)
@@ -38,6 +39,7 @@ def do_build(vm_data):
         time.sleep(15)
 
         # Next, connect with SSH.
+        print("Connecting to VM...")
         with fabric.Connection(
             'localhost',
             user="digichem",
@@ -50,12 +52,15 @@ def do_build(vm_data):
         ) as ssh:
 
             # Check for updates to the local build-boy script.
+            print("Fetching updates...")
             ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
 
             # Call the local build-boy build script.
+            print("Running build...")
             ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
 
             # All done, make the VM go to bed.
+            print("Shutting down...")
             ssh.run("sudo shutdown now", warn = True)
     
     except:
