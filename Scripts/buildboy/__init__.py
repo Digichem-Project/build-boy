@@ -120,7 +120,7 @@ def build(target, branch = "build"):
         'commit': subprocess.run(['git', 'rev-parse', '--verify', 'HEAD'], capture_output=True, universal_newlines=True, check=True).stdout.strip()
     }
     # If this is a major version, update that too.
-    if silico.development:
+    if not silico.development:
         new_data['release_version'] = new_data['version']
         new_data['release_commit'] = new_data['commit']
 
