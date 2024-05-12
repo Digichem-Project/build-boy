@@ -109,9 +109,9 @@ def build(target, branch = "build"):
 
     import silico
     import openprattle
-    if silico.__version__.strip() == last_data['version']:
+    if silico.__version__.strip() == last_data.get('version', ""):
         # Nothing new.
-        print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_data['version'], silico.__version__))
+        print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_data.get('version', ""), silico.__version__))
         exit()
 
     # Update data.
