@@ -109,6 +109,7 @@ def build(target, branch = "build"):
 
     import silico
     import openprattle
+    import digichem
     if silico.__version__.strip() == last_data.get('version', ""):
         # Nothing new.
         print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_data.get('version', ""), silico.__version__))
@@ -213,7 +214,7 @@ def build(target, branch = "build"):
             continue
 
         # First, add a header.
-        changelog.append("{}:".format(change_type))
+        changelog.append("\n{}:".format(change_type))
 
         # Add each change.
         for change in changes[change_type]:
@@ -257,7 +258,8 @@ def build(target, branch = "build"):
         universal_newlines = True, check = True)
     
     notes = 'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
-            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__) +\
+            'Bundled with: Digichem-core v{}\n'.format(digichem.__version__) +\
+            '          and Openprattle v{}\n\n'.format(openprattle.__version__) +\
             changelog +\
             "\n\n"
     notes += 'Built by the hard-working Build-boy.'
