@@ -257,18 +257,10 @@ def build(target, branch = "build"):
         universal_newlines = True, check = True)
     
     notes = 'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
-            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__)
-    #        'Changes since version {}:\n'.format(last_version)
-    
-    # changes = subprocess.run([
-    #     'git', 'log', '--pretty=format:- %as: %s', '--ancestry-path', '{}..{}'.format(
-    #         # Old version.
-    #         "{}-{}".format(last_version, target)
-    #         # New version.
-    #     )
-    #     ], universal_newlines = True, check = True)
-    
-    notes += '\nBuilt by the hard-working Build-boy.'
+            'Bundled with Openprattle v{}\n\n'.format(openprattle.__version__) +\
+            changelog +\
+            "\n\n"
+    notes += 'Built by the hard-working Build-boy.'
 
     # Now create a github release and attach the build.
     sig = [
