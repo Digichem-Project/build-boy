@@ -214,7 +214,7 @@ def build(target, branch = "build"):
             continue
 
         # First, add a header.
-        changelog.append("\n{}:".format(change_type))
+        changelog.append("\n#### {}:".format(change_type))
 
         # Add each change.
         for change in changes[change_type]:
@@ -257,9 +257,10 @@ def build(target, branch = "build"):
     subprocess.run(['git', 'push', 'origin', tag],
         universal_newlines = True, check = True)
     
-    notes = 'Automated build of Digichem v{} for the {} system.\n'.format(silico.__version__, target) +\
-            'Bundled with: Digichem-core v{}\n'.format(digichem.__version__) +\
-            '          and Openprattle v{}\n\n'.format(openprattle.__version__) +\
+    notes = '## Automated build of Digichem v{} for the {} system\n'.format(silico.__version__, target) +\
+            '#### Bundled with:\n' +\
+            ' - Digichem-core v{}\n'.format(digichem.__version__) +\
+            ' - Openprattle v{}\n\n'.format(openprattle.__version__) +\
             changelog +\
             "\n\n"
     notes += 'Built by the hard-working Build-boy.'
