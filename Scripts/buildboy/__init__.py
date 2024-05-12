@@ -4,6 +4,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import re
+import json
 
 def expand_path(pth):
     """Perform shell-like expansion on a path."""
@@ -89,8 +90,8 @@ def build(target, branch = "build"):
     print("-----------------------------")
     # First, check if there's a new version to build.
     # Get the last version we did.
-    with open(Path('../../Builds', target, 'version')) as v_file:
-        last_version = v_file.read().strip()
+    with open(Path('../../Builds', target, 'status')) as v_file:
+        last_data = json.loads(v_file)
 
     # Now get the latest version.
     os.chdir(expand_path('~/silico'))
@@ -108,10 +109,20 @@ def build(target, branch = "build"):
 
     import silico
     import openprattle
-    if silico.__version__.strip() == last_version:
+    if silico.__version__.strip() == last_data['version']:
         # Nothing new.
-        print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_version, silico.__version__))
+        print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_data['version'], silico.__version__))
         exit()
+
+    # Update data.
+    new_data = {
+        'version': silico.__version__,
+        'commit': subprocess.run(['git', 'rev-parse', '--verify', 'HEAD'], capture_output=True, universal_newlines=True, check=True).stdout.strip()
+    }
+    # If this is a major version, update that too.
+    if silico.development:
+        new_data['release_version'] = new_data['version']
+        new_data['release_commit'] = new_data['commit']
 
     # Work to be done.
 
@@ -130,8 +141,88 @@ def build(target, branch = "build"):
     os.chdir(Path(expand_path("~/build-boy/Builds"), target))
 
     # Update the version.
-    with open('version', 'wt') as v_file:
-        v_file.write("{}\n".format(silico.__version__))
+    with open('status', 'wt') as v_file:
+        v_file.write(json.dumps(new_data))
+
+    # Write a changelog.
+    # What we compare to depends on what type of release this is.
+    # If this is a development version, just show from the last development version.
+    # If it's a release (!development), show from the last release version.
+    if silico.development:
+        last_commit = last_data.get('commit', "")
+        last_version = last_data.get('version', "")
+    
+    else:
+        last_commit = last_data.get('release_commit', "")
+        last_version = last_data.get('release_version', "")
+
+    # Get changes from git
+    raw_changes = subprocess.run([
+        'git', 'log', '--pretty=format:%as: %s', '--ancestry-path', '{}..{}'.format(
+            # Old version.
+            last_commit,
+            # New version.
+            "HEAD"
+        )
+        ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
+    
+    changes = {
+        'New features': [],
+        'Bugfixes': [],
+        'Documentation changes': [],
+        'Testing updates': [],
+        'Miscellaneous': []
+    }
+    # Only keep semantic commits, and split by type.
+    for raw_change in raw_changes:
+        try:
+            change_split = raw_change.split(" ")
+            date = change_split[0]
+            change_type = change_split[1]
+            message = " ".join(change_split[2:])
+
+            if change_type.lower() == "feat:":
+                dest = "New features"
+            
+            elif change_type.lower() == "fix":
+                dest = "Bugfixes"
+
+            elif change_type.lower() == "doc":
+                dest = "Documentation changes"
+
+            elif change_type.lower() == "test":
+                dest = "Testing updates"
+            
+            elif change_type.lower() in ("style", "refactor", "chore"):
+                dest = "Miscellaneous"
+            
+            else:
+                continue
+
+            changes[dest].append({'date': date, 'message': message})
+        
+        except Exception as e:
+            print("Failed to process commit: {}, {}".format(raw_change, e))
+    
+    # Now assemble into a changelog
+    changelog = ["Changes in this version ({}) since {}".format(silico.__version__, last_version)]
+    for change_type in changes:
+        if len(changes[change_type]) == 0:
+            # No updates for this class, skip.
+            continue
+
+        # First, add a header.
+        changelog.append("{}:".format(change_type))
+
+        # Add each change.
+        for change in changes[change_type]:
+            changelog.append("- [{}]: {}".format(change['date'], change['message']))
+    
+    changelog = "\n".join(changelog)
+
+    # Write the changelog.
+    with open('changelog', 'wt') as changelog_file:
+        changelog_file.write(changelog)
 
     # Copy the LICENSES folder for easier viewing.
     shutil.rmtree(Path(build_dir, 'LICENSES'), ignore_errors = True)
