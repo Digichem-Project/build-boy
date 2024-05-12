@@ -142,7 +142,7 @@ def build(target, branch = "build"):
             # New version.
             "HEAD"
         )
-        ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
+        ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
 
     # Work to be done.
 
@@ -185,16 +185,16 @@ def build(target, branch = "build"):
             if change_type.lower() == "feat:":
                 dest = "New features"
             
-            elif change_type.lower() == "fix":
+            elif change_type.lower() == "fix:":
                 dest = "Bugfixes"
 
-            elif change_type.lower() == "doc":
+            elif change_type.lower() == "doc:":
                 dest = "Documentation changes"
 
-            elif change_type.lower() == "test":
+            elif change_type.lower() == "test:":
                 dest = "Testing updates"
             
-            elif change_type.lower() in ("style", "refactor", "chore"):
+            elif change_type.lower() in ("style:", "refactor:", "chore:"):
                 dest = "Miscellaneous"
             
             else:
