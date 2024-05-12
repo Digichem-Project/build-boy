@@ -124,6 +124,26 @@ def build(target, branch = "build"):
         new_data['release_version'] = new_data['version']
         new_data['release_commit'] = new_data['commit']
 
+    # Get a list of changes for later.
+    # If it's a release (!development), show from the last release version.
+    if silico.development:
+        last_commit = last_data.get('commit', "")
+        last_version = last_data.get('version', "")
+    
+    else:
+        last_commit = last_data.get('release_commit', "")
+        last_version = last_data.get('release_version', "")
+
+    # Get changes from git
+    raw_changes = subprocess.run([
+        'git', 'log', '--pretty=format:%as: %s', '--ancestry-path', '{}..{}'.format(
+            # Old version.
+            last_commit,
+            # New version.
+            "HEAD"
+        )
+        ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
+
     # Work to be done.
 
     print("-----------------------")
@@ -147,25 +167,6 @@ def build(target, branch = "build"):
     # Write a changelog.
     # What we compare to depends on what type of release this is.
     # If this is a development version, just show from the last development version.
-    # If it's a release (!development), show from the last release version.
-    if silico.development:
-        last_commit = last_data.get('commit', "")
-        last_version = last_data.get('version', "")
-    
-    else:
-        last_commit = last_data.get('release_commit', "")
-        last_version = last_data.get('release_version', "")
-
-    # Get changes from git
-    raw_changes = subprocess.run([
-        'git', 'log', '--pretty=format:%as: %s', '--ancestry-path', '{}..{}'.format(
-            # Old version.
-            last_commit,
-            # New version.
-            "HEAD"
-        )
-        ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
-    
     changes = {
         'New features': [],
         'Bugfixes': [],
