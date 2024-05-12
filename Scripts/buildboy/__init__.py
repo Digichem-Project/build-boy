@@ -217,7 +217,7 @@ def build(target, branch = "build"):
 
         # Add each change.
         for change in changes[change_type]:
-            changelog.append("- [{}]: {}".format(change['date'], change['message']))
+            changelog.append(" - [{}]: {}".format(change['date'], change['message']))
     
     changelog = "\n".join(changelog)
 
