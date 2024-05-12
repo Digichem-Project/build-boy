@@ -91,7 +91,7 @@ def build(target, branch = "build"):
     # First, check if there's a new version to build.
     # Get the last version we did.
     with open(Path('../../Builds', target, 'status')) as v_file:
-        last_data = json.loads(v_file)
+        last_data = json.load(v_file)
 
     # Now get the latest version.
     os.chdir(expand_path('~/silico'))
