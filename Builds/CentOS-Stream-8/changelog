@@ -1,1 +1,5 @@
-Changes in this version (6.0.0-pre.5) since 
+Changes in this version (6.0.0-pre.6) since 6.0.0-pre.5
+Documentation changes:
+ - [2024-05-12:]: updated dependencies
+Miscellaneous:
+ - [2024-05-12:]: bumped version for build-test
