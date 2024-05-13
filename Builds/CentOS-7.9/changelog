@@ -1,5 +1,4 @@
-Changes in this version (6.0.0-pre.6) since 6.0.0-pre.5
-Documentation changes:
- - [%as:]: updated dependencies
-Miscellaneous:
- - [%as:]: bumped version for build-test
+Changes in this version (6.0.0-pre.7) since 6.0.0-pre.6
+
+#### Miscellaneous:
+ - [%as:]: Another version bump for build test
