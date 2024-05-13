@@ -207,7 +207,7 @@ def build(target, branch = "build"):
             print("Failed to process commit: {}, {}".format(raw_change, e))
     
     # Now assemble into a changelog
-    changelog = ["Changes in this version ({}) since {}".format(silico.__version__, last_version)]
+    changelog = ["### Changes in this version ({}) since {}".format(silico.__version__, last_version)]
     for change_type in changes:
         if len(changes[change_type]) == 0:
             # No updates for this class, skip.
@@ -257,7 +257,7 @@ def build(target, branch = "build"):
     subprocess.run(['git', 'push', 'origin', tag],
         universal_newlines = True, check = True)
     
-    notes = '## Automated build of Digichem v{} for the {} system\n'.format(silico.__version__, target) +\
+    notes = '### Automated build of Digichem v{} for the {} system\n'.format(silico.__version__, target) +\
             '#### Bundled with:\n' +\
             ' - Digichem-core v{}\n'.format(digichem.__version__) +\
             ' - Openprattle v{}\n\n'.format(openprattle.__version__) +\
