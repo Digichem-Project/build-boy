@@ -1,4 +1,10 @@
-Changes in this version (6.0.0-pre.7) since 6.0.0-pre.6
+### Changes in this version (6.0.0-pre.8) since 6.0.0-pre.7
+
+#### Documentation changes:
+ - [%as:]: initial documentation for installation instructions etc
+ - [%as:]: Added version info to documentation
+ - [%as:]: changed theme to read-the-docs
+ - [%as:]: finished doc of result --auto
 
 #### Miscellaneous:
- - [%as:]: Another version bump for build test
+ - [%as:]: Updated install script to match new build style
