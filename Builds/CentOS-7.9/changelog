@@ -1,10 +1,22 @@
-### Changes in this version (6.0.0-pre.8) since 6.0.0-pre.7
+### Changes in this version (6.0.0-pre.9) since 6.0.0-pre.8
+
+#### New features:
+ - [%as:]: install script now sets up skeleto dir
+ - [%as:]: Added example configs for programs and destinations in skeleton dir
+ - [%as:]: Added skeleton digichem.yaml file
+
+#### Bugfixes:
+ - [%as:]: Changed SLURM max-nodes default to 1
 
 #### Documentation changes:
- - [%as:]: initial documentation for installation instructions etc
- - [%as:]: Added version info to documentation
- - [%as:]: changed theme to read-the-docs
- - [%as:]: finished doc of result --auto
+ - [%as:]: minor updates to dependencies
+ - [%as:]: Updated version info for supported builds
+ - [%as:]: minor updates to install doc
 
 #### Miscellaneous:
- - [%as:]: Updated install script to match new build style
+ - [%as:]: Moved skeleton folder into data
+ - [%as:]: bumped pre-release
+ - [%as:]: Removed old and unused freeze dirs
+ - [%as:]: Removed some lingering configs in preparation for new skeleton dir
+ - [%as:]: Changed the location of some server locations
+ - [%as:]: updated freeze script to not include version numbers in unpacked digichem dir
