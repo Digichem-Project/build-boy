@@ -53,22 +53,7 @@ def build_target(
     shutil.rmtree("build", ignore_errors=True)
     shutil.rmtree("dist", ignore_errors=True)
 
-    # Change branches.
-    subprocess.run([
-        'git', 'checkout', branch
-    ], universal_newlines = True, check = True)
-
-    # Get the latest version from git.
-    # WARNING: This will forcibly update and remove local files.
-    subprocess.run([
-       'git', 'fetch', 'origin'
-    ], universal_newlines = True, check = True)
-    subprocess.run([
-       'git', 'reset', '--hard', 'origin/' + branch
-    ], universal_newlines = True, check = True)
-    #subprocess.run([
-    #    'git', 'pull', 'origin'
-    #], universal_newlines = True, check = True)
+    update_repo(".", branch=branch)
 
     # Now build.
     sig = ['./freeze', target]
