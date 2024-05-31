@@ -275,11 +275,39 @@ def build(target, branch = "build"):
     # Also the tag
     subprocess.run(['git', 'push', 'origin', tag],
         universal_newlines = True, check = True)
+
+    depends = [
+        ["digichem-core", 'digichem'],
+        "basis_set_exchange",
+        "cclib",
+        "mako",
+        "matplotlib",
+        "openprattle",
+        ["pillow", "PIL"],
+        "pysoc",
+        ["pyyaml", "yaml"],
+        "rdkit",
+        "scipy",
+        "urwid",
+        "weasyprint",
+    ]
     
     notes = '### Automated build of Digichem v{} for the {} system\n'.format(silico.__version__, target) +\
-            '#### Bundled with:\n' +\
-            ' - Digichem-core v{}\n'.format(digichem.__version__) +\
-            ' - Openprattle v{}\n\n'.format(openprattle.__version__) +\
+            '#### Bundled with:\n'
+    
+    for depend in depends:
+        # CAREFUL, a short module name will break this
+        if len(depend) == 2:
+            mod_desc = depend[0]
+            mod_name = depend[1]
+        
+        else:
+            mod_desc = depend
+            mod_name = depend
+        mod = __import__(mod_name)
+        notes += "{}: {}".format(mod_desc, mod.__version__) + "\n"
+    
+    notes += '\n' +\
             changelog +\
             "\n\n"
     notes += 'Built by the hard-working Build-boy.'
