@@ -1,11 +1,4 @@
-### Changes in this version (6.0.0-pre.10) since 6.0.0-pre.9
-
-#### Documentation changes:
- - [2024-05-17:]: completed setup documentation
- - [2024-05-17:]: started adding setup documentation
- - [2024-05-17:]: Added main install documentation
- - [2024-05-17:]: minor updates to main install doc
+### Changes in this version (6.0.0-pre.11) since 6.0.0-pre.10
 
 #### Miscellaneous:
- - [2024-05-31:]: bumped version number; new cclib hotfix
- - [2024-05-17:]: minor updates to skeleton directory
+ - [2024-05-31:]: bumped version, update depends
