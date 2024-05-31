@@ -10,7 +10,7 @@ def update_repo(repo_path, branch = "main", upstream = "origin"):
     """
     Forcibly update a local repo from origin.
     """
-    print("Updating '{}' to '{}'/'{}'".format(repo_path, upstream, branch))
+    print("Updating '{}' to '{}/{}'".format(repo_path, upstream, branch))
     start_dir = Path(os.getcwd()).resolve()
     try:
         os.chdir(repo_path)
