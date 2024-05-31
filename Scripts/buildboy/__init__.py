@@ -122,7 +122,7 @@ def build(target, branch = "build"):
     update_repo(expand_path('~/configurables'))
     update_repo(expand_path('~/digichem-core'))
     update_repo(expand_path('~/openprattle'))
-    update_repo(expand_path('~/pysoc', "master"))
+    update_repo(expand_path('~/pysoc'), "master")
 
     os.chdir(expand_path('~/silico'))
 
