@@ -6,6 +6,30 @@ import subprocess
 import re
 import json
 
+def update_repo(repo_path, branch = "main", upstream = "origin"):
+    """
+    Forcibly update a local repo from origin.
+    """
+    start_dir = Path(os.getcwd()).resolve()
+    try:
+        os.chdir(repo_path)
+
+        # Checkout.
+        # TODO: Checkout could fail if there are untracked files, but best to stop then anyway.
+        subprocess.run([
+            'git', 'checkout', branch
+        ], universal_newlines = True, check = True)
+        # Get the latest version from git.
+        subprocess.run([
+        'git', 'fetch', upstream
+        ], universal_newlines = True, check = True)
+        subprocess.run([
+        'git', 'reset', '--hard', upstream+ '/' + branch
+        ], universal_newlines = True, check = True)
+    
+    finally:
+        os.chdir(start_dir)
+
 def expand_path(pth):
     """Perform shell-like expansion on a path."""
     pth = os.path.expanduser(pth)
@@ -93,19 +117,14 @@ def build(target, branch = "build"):
     with open(Path('../../Builds', target, 'status')) as v_file:
         last_data = json.load(v_file)
 
-    # Now get the latest version.
+    # Now get the latest version of repos that we'll need.
+    update_repo(expand_path('~/silico'), "build")
+    update_repo(expand_path('~/configurables'))
+    update_repo(expand_path('~/digichem-core'))
+    update_repo(expand_path('~/openprattle'))
+    update_repo(expand_path('~/pysoc', "master"))
+
     os.chdir(expand_path('~/silico'))
-    # Checkout.
-    subprocess.run([
-        'git', 'checkout', branch
-    ], universal_newlines = True, check = True)
-    # Get the latest version from git.
-    subprocess.run([
-       'git', 'fetch', 'origin'
-    ], universal_newlines = True, check = True)
-    subprocess.run([
-       'git', 'reset', '--hard', 'origin/' + branch
-    ], universal_newlines = True, check = True)
 
     import silico
     import openprattle
