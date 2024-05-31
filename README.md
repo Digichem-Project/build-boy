@@ -46,9 +46,9 @@ If in doubt, the oldest available OS (currently CentOS-7.9) is the most likely t
 
 ## Licenses
 
-The Digichem project is split into two sections, each with their own license.
+The Digichem project is split into two sections, each with it's own license.
  - The Digichem program is proprietary software. It is currently available in binary form only under a free-to-use but timed license. 
- - Core components of the library (Digichem-core) are distributed separately under an open-source license.
+ - Core components of the library ([Digichem-core](https://github.com/Digichem-Project/digichem-core)) are distributed separately under an open-source license.
 
 Additionally, Build-boy (the code in this repository) is available separately under an open-source license.
 
@@ -73,7 +73,7 @@ See [Digichem-core](https://github.com/Digichem-Project/digichem-core) for more 
 
 ### Build-boy
 
-Build-boy itself is licensed under the permissive, open-source BSD 3-clause license (see LICENSE).
+Build-boy itself is licensed under the permissive, open-source BSD 3-clause license (see [LICENSE](LICENSE)).
 In summary, you are free to do whatever you want to with the Build-boy code, but you cannot claim
 affiliation with Digichem.
 
