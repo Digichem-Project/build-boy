@@ -1,4 +1,7 @@
-### Changes in this version (6.0.0-pre.11) since 6.0.0-pre.10
+### Changes in this version (6.0.0-pre.12) since 6.0.0-pre.11
+
+#### Bugfixes:
+ - [2024-05-31:]: prevented openbabel imports in submodules
 
 #### Miscellaneous:
- - [2024-05-31:]: bumped version, update depends
+ - [2024-05-31:]: bumped version
