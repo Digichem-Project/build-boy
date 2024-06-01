@@ -1,11 +1,8 @@
-### Changes in this version (6.0.0-pre.10) since 6.0.0-pre.9
+### Changes in this version (6.0.0-pre.12) since 6.0.0-pre.10
 
-#### Documentation changes:
- - [%as:]: completed setup documentation
- - [%as:]: started adding setup documentation
- - [%as:]: Added main install documentation
- - [%as:]: minor updates to main install doc
+#### Bugfixes:
+ - [2024-05-31:]: prevented openbabel imports in submodules
 
 #### Miscellaneous:
- - [%as:]: bumped version number; new cclib hotfix
- - [%as:]: minor updates to skeleton directory
+ - [2024-05-31:]: bumped version
+ - [2024-05-31:]: bumped version, update depends
