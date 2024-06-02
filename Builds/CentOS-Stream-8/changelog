@@ -1,8 +1,7 @@
-### Changes in this version (6.0.0-pre.12) since 6.0.0-pre.10
+### Changes in this version (6.0.0-pre.13) since 6.0.0-pre.12
 
 #### Bugfixes:
- - [2024-05-31:]: prevented openbabel imports in submodules
+ - [2024-06-02:]: fixe resumable submission not able to find digichem executable
 
 #### Miscellaneous:
- - [2024-05-31:]: bumped version
- - [2024-05-31:]: bumped version, update depends
+ - [2024-06-02:]: bumped pre-release
