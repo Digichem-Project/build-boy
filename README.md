@@ -17,7 +17,7 @@ In most cases, this means the operating system of your computational server, not
 - CentOS-8.5: <!-- CentOS-8.5 --> [6.0.0-pre.13](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.13-CentOS-8.5/digichem.6.0.0-pre.13.CentOS-8.5.tar.gz)
 
 ### CentOS Stream (Redhat > 8.5)
-- CentOS-Stream-8: <!-- CentOS-Stream-8 --> [6.0.0-pre.12](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.12-CentOS-Stream-8/digichem.6.0.0-pre.12.CentOS-Stream-8.tar.gz)
+- CentOS-Stream-8: <!-- CentOS-Stream-8 --> [6.0.0-pre.13](https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.13-CentOS-Stream-8/digichem.6.0.0-pre.13.CentOS-Stream-8.tar.gz)
 
 ## All Builds
 
