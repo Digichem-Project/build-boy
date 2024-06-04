@@ -1,7 +1,4 @@
-### Changes in this version (6.0.0-pre.13) since 6.0.0-pre.12
-
-#### Bugfixes:
- - [2024-06-02:]: fixe resumable submission not able to find digichem executable
+### Changes in this version (6.0.0-pre.14) since 6.0.0-pre.13
 
 #### Miscellaneous:
- - [2024-06-02:]: bumped pre-release
+ - [2024-06-03:]: bumped pre-release
