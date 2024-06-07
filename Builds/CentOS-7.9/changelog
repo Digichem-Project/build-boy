@@ -1,16 +1,4 @@
-### Changes in this version (6.0.0-pre.15) since 6.0.0-pre.14
-
-#### Bugfixes:
- - [2024-06-06:]: fixed config show command after change to library location
-
-#### Documentation changes:
- - [2024-06-06:]: tweaked setup instructions for Orca
- - [2024-06-06:]: added some additional comments re. installation folder structure
- - [2024-06-06:]: removed WIP sections from doc index
-
-#### Testing updates:
- - [2024-06-06:]: fixed missing destination definition
- - [2024-06-06:]: prepared for new submission tests
+### Changes in this version (6.0.0-pre.16) since 6.0.0-pre.15
 
 #### Miscellaneous:
- - [2024-06-07:]: bumped pre-release
+ - [2024-06-07:]: bump pre
