@@ -6,6 +6,10 @@ This is the Digichem automated build server.
 
 If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /> Digichem downloads, you've come to the right place.
 
+## Documentation
+
+Please see the Digichem [documentation](https://doc.digi-chem.co.uk) for full installation instructions and further information.
+
 ## Latest Versions
 
 To download the latest version of Digichem, please select an option from the supported operating systems below.
