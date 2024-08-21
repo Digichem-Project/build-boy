@@ -1,5 +1,12 @@
-### Changes in this version (6.1.1) since 6.1.0
+### Changes in this version (6.1.2) since 6.1.1
+
+#### New features:
+ - [2024-08-21:]: Gaussian programs will now try and correctly specify the relevant rwfdump path
+
+#### Bugfixes:
+ - [2024-08-21:]: fixed another confusing messge if a program stops almost immediately
+ - [2024-08-21:]: fixed a confusing error message if a program stops immediately
 
 #### Miscellaneous:
- - [2024-08-01:]: update last modified
- - [2024-08-01:]: update to new Digichem-core version 6.0.1
+ - [2024-08-21:]: update last modified
+ - [2024-08-21:]: bumped version to 6.1.2
