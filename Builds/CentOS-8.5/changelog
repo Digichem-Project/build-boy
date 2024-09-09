@@ -1,12 +1,4 @@
-### Changes in this version (6.1.2) since 6.1.1
-
-#### New features:
- - [2024-08-21:]: Gaussian programs will now try and correctly specify the relevant rwfdump path
-
-#### Bugfixes:
- - [2024-08-21:]: fixed another confusing messge if a program stops almost immediately
- - [2024-08-21:]: fixed a confusing error message if a program stops immediately
+### Changes in this version (6.1.3) since 6.1.2
 
 #### Miscellaneous:
- - [2024-08-21:]: update last modified
- - [2024-08-21:]: bumped version to 6.1.2
+ - [2024-09-09:]: fixed bundled pysoc not supporting rwfdump
