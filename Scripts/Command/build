@@ -85,7 +85,7 @@ def main():
     print("--------------------------------------")
     print("")
     print("Good-evening.")
-    print("The time is:" + str(datetime.datetime.now()))
+    print("The time is: " + str(datetime.datetime.now()))
     for vm in vms.values():
         try:
             print("--------------------------------------")
