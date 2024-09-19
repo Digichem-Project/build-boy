@@ -1,4 +1,12 @@
-### Changes in this version (6.1.3) since 6.1.2
+### Changes in this version (6.2.0) since 6.1.3
+
+#### New features:
+ - [2024-09-19:]: added support for Turbomole's frozen core approximation
+
+#### Bugfixes:
+ - [2024-09-19:]: fixed using sub-options as attributed not keys
 
 #### Miscellaneous:
- - [2024-09-09:]: fixed bundled pysoc not supporting rwfdump
+ - [2024-09-19:]: update last modified
+ - [2024-09-19:]: bumped version to 6.2.0
+ - [2024-09-09:]: update last modified
