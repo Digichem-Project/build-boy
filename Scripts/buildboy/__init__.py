@@ -105,7 +105,7 @@ def build(target, branch = "build"):
 
     # Now get the latest version of repos that we'll need.
     update_repo(expand_path('~/silico'), "build")
-    update_repo(expand_path('~/cclib'), "babel-fix")
+    update_repo(expand_path('~/cclib'), "bleeding")
     update_repo(expand_path('~/configurables'))
     update_repo(expand_path('~/digichem-core'))
     update_repo(expand_path('~/openprattle'))
