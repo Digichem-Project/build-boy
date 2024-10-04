@@ -1,18 +1,54 @@
-### Changes in this version (6.3.0) since 6.2.0
+### Changes in this version (6.4.0) since 6.3.0
 
 #### New features:
- - [2024-09-23:]: added initial support for Orca frozen core
- - [2024-09-23:]: added support for FC, Full and Window frozen core keywords in Gussian
- - [2024-09-20:]: added initial support for frozen core for all calc programs
+ - [2024-10-03:]: The mail: events option now uses none_to_default
+ - [2024-10-02:]: increased number of log file lines to 100
+ - [2024-10-01:]: calculation manager objects now return a list of submitted calcs (rather than just the count)
+ - [2024-10-01:]: increased the number of lines from the log file included in error messages (addresses #131)
+ - [2024-09-30:]: fixed a few minor errors in program help string
+ - [2024-09-30:]: swapped versioning system to hatchling compatible
+ - [2024-09-27:]: scratch cleanup can now remove files as well as folders
+ - [2024-09-27:]: changed default scratch dir to /tmp
+ - [2024-09-27:]: added new loading bar to setup program
+ - [2024-09-27:]: added a new scratch: expiry calc option to clean up old files
+ - [2024-09-26:]: added a progress indicator to the setup program
+ - [2024-09-26:]: improved logging fo setup command
+ - [2024-09-26:]: Gaussian discover() now uses minor version is available in logging
+ - [2024-09-26:]: setup program now has better version detection and avoids duplicate definitions
 
 #### Bugfixes:
- - [2024-09-24:]: fixed not understanding how FrozenCore -n works
- - [2024-09-23:]: fixed using wrong FC keywords
- - [2024-09-23:]: fixed orca specific freeze options located in the wrong place
- - [2024-09-23:]: fixed not stringifying new Gaussian keywords
- - [2024-09-23:]: fixed using number_virtual not virtual_number
- - [2024-09-20:]: fixed a typo specifying freeze:threshold was in eV rather than H
+ - [2024-10-02:]: fixed series calcs referring to old defs
+ - [2024-10-01:]: fixed not resolving methods in library test
+ - [2024-10-01:]: fixed not expanding coord list in submit tests
+ - [2024-09-27:]: fixed bug in checking scratch expiry
+ - [2024-09-27:]: fixed setup program accidentally using only Turbomole calc definitions
+ - [2024-09-26:]: fixed setup program favouring old versions over recent ones
+ - [2024-09-26:]: fixed trying to reference non-existent setups
+ - [2024-09-26:]: fixed logging calls
+ - [2024-09-26:]: fixed not saving in done
+ - [2024-09-26:]: fixed another bug in setup
+ - [2024-09-26:]: fixed not using list over generator
+ - [2024-09-26:]: fixed not updating setup program to new return values of discover()
+
+#### Testing updates:
+ - [2024-10-02:]: fixed broken test for NMR images
+ - [2024-10-02:]: fixed library test not referencing new unrestricted calcs
+ - [2024-10-01:]: updated test_library to support now method manager
 
 #### Miscellaneous:
- - [2024-09-25:]: update last modified
- - [2024-09-25:]: bumped version to 6.3.0.
+ - [2024-10-03:]: update last modified
+ - [2024-10-03:]: mim version of digichem-core is now 6.0.3
+ - [2024-10-03:]: bumped v to 6.4.0
+ - [2024-10-03:]: increased min version of configurables to 1.2.0
+ - [2024-10-01:]: update last modified
+ - [2024-09-30:]: fixed ordering of Usage and Documentation in README
+ - [2024-09-30:]: minor updates to README
+ - [2024-09-30:]: updated README
+ - [2024-09-30:]: removed old pack_current script
+ - [2024-09-30:]: updated changelog (although this might not be staying around for long
+ - [2024-09-30:]: added project file
+ - [2024-09-30:]: removed server files which aren't needed until v7
+ - [2024-09-30:]: added LICENSE file (currently proprietary
+ - [2024-09-27:]: removed old files
+ - [2024-09-27:]: removed old logo folder
+ - [2024-09-26:]: added future todo
