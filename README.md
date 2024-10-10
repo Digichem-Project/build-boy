@@ -23,6 +23,9 @@ In most cases, this means the operating system of your computational server, not
 ### CentOS Stream (Redhat > 8.5)
 - CentOS-Stream-8: <!-- CentOS-Stream-8 --> [6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
 
+### Rocky Linux (Redhat > 9.0)
+- Rocky-Linux-9: <!-- Rocky-Linux-9 --> [coming soon!](https://github.com/Digichem-Project/build-boy/releases)
+
 ## All Builds
 
 For historic builds of older versions, see the [releases page](https://github.com/Digichem-Project/build-boy/releases).
