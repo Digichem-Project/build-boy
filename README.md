@@ -18,35 +18,6 @@ In most cases, this means the operating system of your computational server, not
 
 ### Fedora Based
 
-#### CentOS 7.9
-
-Suitable for CentOS v7 and Redhat v7 onwards.
-<!-- CentOS-7.9 -->
-[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-7.9/digichem.6.5.0.CentOS-7.9.tar.gz)
-
-#### CentOS 8.5
-
-Suitable for CentOS v8 and Redhat v8 onwards.
-<!-- CentOS-8.5 -->
-[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-8.5/digichem.6.5.0.CentOS-8.5.tar.gz)
-
-#### CentOS Stream 8
-
-<!-- CentOS-Stream-8 -->
-[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
-
-
-### Debian Based
-
-#### Debian Jessie (8)
-
-<!-- Debian-Jessie -->
-[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
-
-
-
-### Fedora Based
-
 Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other related distros.
 
 #### Rocky Linux
