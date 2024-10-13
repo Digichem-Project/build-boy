@@ -327,7 +327,7 @@ def build(target, branch = "build"):
     
     readme_data = re.sub(
         r"<!-- " + re.escape(target) + r" -->.*",
-        "<!-- " + target + " --> [{}]({})".format(
+        "<!-- " + target + " --> [Download Digichem v{}]({})".format(
             silico.__version__,
             download_link
         ),
