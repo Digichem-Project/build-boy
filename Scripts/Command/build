@@ -39,7 +39,7 @@ vms = {
         'vm': '82b05661-19e8-494d-b8c0-a3e543333ef1',
         'port': '2226',
         # Needed to auth with rsa for some reason.
-        'connect_kwargs': {'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']}
+        'connect_kwargs': {'disabled_algorithms': {'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']}}
     }
 }
 
