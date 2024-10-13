@@ -73,11 +73,11 @@ def do_build(vm_data):
 
             # Check for updates to the local build-boy script.
             print("Fetching updates...")
-            ssh.run('. ~/.bashrc && cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
+            ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
 
             # Call the local build-boy build script.
             print("Running build...")
-            ssh.run('. ~/.bashrc && cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
+            ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
 
             # All done, make the VM go to bed.
             print("Shutting down VM...")
