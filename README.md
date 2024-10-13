@@ -16,15 +16,55 @@ To download the latest version of Digichem, please select an option from the sup
 Please not that the operating system should match that of the machine where you intend to install Digichem.
 In most cases, this means the operating system of your computational server, not your personal machine.
 
-### CentOS Linux (Redhat <= 8.5)
-- CentOS-7.9: <!-- CentOS-7.9 --> [6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-7.9/digichem.6.5.0.CentOS-7.9.tar.gz)
-- CentOS-8.5: <!-- CentOS-8.5 --> [6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-8.5/digichem.6.5.0.CentOS-8.5.tar.gz)
+### Fedora Based
 
-### CentOS Stream (Redhat > 8.5)
-- CentOS-Stream-8: <!-- CentOS-Stream-8 --> [6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
+#### CentOS 7.9
+
+Suitable for CentOS v7 and Redhat v7 onwards.
+<!-- CentOS-7.9 -->
+[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-7.9/digichem.6.5.0.CentOS-7.9.tar.gz)
+
+#### CentOS 8.5
+
+Suitable for CentOS v8 and Redhat v8 onwards.
+<!-- CentOS-8.5 -->
+[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-8.5/digichem.6.5.0.CentOS-8.5.tar.gz)
+
+#### CentOS Stream 8
+
+<!-- CentOS-Stream-8 -->
+[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
+
+
+### Debian Based
+
+#### Debian Jessie (8)
+
+<!-- Debian-Jessie -->
+[Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
+
+
+
+### Fedora Based
+
+Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other related distros.
+
+#### CentOS Linux (Redhat <= 8.5)
+- CentOS-7.9: <!-- CentOS-7.9 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-7.9/digichem.6.5.0.CentOS-7.9.tar.gz)
+- CentOS-8.5: <!-- CentOS-8.5 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-8.5/digichem.6.5.0.CentOS-8.5.tar.gz)
+
+#### CentOS Stream (Redhat > 8.5)
+- CentOS-Stream-8: <!-- CentOS-Stream-8 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
 
 ### Rocky Linux (Redhat > 9.0)
-- Rocky-Linux-9: <!-- Rocky-Linux-9 --> [coming soon!](https://github.com/Digichem-Project/build-boy/releases)
+- Rocky-Linux-9: <!-- Rocky-Linux-9 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
+
+### Debian Based
+
+Suitable for Debian, Ubuntu, and other related distros.
+
+### Rocky Linux (Redhat > 9.0)
+- Rocky-Linux-9: <!-- Rocky-Linux-9 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
 
 ## All Builds
 
