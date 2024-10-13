@@ -23,6 +23,16 @@ vms = {
         'target': 'CentOS-Stream-8',
         'vm': '21141559-9433-4107-b628-2e91b2c83640',
         'port': '2224'
+    },
+    'Rocky-Linux-9': {
+        'target': 'Rocky-Linux-9',
+        'vm': 'e6b4503f-99e6-4118-91bf-3a1cad51397c',
+        'port': '2225'
+    },
+    'Debian-Jessie': {
+        'target': 'Debian-Jessie',
+        'vm': '82b05661-19e8-494d-b8c0-a3e543333ef1',
+        'port': '2226'
     }
 }
 
