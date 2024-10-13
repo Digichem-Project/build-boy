@@ -4,6 +4,7 @@ from pathlib import Path
 import subprocess
 import time
 import datetime
+import copy
 
 import fabric
 
@@ -12,27 +13,33 @@ vms = {
     'CentOS-7.9': {
         'target': 'CentOS-7.9',
         'vm': '8bd62c88-86aa-4faa-9b6d-71d5305280d7',
-        'port': '2222'
+        'port': '2222',
+        'connect_kwargs': {}
     },
     'CentOS-8.5': {
         'target': 'CentOS-8.5',
         'vm': '4509aa09-d428-429a-bcfd-290672dbe6f3',
-        'port': '2223'
+        'port': '2223',
+        'connect_kwargs': {}
     },
     'CentOS-Stream-8': {
         'target': 'CentOS-Stream-8',
         'vm': '21141559-9433-4107-b628-2e91b2c83640',
-        'port': '2224'
+        'port': '2224',
+        'connect_kwargs': {}
     },
     'Rocky-Linux-9': {
         'target': 'Rocky-Linux-9',
         'vm': 'e6b4503f-99e6-4118-91bf-3a1cad51397c',
-        'port': '2225'
+        'port': '2225',
+        'connect_kwargs': {}
     },
     'Debian-Jessie': {
         'target': 'Debian-Jessie',
         'vm': '82b05661-19e8-494d-b8c0-a3e543333ef1',
-        'port': '2226'
+        'port': '2226',
+        # Needed to auth with rsa for some reason.
+        'connect_kwargs': {'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']}
     }
 }
 
@@ -49,17 +56,19 @@ def do_build(vm_data):
         print("Waiting for boot...")
         time.sleep(120)
 
+        # Get our connection options.
+        connect_kwargs = copy.copy(vm_data['connect_kwargs'])
+        # The PC just turned on, give it some time to wake-up:
+        connect_kwargs['timeout'] = 300 # 5 mins
+        connect_kwargs['banner_timeout'] = 300
+
         # Next, connect with SSH.
         print("Connecting to VM...")
         with fabric.Connection(
             'localhost',
             user="digichem",
             port=vm_data['port'],
-            # The PC just turned on, give it some time to wake-up:
-            connect_kwargs = {
-                "timeout": 300, # 5 mins.
-                "banner_timeout": 300
-            }
+            connect_kwargs = connect_kwargs
         ) as ssh:
 
             # Check for updates to the local build-boy script.
