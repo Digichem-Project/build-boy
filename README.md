@@ -21,7 +21,7 @@ In most cases, this means the operating system of your computational server, not
 Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other related distros.
 
 #### Rocky Linux
-- Rocky Linux 9: <!-- Rocky-Linux-9 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
+- Rocky Linux 9: <!-- Rocky-Linux-9 --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
 
 #### CentOS Stream
 - CentOS Stream 8: <!-- CentOS-Stream-8 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz)
@@ -35,11 +35,11 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 Suitable for Debian, Ubuntu, and other related distros.
 
 #### Debian
-- Debian Bookworm (12): <!-- Debian-Bookworm --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
-- Debian Bullseye (11): <!-- Debian-Bullseye --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
-- Debian Buster (10): <!-- Debian-Buster --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
-- Debian Stretch (9): <!-- Debian-Stretch --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
-- Debian Jessie (8): <!-- Debian-Jessie --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
+- Debian Bookworm (12): <!-- Debian-Bookworm --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
+- Debian Bullseye (11): <!-- Debian-Bullseye --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
+- Debian Buster (10): <!-- Debian-Buster --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
+- Debian Stretch (9): <!-- Debian-Stretch --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
+- Debian Jessie (8): <!-- Debian-Jessie --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
 
 ## All Builds
 
