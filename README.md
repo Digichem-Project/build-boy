@@ -49,7 +49,7 @@ Suitable for CentOS v8 and Redhat v8 onwards.
 
 Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other related distros.
 
-### Rocky Linux (Redhat > 9.0)
+#### Rocky Linux (Redhat > 9.0)
 - Rocky Linux 9: <!-- Rocky-Linux-9 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
 
 #### CentOS Stream (Redhat > 8.5)
@@ -63,7 +63,7 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 
 Suitable for Debian, Ubuntu, and other related distros.
 
-### Debian
+#### Debian
 - Debian Bookworm (12): <!-- Debian-Bookworm --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
 - Debian Bullseye (11): <!-- Debian-Bullseye --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
 - Debian Buster (10): <!-- Debian-Buster --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases)
