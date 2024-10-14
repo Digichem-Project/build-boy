@@ -1,8 +1,10 @@
-### Changes in this version (6.5.0) since 6.4.0
+### Changes in this version (6.5.1) since 6.5.0
 
-#### New features:
- - [2024-10-07:]: added support for cleanup_time in SLURM
+#### Bugfixes:
+ - [2024-10-13:]: re-build for CentOS Stream 8 to fix cclib; chore: bump to 6.5.1
+ - [2024-10-13:]: fixed broken error message when submitting from a method file
 
 #### Miscellaneous:
- - [2024-10-07:]: update last modified
- - [2024-10-07:]: bumped version to 6.5.0
+ - [2024-10-13:]: update last modified
+ - [2024-10-10:]: removed old explicit build target check with general check
+ - [2024-10-10:]: added Rocky-Linux-9 as build target
