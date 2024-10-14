@@ -24,7 +24,7 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 - Rocky Linux 9: <!-- Rocky-Linux-9 --> [Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-Rocky-Linux-9/digichem.6.5.0.Rocky-Linux-9.tar.gz)
 
 #### CentOS Stream
-- CentOS Stream 8: <!-- CentOS-Stream-8 --> [Download Digichem 6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-CentOS-Stream-8/digichem.6.5.0.CentOS-Stream-8.tar.gz) (Also suitable for Redhat > 8.5)
+- CentOS Stream 8: <!-- CentOS-Stream-8 --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-CentOS-Stream-8/digichem.6.5.1.CentOS-Stream-8.tar.gz)
 
 #### CentOS Linux
 - CentOS 8.5: <!-- CentOS-8.5 --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-CentOS-8.5/digichem.6.5.1.CentOS-8.5.tar.gz)
