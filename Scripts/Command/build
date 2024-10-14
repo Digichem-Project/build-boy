@@ -44,22 +44,26 @@ vms = {
     'Debian-Stretch': {
         'target': 'Debian-Stretch',
         'vm': '0c8c1959-b590-45fb-a2d7-696eeef96273',
-        'port': '2227'
+        'port': '2227',
+        'connect_kwargs': {}
     },
     'Debian-Buster': {
         'target': 'Debian-Buster',
         'vm': '5ad0c9c3-e5b5-4b0c-a586-ce41192de566',
-        'port': '2228'
+        'port': '2228',
+        'connect_kwargs': {}
     },
     'Debian-Bullseye': {
         'target': 'Debian-Bullseye',
         'vm': '2b9d47ff-4365-4d33-9708-21eae54c76e8',
-        'port': '2229'
+        'port': '2229',
+        'connect_kwargs': {}
     },
     'Debian-Bookworm': {
         'target': 'Debian-Bookworm',
         'vm': '3458c148-618d-4ea2-8af9-8c75e797ba06',
-        'port': '2230'
+        'port': '2230',
+        'connect_kwargs': {}
     }
 }
 
