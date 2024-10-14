@@ -1,3 +1,3 @@
-Debian Bookworm (12)
+Debian Bullseye (11)
 --------------------
 
