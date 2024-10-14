@@ -53,7 +53,7 @@ vms = {
     },
     'Debian-Bullseye': {
         'target': 'Debian-Bullseye',
-        'vm': '',
+        'vm': '2b9d47ff-4365-4d33-9708-21eae54c76e8',
         'port': '2229'
     },
     'Debian-Bookworm': {
