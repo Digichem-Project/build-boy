@@ -35,7 +35,7 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 Suitable for Debian, Ubuntu, and other related distros.
 
 #### Debian
-- Debian Bookworm (12): <!-- Debian-Bookworm --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
+- Debian Bookworm (12): <!-- Debian-Bookworm --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Bookworm/digichem.6.5.1.Debian-Bookworm.tar.gz)
 - Debian Bullseye (11): <!-- Debian-Bullseye --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Bullseye/digichem.6.5.1.Debian-Bullseye.tar.gz)
 - Debian Buster (10): <!-- Debian-Buster --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Buster/digichem.6.5.1.Debian-Buster.tar.gz)
 - Debian Stretch (9): <!-- Debian-Stretch --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Stretch/digichem.6.5.1.Debian-Stretch.tar.gz)
