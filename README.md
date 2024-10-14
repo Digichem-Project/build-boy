@@ -39,7 +39,7 @@ Suitable for Debian, Ubuntu, and other related distros.
 - Debian Bullseye (11): <!-- Debian-Bullseye --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
 - Debian Buster (10): <!-- Debian-Buster --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
 - Debian Stretch (9): <!-- Debian-Stretch --> [Coming Soon!](https://github.com/Digichem-Project/build-boy/releases)
-- Debian Jessie (8): <!-- Debian-Jessie --> [Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-Debian-Jessie/digichem.6.5.0.Debian-Jessie.tar.gz)
+- Debian Jessie (8): <!-- Debian-Jessie --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Jessie/digichem.6.5.1.Debian-Jessie.tar.gz)
 
 ## All Builds
 
