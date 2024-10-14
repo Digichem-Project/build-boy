@@ -21,7 +21,7 @@ In most cases, this means the operating system of your computational server, not
 Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other related distros.
 
 #### Rocky Linux
-- Rocky Linux 9: <!-- Rocky-Linux-9 --> [Download Digichem v6.5.0](https://github.com/Digichem-Project/build-boy/releases/download/6.5.0-Rocky-Linux-9/digichem.6.5.0.Rocky-Linux-9.tar.gz)
+- Rocky Linux 9: <!-- Rocky-Linux-9 --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Rocky-Linux-9/digichem.6.5.1.Rocky-Linux-9.tar.gz)
 
 #### CentOS Stream
 - CentOS Stream 8: <!-- CentOS-Stream-8 --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-CentOS-Stream-8/digichem.6.5.1.CentOS-Stream-8.tar.gz)
