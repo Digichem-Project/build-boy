@@ -8,7 +8,7 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 ## Documentation
 
-### installation
+### Installation
 
 1. Download Digichem from below.
 1. Upload the archive to your computational server.
@@ -49,7 +49,7 @@ For historic builds of older versions, see the [releases page](https://github.co
 
 ## My OS/version Isn't Supported!
 
-Don't panic, you don't need to match your operating system exactly[^1]. At the moment, all compiled
+Don't panic; you don't need to match your operating system exactly[^1]. At the moment, all compiled
 versions of Digichem offer the exact same features, so you simply need to pick a version that is compatible
 with your computational server. In most cases, so long as your OS is more recent (a higher version) than
 the version you download, all will be fine.
@@ -68,7 +68,9 @@ If your OS isn't supported and you think it should be, please consider creating 
 
 If in doubt, the oldest available OS (currently CentOS-7.9) is the most likely to be compatible.
 
-[^1]: The main technical requirement is to match the glibc version of your operating system with the version you download. Versions of Digichem compiled against a *newer* version of glibc than what is present on your system will not function.
+[^1]: The main technical requirement is to match the glibc version of your operating system with the version you download.
+Versions of Digichem compiled against a *newer* version of glibc than what is present on your system will not function.
+The oldest currently supported glibc version is 2.17 (CentOS 7.9).
 
 ## Licenses
 
