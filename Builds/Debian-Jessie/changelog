@@ -1,1 +1,31 @@
-### Changes in this version (6.5.1) since 6.5.0
+### Changes in this version (6.6.0) since 6.5.1
+
+#### New features:
+ - [%as:]: added --structure search query for DBs
+ - [%as:]: image progam will now use a temp working dir if non is available
+ - [%as:]: increased mim digichem-core version to 6.1.0
+ - [%as:]: image program now reports rendering errors
+ - [%as:]: image program will no longer overwrite files it just wrote
+ - [%as:]: image program now correctly writes one image when writing to a specific location
+ - [%as:]: image command can now write image files outside of the report directory
+ - [%as:]: updated logos to non-wonky varients
+
+#### Bugfixes:
+ - [%as:]: fixed database slice program not starting up
+ - [%as:]: image program can now write cube files to specific location
+ - [%as:]: added fix for method files not loading properly
+ - [%as:]: fixed some behaviour of the image command; images/cubes are now overwritten by default; the cleanup behaviour is now much improved
+
+#### Testing updates:
+ - [%as:]: added skips for image program test
+ - [%as:]: added PATH to git auto tests
+ - [%as:]: fixed calling wrong program
+ - [%as:]: added tests for image program
+ - [%as:]: fixed report tests using local test data for some reason
+
+#### Miscellaneous:
+ - [%as:]: update last modified
+ - [%as:]: added bin directory
+ - [%as:]: removed old code in db search command
+ - [%as:]: removed unused test data dir
+ - [%as:]: bumped version to 6.6.0
