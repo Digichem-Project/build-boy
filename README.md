@@ -39,7 +39,7 @@ Suitable for Debian, Ubuntu, and other related distros.
 
 - Debian Bookworm (12): <!-- Debian-Bookworm --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Bookworm/digichem.6.5.1.Debian-Bookworm.tar.gz)
 - Debian Bullseye (11): <!-- Debian-Bullseye --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Bullseye/digichem.6.5.1.Debian-Bullseye.tar.gz)
-- Debian Buster (10): <!-- Debian-Buster --> [Download Digichem v6.5.1](https://github.com/Digichem-Project/build-boy/releases/download/6.5.1-Debian-Buster/digichem.6.5.1.Debian-Buster.tar.gz)
+- Debian Buster (10): <!-- Debian-Buster --> [Download Digichem v6.6.0](https://github.com/Digichem-Project/build-boy/releases/download/6.6.0-Debian-Buster/digichem.6.6.0.Debian-Buster.tar.gz)
 - Debian Stretch (9): <!-- Debian-Stretch --> [Download Digichem v6.6.0](https://github.com/Digichem-Project/build-boy/releases/download/6.6.0-Debian-Stretch/digichem.6.6.0.Debian-Stretch.tar.gz)
 - Debian Jessie (8): <!-- Debian-Jessie --> [Download Digichem v6.6.0](https://github.com/Digichem-Project/build-boy/releases/download/6.6.0-Debian-Jessie/digichem.6.6.0.Debian-Jessie.tar.gz)
 
