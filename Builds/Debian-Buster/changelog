@@ -1,31 +1,92 @@
-### Changes in this version (6.6.0) since 6.5.1
+### Changes in this version (6.6.1) since 6.6.0
 
 #### New features:
- - [%as:]: added --structure search query for DBs
- - [%as:]: image progam will now use a temp working dir if non is available
- - [%as:]: increased mim digichem-core version to 6.1.0
- - [%as:]: image program now reports rendering errors
- - [%as:]: image program will no longer overwrite files it just wrote
- - [%as:]: image program now correctly writes one image when writing to a specific location
- - [%as:]: image command can now write image files outside of the report directory
- - [%as:]: updated logos to non-wonky varients
+ - [%as:]: gaussian wrapper script now use shlex for quoting
+ - [%as:]: any leftover program output is now printed even if the calculation succeeded
+ - [%as:]: reduced length of post calculation folder names
+ - [%as:]: added validation for excluding bse for Orca
 
 #### Bugfixes:
- - [%as:]: fixed database slice program not starting up
- - [%as:]: image program can now write cube files to specific location
- - [%as:]: added fix for method files not loading properly
- - [%as:]: fixed some behaviour of the image command; images/cubes are now overwritten by default; the cleanup behaviour is now much improved
+ - [%as:]: added explicit .log suffix to output symlink to fix Gaussian
+ - [%as:]: fixed gaussian crash with long folder names
+ - [%as:]: fixed method library always reloading from file
+ - [%as:]: changed silico -> digichem in help message
+ - [%as:]: fixed typo in short_name option
 
-#### Testing updates:
- - [%as:]: added skips for image program test
- - [%as:]: added PATH to git auto tests
- - [%as:]: fixed calling wrong program
- - [%as:]: added tests for image program
- - [%as:]: fixed report tests using local test data for some reason
+#### Documentation changes:
+ - [%as:]: adde better documentation for image program input/output files
+ - [%as:]: added initial documentation for the image command
+ - [%as:]: expanded documentation for report settings
+ - [%as:]: expanded documentation for report density files
+ - [%as:]: WIP report documentation
+ - [%as:]: added extension to generate documentation from configurables (WIP)
+ - [%as:]: updated banner with aligned icon
+ - [%as:]: updated favicon with new docs icon
+ - [%as:]: updated favicon with non wonky variety
+ - [%as:]: added favicon
+ - [%as:]: fixed minor typo
+ - [%as:]: added initial documentation for report program
+ - [%as:]: fixed some typos
+ - [%as:]: split program documentation and command line references
+ - [%as:]: updated some links to 6.1.2
+ - [%as:]: updated link to latest download
+ - [%as:]: added monitor section to the quick start guide
+ - [%as:]: added fix for tables not supporting word-wrap
+ - [%as:]: wip updates to monitor walkthrough
+ - [%as:]: wip adding calc monitoring section to getting started
+ - [%as:]: added link to quick setup
+ - [%as:]: expanded documentation for setup process
+ - [%as:]: added quick-start guide to cover first calculation submission
+ - [%as:]: Added new quick-start documentation
+ - [%as:]: added link for full installation instructions
+ - [%as:]: fixed using wrong headers for program docs
+ - [%as:]: added reference for program options
+ - [%as:]: added links for Program setup and minor tweaks
+ - [%as:]: added documentation for post-processing options
+ - [%as:]: minor updates to calc method
+ - [%as:]: Added documentation for the structure options
+ - [%as:]: Added documentation for scratch options
+ - [%as:]: added COSX documentation
+ - [%as:]: minor tweaks to method docs
+ - [%as:]: minor fixes
+ - [%as:]: minor changes
+ - [%as:]: added section on RI
+ - [%as:]: ammended examples for electron occupations
+ - [%as:]: added documentation for electron occupation
+ - [%as:]: added documentation for solvents
+ - [%as:]: increased depth of method spec TOC
+ - [%as:]: added link to destination memory
+ - [%as:]: expanded excited states properties and added performance doc
+ - [%as:]: added section on opt + freq jobs
+ - [%as:]: fixed short underline
+ - [%as:]: expanded docs for turbomole excited states
+ - [%as:]: expanded properties doc to include freq, nmr, and initial es
+ - [%as:]: minor typo fixes and ammendments
+ - [%as:]: increase max depth of nav bar
+ - [%as:]: expanded documentation for basis sets and some initial properties
+ - [%as:]: fixed various minor typos
+ - [%as:]: expanded docs for SCF options
+ - [%as:]: added doc for scf method
+ - [%as:]: added sphinx_design as a dependency
+ - [%as:]: wip updates to SCF options
+ - [%as:]: expanded bibliography with emp dispersion and CC2 references
+ - [%as:]: fixed typo
+ - [%as:]: commented out unused section
+ - [%as:]: minor tweak to destination methods
+ - [%as:]: added initial documentation for calculation methods
+ - [%as:]: updates to destination documentation
+ - [%as:]: initial work on method spec
+ - [%as:]: minor fixes for sphinx
+ - [%as:]: added documentation for setting up external programs etc
+ - [%as:]: wip adding external programs doc
+ - [%as:]: moved setup out of installation
+ - [%as:]: added substitution for major digichem version
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: added bin directory
- - [%as:]: removed old code in db search command
- - [%as:]: removed unused test data dir
- - [%as:]: bumped version to 6.6.0
+ - [%as:]: bumped core min-version
+ - [%as:]: bumped version
+ - [%as:]: update last modified
+ - [%as:]: moved configurables extension to Configurables package
+ - [%as:]: removed old introduction section ready for replacement
+ - [%as:]: minor typo fixes and todos
