@@ -1,92 +1,16 @@
-### Changes in this version (6.6.1) since 6.6.0
+### Changes in this version (6.6.2) since 6.6.1
 
 #### New features:
- - [2024-10-25:]: gaussian wrapper script now use shlex for quoting
- - [2024-10-25:]: any leftover program output is now printed even if the calculation succeeded
- - [2024-10-25:]: reduced length of post calculation folder names
- - [2024-06-17:]: added validation for excluding bse for Orca
+ - [2024-10-25:]: added slightly better error reporting for Gaussian discover
+ - [2024-10-25:]: moved main 'silico.yaml' file to 'digichem.yaml' for consistency (fixes #148)
 
 #### Bugfixes:
- - [2024-10-25:]: added explicit .log suffix to output symlink to fix Gaussian
- - [2024-10-25:]: fixed gaussian crash with long folder names
- - [2024-10-23:]: fixed method library always reloading from file
- - [2024-07-23:]: changed silico -> digichem in help message
- - [2024-07-09:]: fixed typo in short_name option
-
-#### Documentation changes:
- - [2024-10-10:]: adde better documentation for image program input/output files
- - [2024-10-10:]: added initial documentation for the image command
- - [2024-10-09:]: expanded documentation for report settings
- - [2024-10-09:]: expanded documentation for report density files
- - [2024-10-08:]: WIP report documentation
- - [2024-10-08:]: added extension to generate documentation from configurables (WIP)
- - [2024-10-08:]: updated banner with aligned icon
- - [2024-10-08:]: updated favicon with new docs icon
- - [2024-10-08:]: updated favicon with non wonky variety
- - [2024-10-07:]: added favicon
- - [2024-10-07:]: fixed minor typo
- - [2024-10-04:]: added initial documentation for report program
- - [2024-10-04:]: fixed some typos
- - [2024-10-03:]: split program documentation and command line references
- - [2024-08-27:]: updated some links to 6.1.2
- - [2024-08-07:]: updated link to latest download
- - [2024-08-01:]: added monitor section to the quick start guide
- - [2024-08-01:]: added fix for tables not supporting word-wrap
- - [2024-08-01:]: wip updates to monitor walkthrough
- - [2024-07-31:]: wip adding calc monitoring section to getting started
- - [2024-07-17:]: added link to quick setup
- - [2024-07-17:]: expanded documentation for setup process
- - [2024-07-16:]: added quick-start guide to cover first calculation submission
- - [2024-07-16:]: Added new quick-start documentation
- - [2024-07-16:]: added link for full installation instructions
- - [2024-07-16:]: fixed using wrong headers for program docs
- - [2024-07-09:]: added reference for program options
- - [2024-07-09:]: added links for Program setup and minor tweaks
- - [2024-07-09:]: added documentation for post-processing options
- - [2024-07-09:]: minor updates to calc method
- - [2024-07-08:]: Added documentation for the structure options
- - [2024-07-08:]: Added documentation for scratch options
- - [2024-07-08:]: added COSX documentation
- - [2024-07-08:]: minor tweaks to method docs
- - [2024-06-17:]: minor fixes
- - [2024-06-15:]: minor changes
- - [2024-06-15:]: added section on RI
- - [2024-06-15:]: ammended examples for electron occupations
- - [2024-06-15:]: added documentation for electron occupation
- - [2024-06-15:]: added documentation for solvents
- - [2024-06-15:]: increased depth of method spec TOC
- - [2024-06-15:]: added link to destination memory
- - [2024-06-15:]: expanded excited states properties and added performance doc
- - [2024-06-15:]: added section on opt + freq jobs
- - [2024-06-15:]: fixed short underline
- - [2024-06-14:]: expanded docs for turbomole excited states
- - [2024-06-13:]: expanded properties doc to include freq, nmr, and initial es
- - [2024-06-13:]: minor typo fixes and ammendments
- - [2024-06-13:]: increase max depth of nav bar
- - [2024-06-12:]: expanded documentation for basis sets and some initial properties
- - [2024-06-12:]: fixed various minor typos
- - [2024-06-11:]: expanded docs for SCF options
- - [2024-06-11:]: added doc for scf method
- - [2024-06-11:]: added sphinx_design as a dependency
- - [2024-06-11:]: wip updates to SCF options
- - [2024-06-07:]: expanded bibliography with emp dispersion and CC2 references
- - [2024-06-07:]: fixed typo
- - [2024-06-07:]: commented out unused section
- - [2024-06-07:]: minor tweak to destination methods
- - [2024-06-07:]: added initial documentation for calculation methods
- - [2024-06-07:]: updates to destination documentation
- - [2024-06-06:]: initial work on method spec
- - [2024-06-06:]: minor fixes for sphinx
- - [2024-06-06:]: added documentation for setting up external programs etc
- - [2024-06-06:]: wip adding external programs doc
- - [2024-06-06:]: moved setup out of installation
- - [2024-06-06:]: added substitution for major digichem version
+ - [2024-10-29:]: fix for generating orbitals from archive turbomole calc dirs
+ - [2024-10-25:]: fixed not supporting -o for setup program
+ - [2024-10-25:]: fixed setup program using -o rather than -O for output option
+ - [2024-10-25:]: fixed crash in Gaussian setup if missing minor version
+ - [2024-10-25:]: fixed the urwid palette not being part of the main config
 
 #### Miscellaneous:
- - [2024-10-25:]: update last modified
- - [2024-10-25:]: bumped core min-version
- - [2024-10-23:]: bumped version
- - [2024-10-17:]: update last modified
- - [2024-10-08:]: moved configurables extension to Configurables package
- - [2024-07-16:]: removed old introduction section ready for replacement
- - [2024-06-17:]: minor typo fixes and todos
+ - [2024-10-29:]: update last modified
+ - [2024-10-28:]: bumped version to 6.6.2
