@@ -1,16 +1,8 @@
-### Changes in this version (6.6.2) since 6.6.1
-
-#### New features:
- - [%as:]: added slightly better error reporting for Gaussian discover
- - [%as:]: moved main 'silico.yaml' file to 'digichem.yaml' for consistency (fixes #148)
+### Changes in this version (6.6.3) since 6.6.2
 
 #### Bugfixes:
- - [%as:]: fix for generating orbitals from archive turbomole calc dirs
- - [%as:]: fixed not supporting -o for setup program
- - [%as:]: fixed setup program using -o rather than -O for output option
- - [%as:]: fixed crash in Gaussian setup if missing minor version
- - [%as:]: fixed the urwid palette not being part of the main config
+ - [%as:]: added missing dispersion correction for Orca
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped version to 6.6.2
+ - [%as:]: bumped version to 6.6.3
