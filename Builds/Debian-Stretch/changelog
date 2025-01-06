@@ -1,8 +1,5 @@
-### Changes in this version (6.6.3) since 6.6.2
-
-#### Bugfixes:
- - [%as:]: added missing dispersion correction for Orca
+### Changes in this version (6.6.4) since 6.6.3
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped version to 6.6.3
+ - [%as:]: refreshed license
