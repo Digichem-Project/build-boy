@@ -1,6 +1,19 @@
-### Changes in this version (6.7.0) since 6.6.5
+### Changes in this version (6.7.1) since 6.7.0
+
+#### New features:
+ - [%as:]: added support for Orca 6 changes in orca plot commands
+ - [%as:]: added support for handling densitiesinfo info files when submitting
+ - [%as:]: added support for Orca 6 orcaplot
+
+#### Bugfixes:
+ - [%as:]: fixed passing None density_info_file for Orca <= 5
+ - [%as:]: possible fix for .density .densities weirdness
+ - [%as:]: attempt to fix Orca's weird get_env() method
+ - [%as:]: fixed passing wrong class types for orca cubes
+ - [%as:]: added support for using the correct orca definition for generating cubes
 
 #### Miscellaneous:
- - [%as:]: bumped version to 6.7.0
- - [%as:]: update license copyright to 2025
  - [%as:]: update last modified
+ - [%as:]: upgrade to 6.7.1; Fixes some bugs with image generation with Orca 6
+ - [%as:]: bumped version to 6.7.1
+ - [%as:]: increased min version of digichem-chore to 6.7.0
