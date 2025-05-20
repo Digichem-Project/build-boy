@@ -6,6 +6,7 @@ import re
 import json
 
 from buildboy.util import update_repo, expand_path
+from buildboy.blender import build_blender
 
 def build_target(
     basedir,
@@ -54,7 +55,7 @@ def build_silico(target, prattledir):
     """Build silico"""
     return build_target("~/silico", target = target, branch = "build", freezeargs = [prattledir])
 
-def build(target, branch = "build"):
+def build(target, branch = "build", blender = False):
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
 
@@ -123,6 +124,15 @@ def build(target, branch = "build"):
 
     # Work to be done.
 
+    print("-------------------")
+    print("Building blender...")
+    print("-------------------")
+    if blender:
+        blender_paths = build_blender("4.4", branch = "blender-v4.4-release")
+    
+    else:
+        blender_paths = {}
+
     print("-----------------------")
     print("Building openprattle...")
     print("-----------------------")
@@ -132,6 +142,33 @@ def build(target, branch = "build"):
     print("Building digichem...")
     print("--------------------")
     silico_paths = build_silico(target, oprattle_paths['dir'])
+
+    # TODO: Handling all archives should be done here, rather than partially in the freeze script.
+    if blender:
+        # Create a second archive, this one-containing blender.
+        # Instead of copying, we'll move the blender build (to save file space).
+        blender_paths['dir'].rename(
+            Path(silico_paths['dir'], "blender")
+        )
+
+        # Maybe create a symlink?
+
+        # Create a new archive.
+        os .chdir(Path(silico_paths['dir']), "..")
+
+        subprocess.run([
+            "tar",
+            "-czf"
+            "{}-blender.tar.gz".format(silico_paths['archive'].with_suffix("").with_suffix("")),
+            "digichem"
+        ])
+
+        silico_blender_paths = {
+            "archive": Path(silico_paths['dir'], "..", "{}-blender.tar.gz".format(silico_paths['archive'].with_suffix("").with_suffix(""))).resolve()
+        }
+    
+    else:
+        silico_blender_paths = {}
 
     # Change back to build-boy's dir.
     build_dir = Path(expand_path("~/build-boy/Builds"), target)
@@ -270,11 +307,18 @@ def build(target, branch = "build"):
     notes += 'Built by the hard-working Build-boy.'
 
     # Now create a github release and attach the build.
-    sig = [
-        'gh', 'release', 'create', tag, silico_paths['archive'],
+    sig = ['gh', 'release', 'create', tag, silico_paths['archive']]
+
+    if "archive" in blender_paths:
+        sig.append(blender_paths['archive'])
+    
+    if "archive" in silico_blender_paths:
+        sig.append(silico_blender_paths['archive'])
+    
+    sig.extend([
         '--notes', notes,
         '--title', 'Digichem version {} for {}'.format(silico.__version__, target)
-    ]
+    ])
     # Add pre-release if necessary.
     if silico.development:
         sig.append('-p')
