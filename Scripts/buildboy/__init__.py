@@ -154,7 +154,9 @@ def build(target, branch = "build", blender = False):
         # Maybe create a symlink?
 
         # Create a new archive.
-        os .chdir(Path(silico_paths['dir']), "..")
+        os .chdir(Path(silico_paths['dir'], ".."))
+
+        print("Creating archive with blender...")
 
         subprocess.run([
             "tar",
