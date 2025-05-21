@@ -28,6 +28,8 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
     # Build.
     subprocess.run(["make", build_target], universal_newlines = True, check = True)
 
+    target_dir = "build_linux_{}".format(build_target) if build_target is not None else "build_linux"
+    
     # Install batoms.
     # First, download batoms to a temp dir.
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -66,7 +68,6 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
     subprocess.run(["./pip3", "install", "--upgrade", "ase"], universal_newlines = True, check = True)
     subprocess.run(["./pip3", "install", "scikit-image", "pyyaml"], universal_newlines = True, check = True)
 
-    target_dir = "build_linux_{}".format(build_target) if build_target is not None else "build_linux"
     archive_name = "blender-{}-batoms.tar.gz".format(target)
 
     # Archive.
