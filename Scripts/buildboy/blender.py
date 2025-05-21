@@ -6,6 +6,7 @@ import subprocess
 import tempfile
 import zipfile
 import urllib.request
+import shutil
 
 from buildboy.util import expand_path, update_repo
 
@@ -46,8 +47,15 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
         print("Installing into blender...")
         batoms_dir = Path(temp_dir, "beautiful-atoms-main", "batoms")
 
+        batoms_install_dir = Path(basedir, target_dir, "bin", target,  "scripts/addons_core", "batoms")
         # Then install into blender.
-        batoms_dir.rename(Path(basedir, target_dir, "bin", target,  "scripts/addons_core", "batoms"))
+        # First remove any previous install if present.
+        try:
+            shutil.rmtree(batoms_install_dir)
+        except FileNotFoundError:
+            pass
+            
+        batoms_dir.rename(batoms_install_dir)
 
 
     # Next install dependencies.
@@ -72,7 +80,13 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
 
     # Archive.
     os.chdir(Path(basedir, target_dir))
+
+    try:
+            shutil.rmtree("blender")
+    except FileNotFoundError:
+        pass
     Path("bin").rename("blender")
+    
     subprocess.run(["tar", "-czf", archive_name, "blender"], universal_newlines = True, check = True)
 
     return {
