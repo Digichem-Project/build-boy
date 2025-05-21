@@ -72,7 +72,7 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
 
     # Archive.
     os.chdir(Path(basedir, target_dir))
-    Path("bin").move("blender")
+    Path("bin").rename("blender")
     subprocess.run(["tar", "-czf", archive_name, "blender"], universal_newlines = True, check = True)
 
     return {
