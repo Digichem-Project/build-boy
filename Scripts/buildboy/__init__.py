@@ -124,15 +124,6 @@ def build(target, branch = "build", blender = False):
 
     # Work to be done.
 
-    print("-------------------")
-    print("Building blender...")
-    print("-------------------")
-    if blender:
-        blender_paths = build_blender("4.4", branch = "blender-v4.4-release")
-    
-    else:
-        blender_paths = {}
-
     print("-----------------------")
     print("Building openprattle...")
     print("-----------------------")
@@ -142,6 +133,15 @@ def build(target, branch = "build", blender = False):
     print("Building digichem...")
     print("--------------------")
     silico_paths = build_silico(target, oprattle_paths['dir'])
+
+    print("-------------------")
+    print("Building blender...")
+    print("-------------------")
+    if blender:
+        blender_paths = build_blender("4.4", branch = "blender-v4.4-release")
+    
+    else:
+        blender_paths = {}
 
     # TODO: Handling all archives should be done here, rather than partially in the freeze script.
     if blender:
