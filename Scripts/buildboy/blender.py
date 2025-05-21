@@ -87,11 +87,12 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
     os.chdir(Path(basedir, target_dir))
 
     try:
-            shutil.rmtree("blender")
+        shutil.rmtree("blender")
     except FileNotFoundError:
         pass
     Path("bin").rename("blender")
-    
+
+    print("Creating archive...")
     subprocess.run(["tar", "-czf", archive_name, "blender"], universal_newlines = True, check = True)
 
     return {
