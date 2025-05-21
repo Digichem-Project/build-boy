@@ -14,7 +14,8 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
 
     basedir = expand_path(basedir)
     target_dir = "build_linux_{}".format(build_target) if build_target is not None else "build_linux"
-    
+    archive_name = "blender-{}-batoms.tar.gz".format(target)
+
     # Switch to the build dir.
     os.chdir(Path(basedir, "src"))
 
@@ -80,8 +81,6 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
     subprocess.run([python, "-m", "pip", "install", "--upgrade", "pip"], universal_newlines = True, check = True)
     subprocess.run(["./pip3", "install", "--upgrade", "ase"], universal_newlines = True, check = True)
     subprocess.run(["./pip3", "install", "scikit-image", "pyyaml"], universal_newlines = True, check = True)
-
-    archive_name = "blender-{}-batoms.tar.gz".format(target)
 
     # Archive.
     os.chdir(Path(basedir, target_dir))
