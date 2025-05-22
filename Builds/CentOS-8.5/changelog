@@ -1,4 +1,4 @@
-### Changes in this version (6.8.0-pre.1) since 6.7.1
+### Changes in this version (6.8.0-pre.2) since 6.8.0-pre.1
 
 #### Miscellaneous:
- - [2025-05-21:]: bumped version to 6.8.0-pre.1 to test new blender build system
+ - [2025-05-21:]: prebuild 2 for upcoming blender versions
