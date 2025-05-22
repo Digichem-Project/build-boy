@@ -55,7 +55,7 @@ def build_silico(target, prattledir):
     """Build silico"""
     return build_target("~/silico", target = target, branch = "build", freezeargs = [prattledir])
 
-def build(target, branch = "build", blender = False):
+def build(target, branch = "build", blender = None):
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
 
@@ -142,7 +142,7 @@ def build(target, branch = "build", blender = False):
     print("Building blender...")
     print("-------------------")
     if blender:
-        blender_paths = build_blender("4.4", branch = "blender-v4.4-release")
+        blender_paths = build_blender(blender, branch = "blender-v{}-release".format(blender))
     
     else:
         blender_paths = {}
