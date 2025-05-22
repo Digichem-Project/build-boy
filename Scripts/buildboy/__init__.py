@@ -92,10 +92,14 @@ def build(target, branch = "build", blender = False):
         print("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(last_data.get('version', ""), silico.__version__))
         exit()
 
+    new_commit = subprocess.run(['git', 'rev-parse', '--verify', 'HEAD'], capture_output=True, universal_newlines=True, check=True).stdout.strip()
+
     # Update data.
     new_data = {
         'version': silico.__version__,
-        'commit': subprocess.run(['git', 'rev-parse', '--verify', 'HEAD'], capture_output=True, universal_newlines=True, check=True).stdout.strip()
+        'commit': new_commit,
+        'release_version': last_data.get('release_commit', silico.__version__),
+        'release_commit': last_data.get('release_version', new_commit)
     }
     # If this is a major version, update that too.
     if not silico.development:
