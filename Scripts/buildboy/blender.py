@@ -35,7 +35,7 @@ def build_blender(target, basedir = "~/blender", branch = "main", build_target =
         pass
 
     # Build.
-    subprocess.run(["make", build_target], universal_newlines = True, check = True)
+    subprocess.run(["make", build_target, "ccache"], universal_newlines = True, check = True)
     
     # Install batoms.
     # First, download batoms to a temp dir.
