@@ -121,3 +121,24 @@ Digichem and Digichem-core both use a number of 3rd party libraries and programs
 As part of the build process, these libraries are included into the distributed archive automatically.
 Each program and library naturally retains its original license, which are separate from any of the Digichem licenses.
 See the `_internal/LICENSES` folder of each distribution to view these individual licenses.
+
+### Bundled software
+
+The Digichem download archives also contains additional software that is not directly incorporated into the Digichem program. These packages are:
+
+ - [Openprattle](https://github.com/Digichem-Project/openprattle), used for file conversions
+ - [Blender](https://www.blender.org/), used for rendering images
+
+These packages are optional and can be removed if you wish, but as they provide useful functionality we generally recommend you include them in your installation.
+
+#### Openprattle
+
+Openprattle is currently licensed under the GPL V2.0. The licensing terms can be found in the `digichem/openprattle/_internal/LICENSES/openprattle` directory of your download, or on [github](https://github.com/Digichem-Project/openprattle/blob/main/LICENSE).
+The source code for Openprattle is available from [github](https://github.com/Digichem-Project/openprattle).
+
+#### Blender
+
+Blender is licensed under the GPL v3.0. The licensing terms can be found in the `digichem/blender/license` directory of your download, or on the [Blender website](https://www.blender.org/about/license/).
+The current builds of Digichem use un-modified versions of Blender, so the source code can be found at any of the official Blender distribution sites, such as on [github](https://github.com/blender/blender).
+
+Please note that Digichem is in no way affiliated with Blender or The Blender Foundation (although we are very thankfully of their excellent software).
