@@ -8,7 +8,7 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 ## Installation
 
-1. <!-- Quick-Download --> [Download Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz), or use one of the specific versions below.
+1. Download <!-- Quick-Download --> [Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz), or use one of the specific versions below.
 1. Upload the archive to your computational server.
 1. Unpack the archive with `tar -xzf digichem.*.tar.gz`.
 1. Run the install script with `digichem/_internal/install.sh`.

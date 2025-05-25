@@ -386,7 +386,7 @@ def build(target, branch = "build", blender = None, download_blender = False):
         if target == "CentOS-Stream-8":
             readme_data = re.sub(
                 r"<!-- Quick-Download -->.*",
-                "<!-- Quick-Download -->  [here]({}).".format(full__download_link),
+                "<!-- Quick-Download --> [Digichem]({}), or use one of the specific versions below.".format(full__download_link),
                 readme_data
             )
 
