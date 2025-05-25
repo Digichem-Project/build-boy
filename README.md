@@ -24,6 +24,10 @@ To download the latest version of Digichem, please select an option from the sup
 Please not that the operating system should match that of the machine where you intend to install Digichem.
 In most cases, this means the operating system of your computational server, not your personal machine.
 
+Note that for most distros Digichem is offered in two flavours: a 'full' version that becomes pre-bundled with a Blender-based rendering engine;
+and a 'lite' version that does not. If you do not intend to use Blender as your rendering backend (either because you prefer VMD, or you don't intend to do rendering at all),
+you should choose the lite version. Otherwise, choose the full version.
+
 ### Fedora Based
 
 Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other related distros.
