@@ -67,7 +67,7 @@ def build_blender(os_target, target = "4.4", basedir = "~/blender", branch = "bl
 
     # Remove the old python dir incase of conflicts with batoms or pip installation.
     try:
-        shutil.rmtree(Path(basedir, target_dir, "bin", target))
+        shutil.rmtree(Path(basedir, target_dir))
     except FileNotFoundError:
         pass
 
