@@ -1,1 +1,6 @@
-### Changes in this version (6.8.0) since 
+### Changes in this version (6.8.1-pre.3) since 6.8.0
+
+#### Miscellaneous:
+ - [%as:]: bumped to 6.8.1-pre.3 for build testing
+ - [%as:]: bumped to 6.8.0-pre.2 for build testing
+ - [%as:]: bumped version to 6.8.1-pre.1 for updated build testing
