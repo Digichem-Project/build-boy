@@ -141,4 +141,4 @@ The source code for Openprattle is available from [github](https://github.com/Di
 Blender is licensed under the GPL v3.0. The licensing terms can be found in the `digichem/blender/license` directory of your download, or on the [Blender website](https://www.blender.org/about/license/).
 The current builds of Digichem use un-modified versions of Blender, so the source code can be found at any of the official Blender distribution sites, such as on [github](https://github.com/blender/blender).
 
-Please note that Digichem is in no way affiliated with Blender or The Blender Foundation (although we are very thankfully of their excellent software).
+Please note that Digichem is in no way affiliated with Blender or The Blender Foundation (although we are very thankful of their excellent software).
