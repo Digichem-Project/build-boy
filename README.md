@@ -8,7 +8,7 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 ## Installation
 
-1. Download Digichem from below.
+1. <!-- Quick-Download --> [Download Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz), or use one of the specific versions below.
 1. Upload the archive to your computational server.
 1. Unpack the archive with `tar -xzf digichem.*.tar.gz`.
 1. Run the install script with `digichem/_internal/install.sh`.
@@ -16,18 +16,13 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 Please see the Digichem [documentation](https://doc.digi-chem.co.uk) for full installation instructions and further information.
 
-## Quick Download (Help! There are too many options!)
-
-Don't panic. You can download Digichem <!-- Quick-Download --> [here](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz).
-If you run into problems, browse the table below for a version that matches your setup.
-
 ## Latest Versions
 
 To download the latest version of Digichem, please select an option from the supported operating systems below.
 Please not that the operating system should match that of the machine where you intend to install Digichem.
 In most cases, this means the operating system of your computational server, not your personal machine.
 
-Note that for most distros Digichem is offered in two flavours[^1]: a 'full' version that becomes pre-bundled with a Blender-based rendering engine;
+Note that for most distros Digichem is offered in two flavours[^1]: a 'full' version that comes pre-bundled with a Blender-based rendering engine;
 and a 'lite' version that does not. If you do not intend to use Blender as your rendering backend (either because you prefer VMD, or you don't intend to do rendering at all),
 you should choose the lite version. Otherwise, choose the full version.
 
