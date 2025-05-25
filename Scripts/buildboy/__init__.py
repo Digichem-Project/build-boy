@@ -105,8 +105,8 @@ def build(target, branch = "build", blender = None, download_blender = False):
     new_data = {
         'version': silico.__version__,
         'commit': new_commit,
-        'release_version': last_data.get('release_commit', silico.__version__),
-        'release_commit': last_data.get('release_version', new_commit)
+        'release_version': last_data.get('release_version', new_commit),
+        'release_commit': last_data.get('release_commit', silico.__version__)
     }
     # If this is a major version, update that too.
     if not silico.development:
