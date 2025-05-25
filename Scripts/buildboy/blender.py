@@ -1,20 +1,57 @@
 # Code for building blender and beautiful atoms.
 
 import os
+import os.path
 from pathlib import Path
 import subprocess
 import tempfile
 import zipfile
 import urllib.request
 import shutil
+import tarfile
 
 from buildboy.util import expand_path, update_repo
 
-def build_blender(target, basedir = "~/blender", branch = "main", build_target = "headless"):
+def grab_blender(digichem_target, os_target = "CentOS-Stream-8", blender_target = "4.4",  basedir = "~/blender"):
+    """
+    Download a pre-built version of blender (for OS's that don't support building).
+    """
+    basedir = expand_path(basedir)
+    archive_name = "blender.{}.batoms.{}.tar.gz".format(blender_target, os_target)
+
+    url = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/{}".format(
+        digichem_target,
+        os_target,
+        archive_name
+    )
+
+    # Download.
+    urllib.request.urlretrieve(url, Path(basedir, archive_name))
+
+    # Extract
+    with tarfile.open(Path(basedir, archive_name)) as tar:
+        tar.extractall(basedir, filter = "data")
+
+        # Done.
+        return {
+            "dir": Path(basedir, os.path.commonpath(tar.getnames())).resolve(),
+            "archive": Path(basedir, archive_name).resolve()
+        }
+    
+
+def build_blender(os_target, target = "4.4", basedir = "~/blender", branch = "blender-v4.4-release", build_target = "headless"):
+    """
+    Build blender on this system.
+
+    :param target: The version of blender to build.
+    :param basedir: The directory to build in. Inside should be a 'src' directory containing the blender repo.
+    :param branch: The git branch to build from, ideally should match 'target'.
+    :param build_target: The type of build to pass to make.
+    """
 
     basedir = expand_path(basedir)
     target_dir = "build_linux_{}".format(build_target) if build_target is not None else "build_linux"
-    archive_name = "blender-{}-batoms.tar.gz".format(target)
+    archive_name = "blender.{}.batoms.{}.tar.gz".format(target, os_target)
 
     # Switch to the build dir.
     os.chdir(Path(basedir, "src"))

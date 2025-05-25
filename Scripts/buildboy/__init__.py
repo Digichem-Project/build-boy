@@ -6,7 +6,7 @@ import re
 import json
 
 from buildboy.util import update_repo, expand_path
-from buildboy.blender import build_blender
+from buildboy.blender import build_blender, grab_blender
 
 def build_target(
     basedir,
@@ -55,7 +55,14 @@ def build_silico(target, prattledir):
     """Build silico"""
     return build_target("~/silico", target = target, branch = "build", freezeargs = [prattledir])
 
-def build(target, branch = "build", blender = None):
+def build(target, branch = "build", blender = None, download_blender = False):
+    """
+    Build digichem.
+
+    :param target: The OS we're building for.
+    :param blender: The version of blender to include (if not None).
+    :param download_blender:  If True, a pre-compiled version of blender will be downloaded and used instead of a locally compiled version.
+    """
     # Disable git prompting.
     os.environ['GIT_TERMINAL_PROMPT'] = "0"
 
@@ -141,8 +148,11 @@ def build(target, branch = "build", blender = None):
     print("-------------------")
     print("Building blender...")
     print("-------------------")
-    if blender:
-        blender_paths = build_blender(blender, branch = "blender-v{}-release".format(blender))
+    if blender and not download_blender:
+        blender_paths = build_blender(target, blender, branch = "blender-v{}-release".format(blender))
+    
+    elif blender and download_blender:
+        blender_paths = grab_blender(silico.__version__)
     
     else:
         blender_paths = {}

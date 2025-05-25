@@ -7,4 +7,4 @@ from buildboy import build
 
 # If we've been invoked as a program, call main().
 if __name__ == '__main__':
-    sys.exit(build('Debian-Bullseye'))
+    sys.exit(build('Debian-Bullseye'), blender = "4.4", download_blender = True)
