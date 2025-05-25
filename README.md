@@ -18,7 +18,7 @@ Please see the Digichem [documentation](https://doc.digi-chem.co.uk) for full in
 
 ## Quick Download (Help! There are too many options!)
 
-Don't panic. You can download Digichem <!-- Quick-Download --> [here](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz) | [Download Digichem Lite v6.8.1-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz).
+Don't panic. You can download Digichem <!-- Quick-Download --> [here](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz).
 If you run into problems, browse the table below for a version that matches your setup.
 
 ## Latest Versions
