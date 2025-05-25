@@ -18,6 +18,11 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 Please see the Digichem [documentation](https://doc.digi-chem.co.uk) for full installation instructions and further information.
 
+## Quick Download (Help! There are too many options!)
+
+Don't panic. You can download Digichem <!-- Quick-Download --> [here](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz) | [Download Digichem Lite v6.8.1-pre.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-pre.3-CentOS-Stream-8/digichem.6.8.1-pre.3.CentOS-Stream-8.tar.gz).
+If you run into problems, browse the table below for a version that matches your setup.
+
 ## Latest Versions
 
 To download the latest version of Digichem, please select an option from the supported operating systems below.

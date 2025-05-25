@@ -371,15 +371,26 @@ def build(target, branch = "build", blender = None, download_blender = False):
             lite__download_link
         ) if "archive" in silico_blender_paths else "N/A"
 
-        # Now, write to the file.
+        # Read the old readme.
         with open("../../README.md", "r") as readme_file:
             readme_data = readme_file.read()
         
+        # Change the download link for this version.
         readme_data = re.sub(
             r"<!-- " + re.escape(target) + r" -->.*",
             "<!-- {} --> {} | {} |".format(target, full_download_string, lite__download_string),
             readme_data
         )
+
+        # If this version is the 'default' (Currently CentOS-Stream-8), update that link too.
+        if target == "CentOS-Stream-8":
+            readme_data = re.sub(
+                r"<!-- Quick-Download -->.*",
+                "<!-- Quick-Download -->  [here]({}).".format(full__download_link),
+                readme_data
+            )
+
+        # Save the modified file.
         with open("../../README.md", "w") as readme_file:
             readme_file.write(readme_data)
 
