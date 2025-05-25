@@ -1,4 +1,5 @@
-### Changes in this version (6.8.1-pre.1) since 6.8.0
+### Changes in this version (6.8.1-pre.3) since 6.8.1-pre.1
 
 #### Miscellaneous:
- - [2025-05-25:]: bumped version to 6.8.1-pre.1 for updated build testing
+ - [2025-05-25:]: bumped to 6.8.1-pre.3 for build testing
+ - [2025-05-25:]: bumped to 6.8.0-pre.2 for build testing
