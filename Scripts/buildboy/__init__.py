@@ -345,45 +345,48 @@ def build(target, branch = "build", blender = None, download_blender = False):
     # Upload
     subprocess.run(sig, universal_newlines = True, check = True)
 
-    #https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-Stream-8/digichem.6.0.0-pre.3.CentOS-Stream-8.tar.gz
-    full__download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}-blender.tar.gz".format(
-        silico.__version__,
-        target,
-        silico.__version__,
-        target
-    )
-    full_download_string = "[Download Digichem v{}]({})".format(
-        silico.__version__,
-        full__download_link
-    )
-    lite__download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}.tar.gz".format(
-        silico.__version__,
-        target,
-        silico.__version__,
-        target
-    )
-    lite__download_string = "[Download Digichem Lite v{}]({})".format(
-        silico.__version__,
-        lite__download_link
-    ) if "archive" in silico_blender_paths else "N/A"
-    
-
     # All done, update the main README with the latest version.
-    with open("../../README.md", "r") as readme_file:
-        readme_data = readme_file.read()
-    
-    readme_data = re.sub(
-        r"<!-- " + re.escape(target) + r" -->.*",
-        "<!-- {} --> {} | {} |".format(target, full_download_string, lite__download_string),
-        readme_data
-    )
-    with open("../../README.md", "w") as readme_file:
-        readme_file.write(readme_data)
+    # But only if this is a production version!
+    if not silico.development:
+        # First, prepare the links we'll need.
+        #https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-Stream-8/digichem.6.0.0-pre.3.CentOS-Stream-8.tar.gz
+        full__download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}-blender.tar.gz".format(
+            silico.__version__,
+            target,
+            silico.__version__,
+            target
+        )
+        full_download_string = "[Download Digichem v{}]({})".format(
+            silico.__version__,
+            full__download_link
+        )
+        lite__download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}.tar.gz".format(
+            silico.__version__,
+            target,
+            silico.__version__,
+            target
+        )
+        lite__download_string = "[Download Digichem Lite v{}]({})".format(
+            silico.__version__,
+            lite__download_link
+        ) if "archive" in silico_blender_paths else "N/A"
 
-    # Upload.
-    subprocess.run(['git', 'commit', "../../README.md", '-m', "docs: updated download link for {}-{}".format(silico.__version__, target)],
-        universal_newlines = True, check = True)
-    subprocess.run(['git', 'push', 'origin'],
-        universal_newlines = True, check = True)
+        # Now, write to the file.
+        with open("../../README.md", "r") as readme_file:
+            readme_data = readme_file.read()
+        
+        readme_data = re.sub(
+            r"<!-- " + re.escape(target) + r" -->.*",
+            "<!-- {} --> {} | {} |".format(target, full_download_string, lite__download_string),
+            readme_data
+        )
+        with open("../../README.md", "w") as readme_file:
+            readme_file.write(readme_data)
+
+        # Upload.
+        subprocess.run(['git', 'commit', "../../README.md", '-m', "docs: updated download link for {}-{}".format(silico.__version__, target)],
+            universal_newlines = True, check = True)
+        subprocess.run(['git', 'push', 'origin'],
+            universal_newlines = True, check = True)
 
     # All done.
