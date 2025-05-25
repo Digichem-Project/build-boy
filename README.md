@@ -24,7 +24,7 @@ To download the latest version of Digichem, please select an option from the sup
 Please not that the operating system should match that of the machine where you intend to install Digichem.
 In most cases, this means the operating system of your computational server, not your personal machine.
 
-Note that for most distros Digichem is offered in two flavours: a 'full' version that becomes pre-bundled with a Blender-based rendering engine;
+Note that for most distros Digichem is offered in two flavours[^1]: a 'full' version that becomes pre-bundled with a Blender-based rendering engine;
 and a 'lite' version that does not. If you do not intend to use Blender as your rendering backend (either because you prefer VMD, or you don't intend to do rendering at all),
 you should choose the lite version. Otherwise, choose the full version.
 
@@ -57,7 +57,7 @@ For historic builds of older versions, see the [releases page](https://github.co
 
 ## My OS/version Isn't Supported!
 
-Don't panic; you don't need to match your operating system exactly[^1]. At the moment, all compiled
+Don't panic; you don't need to match your operating system exactly[^2]. At the moment, all compiled
 versions of Digichem offer the exact same features, so you simply need to pick a version that is compatible
 with your computational server. In most cases, so long as your OS is more recent (a higher version) than
 the version you download, all will be fine.
@@ -76,9 +76,11 @@ If your OS isn't supported and you think it should be, please consider creating 
 
 If in doubt, the oldest available OS (currently CentOS-7.9) is the most likely to be compatible.
 
-[^1]: The main technical requirement is to match the glibc version of your operating system with the version you download.
+[^1]: Some distros are too old to support a modern version of Blender (currently CentOS 7.9). For these distros, only a 'lite' version is available.
+[^2]: The main technical requirement is to match the glibc version of your operating system with the version you download.
 Versions of Digichem compiled against a *newer* version of glibc than what is present on your system will not function.
 The oldest currently supported glibc version is 2.17 (CentOS 7.9).
+
 
 ## Licenses
 
