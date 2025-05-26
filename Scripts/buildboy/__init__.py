@@ -350,7 +350,7 @@ def build(target, branch = "build", blender = None, download_blender = False):
     if not silico.development:
         # First, prepare the links we'll need.
         #https://github.com/Digichem-Project/build-boy/releases/download/6.0.0-pre.3-CentOS-Stream-8/digichem.6.0.0-pre.3.CentOS-Stream-8.tar.gz
-        full__download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}-blender.tar.gz".format(
+        full_download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}-blender.tar.gz".format(
             silico.__version__,
             target,
             silico.__version__,
@@ -358,18 +358,18 @@ def build(target, branch = "build", blender = None, download_blender = False):
         )
         full_download_string = "[Download Digichem v{}]({})".format(
             silico.__version__,
-            full__download_link
-        )
-        lite__download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}.tar.gz".format(
+            full_download_link
+        ) if "archive" in silico_blender_paths else "N/A"
+        lite_download_link = "https://github.com/Digichem-Project/build-boy/releases/download/{}-{}/digichem.{}.{}.tar.gz".format(
             silico.__version__,
             target,
             silico.__version__,
             target
         )
-        lite__download_string = "[Download Digichem Lite v{}]({})".format(
+        lite_download_string = "[Download Digichem Lite v{}]({})".format(
             silico.__version__,
-            lite__download_link
-        ) if "archive" in silico_blender_paths else "N/A"
+            lite_download_link
+        )
 
         # Read the old readme.
         with open("../../README.md", "r") as readme_file:
@@ -378,7 +378,7 @@ def build(target, branch = "build", blender = None, download_blender = False):
         # Change the download link for this version.
         readme_data = re.sub(
             r"<!-- " + re.escape(target) + r" -->.*",
-            "<!-- {} --> {} | {} |".format(target, full_download_string, lite__download_string),
+            "<!-- {} --> {} | {} |".format(target, full_download_string, lite_download_string),
             readme_data
         )
 
@@ -386,7 +386,7 @@ def build(target, branch = "build", blender = None, download_blender = False):
         if target == "CentOS-Stream-8":
             readme_data = re.sub(
                 r"<!-- Quick-Download -->.*",
-                "<!-- Quick-Download --> [Digichem]({}), or use one of the specific versions below.".format(full__download_link),
+                "<!-- Quick-Download --> [Digichem]({}), or use one of the specific versions below.".format(full_download_link),
                 readme_data
             )
 
