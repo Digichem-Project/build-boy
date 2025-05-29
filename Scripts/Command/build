@@ -5,8 +5,11 @@ import subprocess
 import time
 import datetime
 import copy
+import os
 
 import fabric
+
+from buildboy.util import update_repo, expand_path
 
 # These are the virtual machines we're going to be building on.
 vms = {
@@ -141,6 +144,21 @@ def main():
         except Exception as e:
             print("Failed to build for VM: {}".format(vm['target']))
             print(e)
+
+    # Finally, tag the silico version and push back.
+    update_repo(expand_path('~/silico'), "build")
+    os.chdir(expand_path('~/silico'))
+    sys.path.append(expand_path('~/silico'))
+    import silico
+
+    try:
+        subprocess.run(["git", "tag", "v{}".format(silico.__version__) ], universal_newlines = True, check = True)
+        subprocess.run(["git", "push", "--tags"])
+    
+    except Exception:
+        # Already done this version.
+        pass
+    
 
 
 # If we've been invoked as a program, call main().    
