@@ -8,7 +8,7 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 ## Installation
 
-1. Download <!-- Quick-Download --> [Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-CentOS-Stream-8/digichem.6.8.1.CentOS-Stream-8-blender.tar.gz), or use one of the specific versions below.
+1. Download <!-- Quick-Download --> [Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-CentOS-Stream-8/digichem.6.8.3.CentOS-Stream-8-blender.tar.gz), or use one of the specific versions below.
 1. Upload the archive to your computational server.
 1. Unpack the archive with `tar -xzf digichem.*.tar.gz`.
 1. Run the install script with `digichem/_internal/install.sh`.
@@ -32,10 +32,10 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 
 | Distro | Full Version (Blender Included) | Lite Version (No Blender) |
 |--------|---------------------------|---------------------------------|
-| Rocky Linux 9 | <!-- Rocky-Linux-9 --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Rocky-Linux-9/digichem.6.8.1.Rocky-Linux-9-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Rocky-Linux-9/digichem.6.8.1.Rocky-Linux-9.tar.gz) |
-| CentOS Stream 8 | <!-- CentOS-Stream-8 --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-CentOS-Stream-8/digichem.6.8.1.CentOS-Stream-8-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-CentOS-Stream-8/digichem.6.8.1.CentOS-Stream-8.tar.gz) |
-| CentOS 8.5 | <!-- CentOS-8.5 --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-CentOS-8.5/digichem.6.8.1.CentOS-8.5-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-CentOS-8.5/digichem.6.8.1.CentOS-8.5.tar.gz) |
-| CentOS 7.9 | <!-- CentOS-7.9 --> N/A | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-CentOS-7.9/digichem.6.8.1.CentOS-7.9.tar.gz) |
+| Rocky Linux 9 | <!-- Rocky-Linux-9 --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Rocky-Linux-9/digichem.6.8.3.Rocky-Linux-9-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Rocky-Linux-9/digichem.6.8.3.Rocky-Linux-9.tar.gz) |
+| CentOS Stream 8 | <!-- CentOS-Stream-8 --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-CentOS-Stream-8/digichem.6.8.3.CentOS-Stream-8-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-CentOS-Stream-8/digichem.6.8.3.CentOS-Stream-8.tar.gz) |
+| CentOS 8.5 | <!-- CentOS-8.5 --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-CentOS-8.5/digichem.6.8.3.CentOS-8.5-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-CentOS-8.5/digichem.6.8.3.CentOS-8.5.tar.gz) |
+| CentOS 7.9 | <!-- CentOS-7.9 --> N/A | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-CentOS-7.9/digichem.6.8.3.CentOS-7.9.tar.gz) |
 
 ### Debian Based
 
@@ -43,11 +43,11 @@ Suitable for Debian, Ubuntu, and other related distros.
 
 | Distro | Full Version (Blender Included) | Lite Version (No Blender) |
 |--------|---------------------------|---------------------------------|
-| Debian Bookworm (12) | <!-- Debian-Bookworm --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Bookworm/digichem.6.8.1.Debian-Bookworm-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Bookworm/digichem.6.8.1.Debian-Bookworm.tar.gz) |
-| Debian Bullseye (11) | <!-- Debian-Bullseye --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Bullseye/digichem.6.8.1.Debian-Bullseye-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Bullseye/digichem.6.8.1.Debian-Bullseye.tar.gz) |
-| Debian Buster (10) | <!-- Debian-Buster --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Buster/digichem.6.8.1.Debian-Buster-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Buster/digichem.6.8.1.Debian-Buster.tar.gz) |
-| Debian Stretch (9) | <!-- Debian-Stretch --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Stretch/digichem.6.8.1.Debian-Stretch-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Stretch/digichem.6.8.1.Debian-Stretch.tar.gz) |
-| Debian Jessie (8) | <!-- Debian-Jessie --> [Download Digichem v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Jessie/digichem.6.8.1.Debian-Jessie-blender.tar.gz) | [Download Digichem Lite v6.8.1](https://github.com/Digichem-Project/build-boy/releases/download/6.8.1-Debian-Jessie/digichem.6.8.1.Debian-Jessie.tar.gz) |
+| Debian Bookworm (12) | <!-- Debian-Bookworm --> [Download Digichem v6.8.2](https://github.com/Digichem-Project/build-boy/releases/download/6.8.2-Debian-Bookworm/digichem.6.8.2.Debian-Bookworm-blender.tar.gz) | [Download Digichem Lite v6.8.2](https://github.com/Digichem-Project/build-boy/releases/download/6.8.2-Debian-Bookworm/digichem.6.8.2.Debian-Bookworm.tar.gz) |
+| Debian Bullseye (11) | <!-- Debian-Bullseye --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Bullseye/digichem.6.8.3.Debian-Bullseye-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Bullseye/digichem.6.8.3.Debian-Bullseye.tar.gz) |
+| Debian Buster (10) | <!-- Debian-Buster --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Buster/digichem.6.8.3.Debian-Buster-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Buster/digichem.6.8.3.Debian-Buster.tar.gz) |
+| Debian Stretch (9) | <!-- Debian-Stretch --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Stretch/digichem.6.8.3.Debian-Stretch-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Stretch/digichem.6.8.3.Debian-Stretch.tar.gz) |
+| Debian Jessie (8) | <!-- Debian-Jessie --> [Download Digichem v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Jessie/digichem.6.8.3.Debian-Jessie-blender.tar.gz) | [Download Digichem Lite v6.8.3](https://github.com/Digichem-Project/build-boy/releases/download/6.8.3-Debian-Jessie/digichem.6.8.3.Debian-Jessie.tar.gz) |
 
 ## All Builds
 
