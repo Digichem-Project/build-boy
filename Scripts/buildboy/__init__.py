@@ -71,14 +71,16 @@ class Builder():
         
         return paths
 
-    def build_oprattle(self, force = False):
+    @property
+    def oprattle_path(self):
         """Build openprattle; a stand-in for openbabel"""
         if self._oprattle_path is None or force:
             self._oprattle_path = self.build_target("~/openprattle")
 
         return self._oprattle_path
     
-    def build_blender(self, *args, force = False, **kwargs):
+    @property
+    def blender_path(self, *args, **kwargs):
         """Build blender"""
         if self._blender_path is None or force:
             self._blender_path = build_blender(self.target, *args, **kwargs)
@@ -90,7 +92,7 @@ class Builder():
         return self.build_target(
             "~/silico",
             branch = "build",
-            freezeargs = [self.build_oprattle['dir']]
+            freezeargs = [self.oprattle_path['dir']]
         )
 
     def prep_repos(self, silico_branch = "build", digichem_branch = "main"):
@@ -182,7 +184,7 @@ class Builder():
         print("-----------------------")
         print("Building openprattle...")
         print("-----------------------")
-        self.build_oprattle()
+        self.oprattle_path
 
         print("--------------------")
         print("Building digichem...")
@@ -194,7 +196,7 @@ class Builder():
         print("-------------------")
         import silico
         if blender and not download_blender:
-            blender_paths = self.build_blender(blender, branch = "blender-v{}-release".format(blender))
+            blender_paths = self.blender_path(blender, branch = "blender-v{}-release".format(blender))
         
         elif blender and download_blender:
             blender_paths = grab_blender(silico.__version__)
