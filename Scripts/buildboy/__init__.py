@@ -80,8 +80,7 @@ class Builder():
 
         return self._oprattle_path
     
-    @property
-    def blender_path(self, *args, **kwargs):
+    def build_blender(self, *args, **kwargs):
         """Build blender"""
         if self._blender_path is None:
             self._blender_path = build_blender(self.target, *args, **kwargs)
@@ -202,7 +201,7 @@ class Builder():
         print("-------------------")
         import silico
         if blender and not download_blender:
-            blender_paths = self.blender_path(blender, branch = "blender-v{}-release".format(blender))
+            blender_paths = self.build_blender(blender, branch = "blender-v{}-release".format(blender))
         
         elif blender and download_blender:
             blender_paths = grab_blender(silico.__version__)
