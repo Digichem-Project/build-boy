@@ -5,6 +5,7 @@ import subprocess
 import re
 import copy
 import json
+import logging
 
 from buildboy.util import update_repo, expand_path
 from buildboy.blender import build_blender, grab_blender
@@ -470,4 +471,4 @@ def build(target, blender = None, download_blender = False):
             man.build(branch, digichem_branch, blender, download_blender)
         
         except Exception as e:
-            print(e)
+            logging.error("Build failed", exc_info = True)
