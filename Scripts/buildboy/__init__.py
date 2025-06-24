@@ -6,6 +6,7 @@ import re
 import copy
 import json
 import logging
+import importlib
 
 from buildboy.util import update_repo, expand_path
 from buildboy.blender import build_blender, grab_blender
@@ -108,13 +109,18 @@ class Builder():
         update_repo(expand_path('~/pysoc'), "master")
         os.chdir(expand_path('~/silico'))
 
+        import silico
+        import digichem
+        importlib.reload(silico)
+        importlib.reload(digichem)
 
     def check_for_new_version(self, branch):
         """
         """
         import silico
-        import openprattle
         import digichem
+
+        import openprattle
         if silico.__version__.strip() == self.last_data.get(branch, {}).get('version', ""):
             # Nothing new.
             raise Exception("build-boy: Nothing to do, last built version was '{}', current version is '{}'".format(self.last_data.get(branch, {}).get('version', ""), silico.__version__))
