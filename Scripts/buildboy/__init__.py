@@ -93,7 +93,7 @@ class Builder():
             freezeargs = [self.build_oprattle['dir']]
         )
 
-    def prep_repos(self, silico_branch = "build", digichem_branch = None):
+    def prep_repos(self, silico_branch = "build", digichem_branch = "main"):
         """
         Setup the build environment.
         """
@@ -158,7 +158,7 @@ class Builder():
             ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
     
 
-    def build(self, branch = "build", digichem_branch = None, blender = None, download_blender = False):
+    def build(self, branch = "build", digichem_branch = "main", blender = None, download_blender = False):
         """
         Build digichem.
 
@@ -458,7 +458,7 @@ def build(target, blender = None, download_blender = False):
     """Build!"""
     # What shall we make?
     builds = [
-        ["build", None],
+        ["build", "main"],
         ["build-testing", "v7.x"]
     ]
 
