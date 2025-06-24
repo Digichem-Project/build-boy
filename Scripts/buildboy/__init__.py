@@ -74,7 +74,7 @@ class Builder():
     @property
     def oprattle_path(self):
         """Build openprattle; a stand-in for openbabel"""
-        if self._oprattle_path is None or force:
+        if self._oprattle_path is None:
             self._oprattle_path = self.build_target("~/openprattle")
 
         return self._oprattle_path
@@ -82,7 +82,7 @@ class Builder():
     @property
     def blender_path(self, *args, **kwargs):
         """Build blender"""
-        if self._blender_path is None or force:
+        if self._blender_path is None:
             self._blender_path = build_blender(self.target, *args, **kwargs)
 
         return self._blender_path
