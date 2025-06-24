@@ -176,7 +176,7 @@ class Builder():
         self.check_for_new_version(branch)
 
         # Get updates for later.
-        self.get_upgrade_info()
+        self.get_upgrade_info(branch)
 
         # Work to be done.
         print("-----------------------")
