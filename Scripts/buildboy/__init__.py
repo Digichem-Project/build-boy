@@ -101,7 +101,7 @@ class Builder():
         update_repo(expand_path('~/silico'), silico_branch)
         update_repo(expand_path('~/cclib'), "master")
         update_repo(expand_path('~/configurables'))
-        update_repo(expand_path('~/digichem-core', digichem_branch))
+        update_repo(expand_path('~/digichem-core'), digichem_branch)
         update_repo(expand_path('~/openprattle'))
         update_repo(expand_path('~/pysoc'), "master")
         os.chdir(expand_path('~/silico'))
