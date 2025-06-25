@@ -87,11 +87,11 @@ class Builder():
 
         return self._blender_path
 
-    def build_silico(self):
+    def build_silico(self, branch = "build"):
         """Build silico"""
         return self.build_target(
             "~/silico",
-            branch = "build",
+            branch = branch,
             freezeargs = [self.oprattle_path['dir']]
         )
 
@@ -194,7 +194,7 @@ class Builder():
         print("--------------------")
         print("Building digichem...")
         print("--------------------")
-        silico_paths = self.build_silico()
+        silico_paths = self.build_silico(branch =branch)
 
         print("-------------------")
         print("Building blender...")
