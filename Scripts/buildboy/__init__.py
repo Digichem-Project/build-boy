@@ -136,8 +136,8 @@ class Builder():
         self.new_data[branch] = {
             'version': silico.__version__,
             'commit': new_commit,
-            'release_version': self.last_data.get(branch, {}).get('release_version', new_commit),
-            'release_commit': self.last_data.get(branch, {}).get('release_commit', silico.__version__)
+            'release_version': self.last_data.get(branch, {}).get('release_version', silico.__version__),
+            'release_commit': self.last_data.get(branch, {}).get('release_commit', new_commit)
         }
         # If this is a major version, update that too.
         if not silico.development:
