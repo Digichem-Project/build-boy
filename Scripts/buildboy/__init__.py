@@ -400,7 +400,22 @@ class Builder():
             sig.append('-p')
 
         # Upload
-        subprocess.run(sig, universal_newlines = True, check = True)
+        attempt = 1
+
+        while True:
+            try:
+                subprocess.run(sig, universal_newlines = True, check = True)
+                break
+
+            except:
+                if attempt < 4:
+                    print("Failed to create release, trying again...")
+                
+                else:
+                    print("Max tries {} exceeded".format(attempt))
+                    raise
+            
+            attempt += 1
 
         # All done, update the main README with the latest version.
         # But only if this is a production version!
