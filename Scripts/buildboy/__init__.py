@@ -356,7 +356,7 @@ class Builder():
             "matplotlib",
             "openprattle",
             ["pillow", "PIL"],
-            ["pyberny", "berny"],
+            #["pyberny", "berny"], PyBerny doesn't seem to know what version it is
             "pyscf",
             "pysoc",
             ["pyyaml", "yaml"],
