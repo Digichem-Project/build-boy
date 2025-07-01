@@ -1,7 +1,1 @@
-### Changes in this version (7.0.0-pre.6) since 7.0.0-pre.5
-
-#### Bugfixes:
- - [%as:]: added missing hidden imports to build script
-
-#### Miscellaneous:
- - [%as:]: removed double space
+### Changes in this version (6.9.0) since 6.8.3
