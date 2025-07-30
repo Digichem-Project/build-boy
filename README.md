@@ -8,7 +8,7 @@ If you're looking for <img src="Logo.png" alt="Banner" height=24 valign=middle /
 
 ## Installation
 
-1. Download <!-- Quick-Download --> [Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.9.2-CentOS-Stream-8/digichem.6.9.2.CentOS-Stream-8-blender.tar.gz), or use one of the specific versions below.
+1. Download <!-- Quick-Download --> [Digichem](https://github.com/Digichem-Project/build-boy/releases/download/6.9.3-CentOS-Stream-8/digichem.6.9.3.CentOS-Stream-8-blender.tar.gz), or use one of the specific versions below.
 1. Upload the archive to your computational server.
 1. Unpack the archive with `tar -xzf digichem.*.tar.gz`.
 1. Run the install script with `digichem/_internal/install.sh`.
@@ -33,7 +33,7 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 | Distro | Full Version (Blender Included) | Lite Version (No Blender) |
 |--------|---------------------------|---------------------------------|
 | Rocky Linux 9 | <!-- Rocky-Linux-9 --> [Download Digichem v6.9.2](https://github.com/Digichem-Project/build-boy/releases/download/6.9.2-Rocky-Linux-9/digichem.6.9.2.Rocky-Linux-9-blender.tar.gz) | [Download Digichem Lite v6.9.2](https://github.com/Digichem-Project/build-boy/releases/download/6.9.2-Rocky-Linux-9/digichem.6.9.2.Rocky-Linux-9.tar.gz) |
-| CentOS Stream 8 | <!-- CentOS-Stream-8 --> [Download Digichem v6.9.2](https://github.com/Digichem-Project/build-boy/releases/download/6.9.2-CentOS-Stream-8/digichem.6.9.2.CentOS-Stream-8-blender.tar.gz) | [Download Digichem Lite v6.9.2](https://github.com/Digichem-Project/build-boy/releases/download/6.9.2-CentOS-Stream-8/digichem.6.9.2.CentOS-Stream-8.tar.gz) |
+| CentOS Stream 8 | <!-- CentOS-Stream-8 --> [Download Digichem v6.9.3](https://github.com/Digichem-Project/build-boy/releases/download/6.9.3-CentOS-Stream-8/digichem.6.9.3.CentOS-Stream-8-blender.tar.gz) | [Download Digichem Lite v6.9.3](https://github.com/Digichem-Project/build-boy/releases/download/6.9.3-CentOS-Stream-8/digichem.6.9.3.CentOS-Stream-8.tar.gz) |
 | CentOS 8.5 | <!-- CentOS-8.5 --> [Download Digichem v6.9.3](https://github.com/Digichem-Project/build-boy/releases/download/6.9.3-CentOS-8.5/digichem.6.9.3.CentOS-8.5-blender.tar.gz) | [Download Digichem Lite v6.9.3](https://github.com/Digichem-Project/build-boy/releases/download/6.9.3-CentOS-8.5/digichem.6.9.3.CentOS-8.5.tar.gz) |
 | CentOS 7.9 | <!-- CentOS-7.9 --> N/A | [Download Digichem Lite v6.9.3](https://github.com/Digichem-Project/build-boy/releases/download/6.9.3-CentOS-7.9/digichem.6.9.3.CentOS-7.9.tar.gz) |
 
