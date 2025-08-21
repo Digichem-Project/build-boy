@@ -1,1 +1,17 @@
-### Changes in this version (7.0.0-pre.15) since 
+### Changes in this version (7.0.0-pre.21) since 7.0.0-pre.15
+
+#### New features:
+ - [2025-08-20:]: added better error reporting when fetching a job that does not exist
+ - [2025-08-20:]: added support for preventing multithreading in newer starlette versions
+
+#### Bugfixes:
+ - [2025-08-20:]: added threading lock to job db to help avoid race condition corruption
+ - [2025-08-19:]: fixed extra status information (path, distro etc) not being printed by digichem info
+
+#### Miscellaneous:
+ - [2025-08-20:]: update last modified
+ - [2025-08-20:]: set pre-release to 21
+ - [2025-08-19:]: update last modified
+ - [2025-08-19:]: added more missing depends
+ - [2025-08-19:]: added missing pyopenssl depends
+ - [2025-08-19:]: removed some old imports
