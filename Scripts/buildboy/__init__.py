@@ -155,14 +155,25 @@ class Builder():
             self.last_version = self.last_data.get(branch, {}).get('release_version', "")
 
         # Get changes from git
+        # First, get time of last commit.
+        last_commit_time = subprocess.run([
+            'git', 'show', '--no-patch', '--format=%ci', last_commit
+        ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
+
+        # TODO: This might be picking up one commit too many?
         self.raw_changes = subprocess.run([
-            'git', 'log', '--pretty=format:%as: %s', '--ancestry-path', '{}..{}'.format(
-                # Old version.
-                last_commit,
-                # New version.
-                "HEAD"
-            )
-            ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
+            'git', 'log', '--pretty=format:%as: %s', '--since', last_commit_time
+        ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
+        
+        # This doesn't work with merge commits.
+        # self.raw_changes = subprocess.run([
+        #     'git', 'log', '--pretty=format:%as: %s', '--ancestry-path', '{}..{}'.format(
+        #         # Old version.
+        #         last_commit,
+        #         # New version.
+        #         "HEAD"
+        #     )
+        #     ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
     
 
     def build(self, branch = "build", digichem_branch = "main", blender = None, download_blender = False):
