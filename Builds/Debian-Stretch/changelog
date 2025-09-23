@@ -1,7 +1,48 @@
-### Changes in this version (7.0.0-pre.23) since 7.0.0-pre.22
+### Changes in this version (6.9.3) since 6.8.3
+
+#### New features:
+ - [%as:]: if no hints are given to setup, various sensible defaults will be tried instead
+ - [%as:]: added option to disable find searching as well as locate searching in Discover
+ - [%as:]: added file locking to setup program
+ - [%as:]: also migrated locate/plocate code to async
+ - [%as:]: migrate discover code to asyncio
+ - [%as:]: initial work to moving discover functionality into separate module
+ - [%as:]: scratch space usag is now activated by default
+ - [%as:]: added support for custom Orca keywords
+
+#### Bugfixes:
+ - [%as:]: fixed mongita errors in new installs
+ - [%as:]: fixed a typo in parsing CCSD(T) calcs with PySCF
+ - [%as:]: fixed unnecessary warning messages in cubegen_parallel
+ - [%as:]: greatly simplified fork_and_monitor() code so the main process runs the program, and the subprocess is used for monitoring. This also fixes a bug in PySCF resulting in deadlocks when running multiple calcs back-to-back
+ - [%as:]: fixed wrong dependenceis
+ - [%as:]: fixed missing pyscf libraries when freezing
+ - [%as:]: added data collection for pyscf (and removed hidden import for numpy.ctypes which did nothing)
+ - [%as:]: added numpy.ctypes as hidden import to build
+
+#### Testing updates:
+ - [%as:]: expanded tests for PySCF
+ - [%as:]: added opt tests for PySCF
+ - [%as:]: added initial tests for PySCF
+ - [%as:]: removed old references to input files which are now included in the digichem-core repo
+ - [%as:]: added check for correct digichem core version
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped to prerelease 23
- - [%as:]: updated license end date to 30-09-2025
+ - [%as:]: bumped version to 6.9.3
+ - [%as:]: update last modified
+ - [%as:]: updated github tests to use git version of cclib in both push and pull tests
+ - [%as:]: bumped version to 6.9.2
+ - [%as:]: bumped pre-release to 6.9.1
+ - [%as:]: moved locate and find code to separate functions
+ - [%as:]: bumped version to 6.9.0
+ - [%as:]: tried to make github install work
+ - [%as:]: added github version of cclib to github dependencies
+ - [%as:]: added missing pyscf depends for github tests
+ - [%as:]: reduced demo license duration to 2 months
+ - [%as:]: update last modified
+ - [%as:]: added pyscf dependencies to freeze file
+ - [%as:]: removed leftover print commands
+ - [%as:]: updated dependencies to include pyscf
+ - [%as:]: update last modified
  - [%as:]: update last modified
