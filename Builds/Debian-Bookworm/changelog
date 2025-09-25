@@ -1,76 +1,22 @@
-### Changes in this version (6.9.3) since 6.8.2
+### Changes in this version (7.0.0-pre.25) since 7.0.0-pre.24
 
 #### New features:
- - [2025-07-08:]: if no hints are given to setup, various sensible defaults will be tried instead
- - [2025-07-08:]: added option to disable find searching as well as locate searching in Discover
- - [2025-07-01:]: added file locking to setup program
- - [2025-07-01:]: also migrated locate/plocate code to async
- - [2025-07-01:]: migrate discover code to asyncio
- - [2025-07-01:]: initial work to moving discover functionality into separate module
- - [2025-06-26:]: scratch space usag is now activated by default
- - [2025-06-25:]: added support for custom Orca keywords
- - [2025-06-06:]: increased default define timeout to 5 min for BIG molecules
- - [2025-06-03:]: added ability to track scratch space file usage
+ - [2025-09-24:]: the license set program now aquires a machine file immediately
+ - [2025-09-24:]: added support for offline license files for clusters that don't have outgoing internet connections
+ - [2025-09-23:]: added better error messages for when no license key is set
+ - [2025-09-23:]: added license checking to main progam
+ - [2025-09-23:]: added license set and license info commands
+ - [2025-09-23:]: expanded license functionality to include seperate functions to validate and activate, functions now return useful data
+ - [2025-09-23:]: added code to check license key
 
 #### Bugfixes:
- - [2025-07-29:]: fixed mongita errors in new installs
- - [2025-07-10:]: fixed a typo in parsing CCSD(T) calcs with PySCF
- - [2025-07-10:]: fixed unnecessary warning messages in cubegen_parallel
- - [2025-07-10:]: greatly simplified fork_and_monitor() code so the main process runs the program, and the subprocess is used for monitoring. This also fixes a bug in PySCF resulting in deadlocks when running multiple calcs back-to-back
- - [2025-06-30:]: fixed wrong dependenceis
- - [2025-06-30:]: fixed missing pyscf libraries when freezing
- - [2025-06-30:]: added data collection for pyscf (and removed hidden import for numpy.ctypes which did nothing)
- - [2025-06-30:]: added numpy.ctypes as hidden import to build
- - [2025-06-09:]: missing symlinks for blender are now setup in install.sh
- - [2025-06-09:]: fixed trying to check cubes that aren't available
- - [2025-06-09:]: fixed distracting cleanup error when a report fails
- - [2025-06-09:]: fixed cubegen pool sometimes making the same file twice
- - [2025-06-06:]: fixed define timeout error log message being mangled
-
-#### Documentation changes:
- - [2025-05-29:]: download link now automatically updates
- - [2025-05-29:]: updated copyright year to 2025
-
-#### Testing updates:
- - [2025-07-10:]: expanded tests for PySCF
- - [2025-07-10:]: added opt tests for PySCF
- - [2025-06-30:]: added initial tests for PySCF
- - [2025-06-30:]: removed old references to input files which are now included in the digichem-core repo
- - [2025-06-30:]: added check for correct digichem core version
+ - [2025-09-24:]: fixed returning slightly outdated meta info when just activating a license
+ - [2025-09-23:]: fixed handling license time expiry
+ - [2025-09-23:]: fixed crash when clicking on authorship info
 
 #### Miscellaneous:
- - [2025-07-29:]: update last modified
- - [2025-07-29:]: bumped version to 6.9.3
- - [2025-07-10:]: update last modified
- - [2025-07-10:]: updated github tests to use git version of cclib in both push and pull tests
- - [2025-07-10:]: bumped version to 6.9.2
- - [2025-07-08:]: bumped pre-release to 6.9.1
- - [2025-07-08:]: moved locate and find code to separate functions
- - [2025-06-30:]: bumped version to 6.9.0
- - [2025-06-30:]: tried to make github install work
- - [2025-06-30:]: added github version of cclib to github dependencies
- - [2025-06-30:]: added missing pyscf depends for github tests
- - [2025-06-30:]: reduced demo license duration to 2 months
- - [2025-06-30:]: update last modified
- - [2025-06-30:]: added pyscf dependencies to freeze file
- - [2025-06-30:]: removed leftover print commands
- - [2025-06-30:]: updated dependencies to include pyscf
- - [2025-06-27:]: update last modified
- - [2025-06-26:]: update last modified
- - [2025-06-09:]: update last modified
- - [2025-06-09:]: bumped to 6.8.3
- - [2025-06-03:]: update last modified
- - [2025-05-29:]: update last modified
- - [2025-05-29:]: debugging conda setup in workflow
- - [2025-05-29:]: debugging conda setup in workflow
- - [2025-05-29:]: added mako to build depends
- - [2025-05-29:]: adjusted upload location
- - [2025-05-29:]: trying different version
- - [2025-05-29:]: set sftp_only to true
- - [2025-05-29:]: added SFTP deploy to workflow
- - [2025-05-29:]: fixed typo
- - [2025-05-29:]: added sphinx-rtd-theme and sphinx_design to docs build depends
- - [2025-05-29:]: added sphinx-argparse to docs build depends
- - [2025-05-29:]: added sphinxcontrib-bibtex to depends for docs build
- - [2025-05-29:]: fixed not setting pythonpath correctly
- - [2025-05-29:]: added initial workflow to autobuild docs
+ - [2025-09-25:]: update last modified
+ - [2025-09-25:]: bumped pre-release to 25
+ - [2025-09-23:]: added requests to depends
+ - [2025-09-23:]: removed old 'license' code
+ - [2025-09-22:]: update last modified
