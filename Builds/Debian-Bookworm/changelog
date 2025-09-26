@@ -1,22 +1,8 @@
-### Changes in this version (7.0.0-pre.25) since 7.0.0-pre.24
+### Changes in this version (7.0.0-pre.26) since 7.0.0-pre.25
 
 #### New features:
- - [2025-09-24:]: the license set program now aquires a machine file immediately
- - [2025-09-24:]: added support for offline license files for clusters that don't have outgoing internet connections
- - [2025-09-23:]: added better error messages for when no license key is set
- - [2025-09-23:]: added license checking to main progam
- - [2025-09-23:]: added license set and license info commands
- - [2025-09-23:]: expanded license functionality to include seperate functions to validate and activate, functions now return useful data
- - [2025-09-23:]: added code to check license key
-
-#### Bugfixes:
- - [2025-09-24:]: fixed returning slightly outdated meta info when just activating a license
- - [2025-09-23:]: fixed handling license time expiry
- - [2025-09-23:]: fixed crash when clicking on authorship info
+ - [2025-09-25:]: added ttl to machine files
 
 #### Miscellaneous:
+ - [2025-09-25:]: bumped pre-release to 26
  - [2025-09-25:]: update last modified
- - [2025-09-25:]: bumped pre-release to 25
- - [2025-09-23:]: added requests to depends
- - [2025-09-23:]: removed old 'license' code
- - [2025-09-22:]: update last modified
