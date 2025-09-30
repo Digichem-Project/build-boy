@@ -492,7 +492,7 @@ def build(target, blender = None, download_blender = False):
     # What shall we make?
     builds = [
         ["build", "main"],
-        ["build-testing", "v7.x"]
+        ["build-testing", "dev"]
     ]
 
     # Get manager.
