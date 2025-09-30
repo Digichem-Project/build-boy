@@ -5,28 +5,21 @@ This software is proprietary. You (the user) have no permission to use or
 distribute this software without those permissions being expressly granted by a 
 license agreement (such as this one).
 
-This license agreement is timed; it grants you a select number of permissions 
-in relation to this software (which are detailed below) only up until the 
-expiry date (below). Once the expiry date has been exceeded, these permissions 
-are automatically revoked and you must obtain another license to continue using 
-the software. If you do not, or cannot, obtain a new license, you must cease 
-using the software immediately and delete it from your system. Failure to do so 
-is in breach of copyright law.
+This license agreement  grants you a select number of permissions in relation
+to this software (which are detailed below), but only while you are in possession
+of a valid license key distributed by Digichem. Any permissions that are not
+explicitly described are not granted. A list of disallowed permissions is also
+provided for your reference, but this list is not exhaustive.
 
 Digichem reserves the right to change the terms of any future licenses issued.
 
-This license will expire after midnight on dd-mm-yyyy.
-This date and time is relative to Coordinated Universal Time (UTC).
-
-This license agreement grants you a limited number of permissions in relation 
-to this software. Any permissions that are not explicitly described are not 
-granted. A list of disallowed permissions is also provided for your reference. 
-This list is not exhaustive.
-
-Under the terms of this license agreement, up until the expiry date, you MAY:
- - Use the software, in binary form, free of charge for any purpose.
+Under the terms of this license agreement, and only while you are in possession
+of a valid license key distributed by Digichem, you MAY:
+ - Use the software, in binary form, for personal, academic, and/or research purposes.
  
 You may NOT:
+ - Use the software in relation to any activity that generates profit (to obtain a
+   commercial license, contact social@digi-chem.co.uk)
  - Use or attempt to access any source code of the software.
  - Redistribute the software in any form (including binary).
  - Sell the software, in any part.

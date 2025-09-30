@@ -83,21 +83,15 @@ The oldest currently supported glibc version is 2.17 (CentOS 7.9).
 ## Licenses
 
 The Digichem project is split into two sections, each with it's own license.
- - The Digichem program is proprietary software. It is currently available in binary form only under a free-to-use but timed license. 
+ - The Digichem program is proprietary software. To use the program, you will need to obtain a license key from ([Digichem](https://digi-chem.co.uk/get-started-year)).
  - Core components of the library ([Digichem-core](https://github.com/Digichem-Project/digichem-core)) are distributed separately under an open-source license.
 
 Additionally, Build-boy (the code in this repository) is available separately under an open-source license.
 
 ### Digichem
 
-Digichem is proprietary software. However, it is currently being made available free-of-charge under a timed-license.
-Each build of Digichem has a license automatically included within it, with an expiry set to
-90 days from the build date. After this time, a new license must be acquired, or else the 
-program will cease to function. The easiest way to acquire a new license is to upgrade to the
-latest Digichem version, which will automatically contain a new license.
-
-Digichem reserves the right to change the license terms in the future, but we will never change the terms of, or seek to revoke,
-an already issued license.
+Digichem is proprietary software, and you will need to obtain a valid license key from Digichem in order to use it.
+License keys can be purchased from ([Digichem](https://digi-chem.co.uk/get-started-year)).
 
 Your Digichem license will be included in your download. See the included LICENSE file for full details.
 See the [DIGICHEM_LICENSE_TEMPLATE](DIGICHEM_LICENSE_TEMPLATE.md) file for an example of such a license.
