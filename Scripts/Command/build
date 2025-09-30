@@ -81,7 +81,12 @@ def do_build(vm_data):
 
         # Wait a little bit for the VM to start.
         print("Waiting for boot...")
-        time.sleep(120)
+        if vm_data['target'] == "Rocky-Linux-9":
+            # Rocky takes a long time to boot up for some reason.
+            time.sleep(600)
+        
+        else:
+            time.sleep(120)
 
         # Get our connection options.
         connect_kwargs = copy.copy(vm_data['connect_kwargs'])
