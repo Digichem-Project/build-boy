@@ -1,8 +1,69 @@
-### Changes in this version (7.0.0-pre.26) since 7.0.0-pre.25
+### Changes in this version (7.0.0) since 6.9.3
 
 #### New features:
  - [2025-09-25:]: added ttl to machine files
+ - [2025-09-24:]: the license set program now aquires a machine file immediately
+ - [2025-09-24:]: added support for offline license files for clusters that don't have outgoing internet connections
+ - [2025-09-23:]: added better error messages for when no license key is set
+ - [2025-09-23:]: added license checking to main progam
+ - [2025-09-23:]: added license set and license info commands
+ - [2025-09-23:]: expanded license functionality to include seperate functions to validate and activate, functions now return useful data
+ - [2025-09-23:]: added code to check license key
+ - [2025-08-20:]: added better error reporting when fetching a job that does not exist
+ - [2025-08-20:]: added support for preventing multithreading in newer starlette versions
+ - [2025-08-14:]: server start command now retuns more information about installation and upgrade potential
+ - [2025-08-14:]: added installation_dir() function to __init__
+ - [2025-08-13:]: added force option to discover endpoints
+ - [2025-08-11:]: added support for parsing binary and text molecule files
+ - [2025-08-08:]: added support for setting config options
+ - [2025-08-07:]: reimplemented auto server shutdown after a timeout
+ - [2025-08-07:]: updated set_config() function to support server reloading and over improvements
+ - [2025-08-06:]: added server --reload command
+ - [2025-08-06:]: added a proper process manager for launching multiple server workers
+ - [2025-08-06:]: added digichem.config.set_config() method for updating settings
+ - [2025-08-04:]: added new endpoints for getting server settings
+
+#### Bugfixes:
+ - [2025-09-24:]: fixed returning slightly outdated meta info when just activating a license
+ - [2025-09-23:]: fixed handling license time expiry
+ - [2025-09-23:]: fixed crash when clicking on authorship info
+ - [2025-09-22:]: fixed line encoding problem when parsing molecules with the server
+ - [2025-08-26:]: fixed not wrapping temp dir in Path
+ - [2025-08-26:]: fixed image program potentially overwriting old temp dirs
+ - [2025-08-26:]: fixed pyscf not having date or jobID
+ - [2025-08-20:]: added threading lock to job db to help avoid race condition corruption
+ - [2025-08-19:]: fixed extra status information (path, distro etc) not being printed by digichem info
+ - [2025-08-14:]: fixed uvicorn using spawn method which is incompatible with frozen distributions
+ - [2025-08-14:]: implemented server startup timeouts to prevent hangs on error
+ - [2025-08-13:]: fixed restarting the server for config changes
+ - [2025-08-11:]: possible fix for data mangling in mol parsing
+ - [2025-08-11:]: fixed server having to write molecules to a temp dir to parse them
+ - [2025-08-11:]: fixed potentially closing all worker pipes
+ - [2025-08-11:]: fixed crash on increasing number of server procs
+ - [2025-08-11:]: fixed server dying when a worker closes
+ - [2025-08-08:]: fixed not returning anything from settings endpoint
+ - [2025-08-07:]: fixed overly verbose error in obtaining local destination data
+ - [2025-08-06:]: moved signal overriding behavior to resume progam only
+ - [2025-08-04:]: fixed not dumping all settings
+ - [2025-08-04:]: removed erroneous async endpoints (was there a reason for this?)
 
 #### Miscellaneous:
+ - [2025-09-30:]: removed license date from freeze code
+ - [2025-09-30:]: updated license terms to reflect new license keys
+ - [2025-09-30:]: update last modified
+ - [2025-09-30:]: first v7 release
  - [2025-09-25:]: bumped pre-release to 26
- - [2025-09-25:]: update last modified
+ - [2025-09-25:]: bumped pre-release to 25
+ - [2025-09-23:]: added requests to depends
+ - [2025-09-23:]: removed old 'license' code
+ - [2025-09-22:]: bumped pre-release to 24
+ - [2025-08-27:]: bumped to prerelease 23
+ - [2025-08-27:]: updated license end date to 30-09-2025
+ - [2025-08-26:]: bumped version to pre.22
+ - [2025-08-20:]: set pre-release to 21
+ - [2025-08-19:]: added more missing depends
+ - [2025-08-19:]: added missing pyopenssl depends
+ - [2025-08-19:]: removed some old imports
+ - [2025-08-15:]: bumped pre-release to 15
+ - [2025-08-07:]: cleaned up old code
+ - [2025-08-05:]: removed unused job_database:id_length param
