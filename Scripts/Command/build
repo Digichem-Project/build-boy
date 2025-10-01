@@ -79,41 +79,52 @@ def do_build(vm_data):
             'vboxmanage', 'startvm', vm_data['vm'], "--type=headless"
         ], universal_newlines = True, check = True)
 
-        # Wait a little bit for the VM to start.
-        print("Waiting for boot...")
-        if vm_data['target'] == "Rocky-Linux-9":
-            # Rocky takes a long time to boot up for some reason.
-            time.sleep(600)
+        # Some VMs (Rocky 9 in particular) take a lot of attempts to connect...
+        attempt = 0
+        exception = None
+        while attempt < 5:
+            try:
+                # Wait a little bit for the VM to start.
+                print("Waiting for boot...")
+                time.sleep(120)
+
+                # Get our connection options.
+                connect_kwargs = copy.copy(vm_data['connect_kwargs'])
+                # The PC just turned on, give it some time to wake-up:
+                connect_kwargs['timeout'] = 300 # 5 mins
+                connect_kwargs['banner_timeout'] = 300
+
+                # Next, connect with SSH.
+                print("Connecting to VM...")
+                with fabric.Connection(
+                    'localhost',
+                    user="digichem",
+                    port=vm_data['port'],
+                    connect_kwargs = connect_kwargs
+                ) as ssh:
+
+                    # Check for updates to the local build-boy script.
+                    print("Fetching updates...")
+                    ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
+
+                    # Call the local build-boy build script.
+                    print("Running build...")
+                    ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
+
+                    # All done, make the VM go to bed.
+                    print("Shutting down VM...")
+                    ssh.run("sudo shutdown now", warn = True)
+                
+                # All done.
+                exception = None
+                break
+
+            except ConnectionError as e:
+                attempt += 1
+                exception = e
         
-        else:
-            time.sleep(120)
-
-        # Get our connection options.
-        connect_kwargs = copy.copy(vm_data['connect_kwargs'])
-        # The PC just turned on, give it some time to wake-up:
-        connect_kwargs['timeout'] = 300 # 5 mins
-        connect_kwargs['banner_timeout'] = 300
-
-        # Next, connect with SSH.
-        print("Connecting to VM...")
-        with fabric.Connection(
-            'localhost',
-            user="digichem",
-            port=vm_data['port'],
-            connect_kwargs = connect_kwargs
-        ) as ssh:
-
-            # Check for updates to the local build-boy script.
-            print("Fetching updates...")
-            ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
-
-            # Call the local build-boy build script.
-            print("Running build...")
-            ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
-
-            # All done, make the VM go to bed.
-            print("Shutting down VM...")
-            ssh.run("sudo shutdown now", warn = True)
+        if exception:
+            raise exception
     
     except:
         # Ask the VM to stop.
