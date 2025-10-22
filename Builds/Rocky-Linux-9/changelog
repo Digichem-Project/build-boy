@@ -1,49 +1,13 @@
-### Changes in this version (7.0.0) since 7.0.0-pre.15
-
-#### New features:
- - [2025-09-25:]: added ttl to machine files
- - [2025-09-24:]: the license set program now aquires a machine file immediately
- - [2025-09-24:]: added support for offline license files for clusters that don't have outgoing internet connections
- - [2025-09-23:]: added better error messages for when no license key is set
- - [2025-09-23:]: added license checking to main progam
- - [2025-09-23:]: added license set and license info commands
- - [2025-09-23:]: expanded license functionality to include seperate functions to validate and activate, functions now return useful data
- - [2025-09-23:]: added code to check license key
- - [2025-08-20:]: added better error reporting when fetching a job that does not exist
- - [2025-08-20:]: added support for preventing multithreading in newer starlette versions
+### Changes in this version (7.0.1) since 7.0.0
 
 #### Bugfixes:
- - [2025-09-24:]: fixed returning slightly outdated meta info when just activating a license
- - [2025-09-23:]: fixed handling license time expiry
- - [2025-09-23:]: fixed crash when clicking on authorship info
- - [2025-09-22:]: fixed line encoding problem when parsing molecules with the server
- - [2025-08-26:]: fixed not wrapping temp dir in Path
- - [2025-08-26:]: fixed image program potentially overwriting old temp dirs
- - [2025-08-26:]: fixed pyscf not having date or jobID
- - [2025-08-20:]: added threading lock to job db to help avoid race condition corruption
- - [2025-08-19:]: fixed extra status information (path, distro etc) not being printed by digichem info
+ - [2025-10-01:]: fixed a problem validating licenses when no config directory exists
 
 #### Miscellaneous:
- - [2025-09-30:]: removed license date from freeze code
- - [2025-09-30:]: updated license terms to reflect new license keys
- - [2025-09-30:]: update last modified
- - [2025-09-30:]: first v7 release
- - [2025-09-25:]: bumped pre-release to 26
- - [2025-09-25:]: update last modified
- - [2025-09-25:]: bumped pre-release to 25
- - [2025-09-23:]: added requests to depends
- - [2025-09-23:]: removed old 'license' code
- - [2025-09-22:]: update last modified
- - [2025-09-22:]: bumped pre-release to 24
- - [2025-08-27:]: update last modified
- - [2025-08-27:]: bumped to prerelease 23
- - [2025-08-27:]: updated license end date to 30-09-2025
- - [2025-08-26:]: update last modified
- - [2025-08-26:]: bumped version to pre.22
- - [2025-08-20:]: update last modified
- - [2025-08-20:]: set pre-release to 21
- - [2025-08-19:]: update last modified
- - [2025-08-19:]: added more missing depends
- - [2025-08-19:]: added missing pyopenssl depends
- - [2025-08-19:]: removed some old imports
- - [2025-08-15:]: bumped pre-release to 15
+ - [2025-10-21:]: update last modified
+ - [2025-10-21:]: bumped to v7.0.1
+ - [2025-10-02:]: added cname back to docs workflow
+ - [2025-10-02:]: removed conditional in docs workflow
+ - [2025-10-02:]: update last modified
+ - [2025-10-02:]: updates to doc workflow
+ - [2025-10-01:]: update last modified
