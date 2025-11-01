@@ -1,13 +1,14 @@
-### Changes in this version (7.0.1) since 7.0.0
+### Changes in this version (7.0.2) since 7.0.1
 
 #### Bugfixes:
- - [2025-10-01:]: fixed a problem validating licenses when no config directory exists
+ - [2025-10-31:]: fixed unnecessary error when changing settings and no server is available
+ - [2025-10-30:]: fixed missing species-data file for PySCF Berny optimisations
+
+#### Documentation changes:
+ - [2025-10-23:]: added pydata theme to workflow
+ - [2025-10-23:]: initial documentation for managing downloads
 
 #### Miscellaneous:
- - [2025-10-21:]: update last modified
- - [2025-10-21:]: bumped to v7.0.1
- - [2025-10-02:]: added cname back to docs workflow
- - [2025-10-02:]: removed conditional in docs workflow
- - [2025-10-02:]: update last modified
- - [2025-10-02:]: updates to doc workflow
- - [2025-10-01:]: update last modified
+ - [2025-10-31:]: update last modified
+ - [2025-10-30:]: bumped version to v7.0.2
+ - [2025-10-23:]: update last modified
