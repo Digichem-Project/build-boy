@@ -1,16 +1,12 @@
-### Changes in this version (7.0.3) since 7.0.1
+### Changes in this version (7.0.3-pre.1) since 7.0.2
 
 #### Bugfixes:
  - [%as:]: updated to 7.0.3 to fix botched build for 7.0.2
  - [%as:]: fixed unnecessary error when changing settings and no server is available
- - [%as:]: fixed missing species-data file for PySCF Berny optimisations
-
-#### Documentation changes:
- - [%as:]: added pydata theme to workflow
- - [%as:]: initial documentation for managing downloads
 
 #### Miscellaneous:
+ - [%as:]: switched to dev
+ - [%as:]: bumped to 7.0.3-pre.1
  - [%as:]: update last modified
  - [%as:]: update last modified
- - [%as:]: bumped version to v7.0.2
  - [%as:]: update last modified
