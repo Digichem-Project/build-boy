@@ -1,12 +1,14 @@
-### Changes in this version (7.0.3-pre.1) since 7.0.2
+### Changes in this version (7.1.0) since 7.0.3
 
-#### Bugfixes:
- - [2025-11-04:]: updated to 7.0.3 to fix botched build for 7.0.2
- - [2025-10-31:]: fixed unnecessary error when changing settings and no server is available
+#### New features:
+ - [2025-11-13:]: added links dir to store spoofed progam installs
+ - [2025-11-13:]: added initial support for non-standard Gaussian installs
+ - [2025-11-10:]: added some initial groundwork for one-day supporting native mongita queries
+ - [2025-11-10:]: database search commands now accept skip & limit keywords
+
+#### Testing updates:
+ - [2025-11-10:]: added test for database skipping and limiting
 
 #### Miscellaneous:
- - [2025-11-04:]: switched to dev
- - [2025-11-04:]: bumped to 7.0.3-pre.1
- - [2025-11-04:]: update last modified
- - [2025-10-31:]: update last modified
- - [2025-10-30:]: update last modified
+ - [2025-11-13:]: update last modified
+ - [2025-11-13:]: bumped version to 7.1.0
