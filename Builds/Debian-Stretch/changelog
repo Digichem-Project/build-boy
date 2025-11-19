@@ -1,14 +1,12 @@
-### Changes in this version (7.1.0) since 7.0.3
+### Changes in this version (7.2.0) since 7.1.0
 
 #### New features:
- - [%as:]: added links dir to store spoofed progam installs
- - [%as:]: added initial support for non-standard Gaussian installs
- - [%as:]: added some initial groundwork for one-day supporting native mongita queries
- - [%as:]: database search commands now accept skip & limit keywords
+ - [%as:]: added better description for the auto_path option
+ - [%as:]: added support for automatically determining the scratch location
 
-#### Testing updates:
- - [%as:]: added test for database skipping and limiting
+#### Documentation changes:
+ - [%as:]: added documentation for logging on to Compute Canada
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped version to 7.1.0
+ - [%as:]: bumped to v7.2.0
