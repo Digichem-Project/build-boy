@@ -365,6 +365,7 @@ class Builder():
             "matplotlib",
             "openprattle",
             ["pillow", "PIL"],
+            "pyscf",
             "pysoc",
             ["pyyaml", "yaml"],
             "rdkit",
