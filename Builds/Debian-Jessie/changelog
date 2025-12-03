@@ -1,12 +1,18 @@
-### Changes in this version (7.2.0) since 7.1.0
+### Changes in this version (7.2.1) since 7.2.0
 
-#### New features:
- - [%as:]: added better description for the auto_path option
- - [%as:]: added support for automatically determining the scratch location
+#### Bugfixes:
+ - [%as:]: better error reporting when specifying a non-existant job ID
+ - [%as:]: fixed calling resolve() on Gaussian root, which interfers with symlink spoofing
+ - [%as:]: added workaround for PySCF issue #3061
 
 #### Documentation changes:
- - [%as:]: added documentation for logging on to Compute Canada
+ - [%as:]: another attempt to fix github worklow for docs
+ - [%as:]: fixed workflow not fetching tags
+ - [%as:]: auto changelog now starts at v6
+ - [%as:]: auto changelog no longer cuts off beginning of non-semantic commits
+ - [%as:]: added changelog to docs (auto generated)
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped to v7.2.0
+ - [%as:]: bumped to 7.2.1
+ - [%as:]: update last modified
