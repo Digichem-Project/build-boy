@@ -26,11 +26,16 @@ def main():
     #   vm_batch = vm_datas[args.batch*batch_number:args.batch*batch_number+args.batch]
 
     for vm_data in vms.values():
-        with start_vm(vm_data, shutdown_on_error = args.shutdown) as ssh:
-            ssh.run(" ".join(args.args))
-            
-            if args.shutdown:
-                ssh.run("sudo shutdown now", warn = True)
+        try:
+            with start_vm(vm_data, shutdown_on_error = args.shutdown) as ssh:
+                ssh.run(" ".join(args.args))
+                
+                if args.shutdown:
+                    ssh.run("sudo shutdown now", warn = True)
+        
+        except Exception as e:
+            print("Failed to run command for VM: {}".format(vm_data['target']))
+            print(e)
 
 
 # If we've been invoked as a program, call main().    
