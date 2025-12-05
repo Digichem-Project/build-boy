@@ -1,145 +1,28 @@
 #!/usr/bin/env python3
 import sys
-from pathlib import Path
 import subprocess
-import time
 import datetime
-import copy
 import os
 
-import fabric
-
-from buildboy.util import update_repo, expand_path
-
+from buildboy.util import update_repo, expand_path, start_vm
 # These are the virtual machines we're going to be building on.
-vms = {
-    'CentOS-7.9': {
-        'target': 'CentOS-7.9',
-        'vm': '8bd62c88-86aa-4faa-9b6d-71d5305280d7',
-        'port': '2222',
-        'connect_kwargs': {}
-    },
-    'CentOS-8.5': {
-        'target': 'CentOS-8.5',
-        'vm': '4509aa09-d428-429a-bcfd-290672dbe6f3',
-        'port': '2223',
-        'connect_kwargs': {}
-    },
-    'CentOS-Stream-8': {
-        'target': 'CentOS-Stream-8',
-        'vm': '21141559-9433-4107-b628-2e91b2c83640',
-        'port': '2224',
-        'connect_kwargs': {}
-    },
-    'Rocky-Linux-9': {
-        'target': 'Rocky-Linux-9',
-        'vm': 'e6b4503f-99e6-4118-91bf-3a1cad51397c',
-        'port': '2225',
-        'connect_kwargs': {}
-    },
-    'Debian-Jessie': {
-        'target': 'Debian-Jessie',
-        'vm': '82b05661-19e8-494d-b8c0-a3e543333ef1',
-        'port': '2226',
-        # Needed to auth with rsa for some reason.
-        'connect_kwargs': {'disabled_algorithms': {'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']}}
-    },
-    'Debian-Stretch': {
-        'target': 'Debian-Stretch',
-        'vm': '0c8c1959-b590-45fb-a2d7-696eeef96273',
-        'port': '2227',
-        'connect_kwargs': {}
-    },
-    'Debian-Buster': {
-        'target': 'Debian-Buster',
-        'vm': '5ad0c9c3-e5b5-4b0c-a586-ce41192de566',
-        'port': '2228',
-        'connect_kwargs': {}
-    },
-    'Debian-Bullseye': {
-        'target': 'Debian-Bullseye',
-        'vm': '2b9d47ff-4365-4d33-9708-21eae54c76e8',
-        'port': '2229',
-        'connect_kwargs': {}
-    },
-    'Debian-Bookworm': {
-        'target': 'Debian-Bookworm',
-        'vm': '3458c148-618d-4ea2-8af9-8c75e797ba06',
-        'port': '2230',
-        'connect_kwargs': {}
-    }
-}
+from buildboy.vms import vms
 
 def do_build(vm_data):
     """"""
-    try:
-        # First, we need to wake up the VM.
-        print("Waking VM...")
-        subprocess.run([
-            'vboxmanage', 'startvm', vm_data['vm'], "--type=headless"
-        ], universal_newlines = True, check = True)
+    with start_vm(vm_data) as ssh:
+        # Check for updates to the local build-boy script.
+        print("Fetching updates...")
+        ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
 
-        # Some VMs (Rocky 9 in particular) take a lot of attempts to connect...
-        attempt = 0
-        exception = None
-        while attempt < 5:
-            try:
-                # Wait a little bit for the VM to start.
-                print("Waiting for boot...")
-                time.sleep(120)
+        # Call the local build-boy build script.
+        print("Running build...")
+        ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
 
-                # Get our connection options.
-                connect_kwargs = copy.copy(vm_data['connect_kwargs'])
-                # The PC just turned on, give it some time to wake-up:
-                connect_kwargs['timeout'] = 300 # 5 mins
-                connect_kwargs['banner_timeout'] = 300
-
-                # Next, connect with SSH.
-                print("Connecting to VM...")
-                with fabric.Connection(
-                    'localhost',
-                    user="digichem",
-                    port=vm_data['port'],
-                    connect_kwargs = connect_kwargs
-                ) as ssh:
-
-                    # Check for updates to the local build-boy script.
-                    print("Fetching updates...")
-                    ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
-
-                    # Call the local build-boy build script.
-                    print("Running build...")
-                    ssh.run('cd build-boy/Scripts/' + vm_data['target'] + " && ./build")
-
-                    # All done, make the VM go to bed.
-                    print("Shutting down VM...")
-                    ssh.run("sudo shutdown now", warn = True)
+        # All done, make the VM go to bed.
+        print("Shutting down VM...")
+        ssh.run("sudo shutdown now", warn = True)
                 
-                # All done.
-                exception = None
-                break
-
-            except ConnectionError as e:
-                attempt += 1
-                exception = e
-        
-        if exception:
-            raise exception
-    
-    except:
-        # Ask the VM to stop.
-        subprocess.run([
-           'vboxmanage', 'controlvm', vm_data['vm'], "acpipowerbutton"
-        ], universal_newlines = True, check = False)
-
-        time.sleep(10)
-
-        # Make sure it is dead.
-        subprocess.run([
-           'vboxmanage', 'controlvm', vm_data['vm'], "poweroff"
-        ], universal_newlines = True, check = False)
-
-        raise
 
 def main():
     print("--------------------------------------")
