@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import sys
+import argparse
+import math
+
+from buildboy.vms import vms
+from buildboy.util import start_vm
+
+def main():
+    """
+    """
+    parser = argparse.ArgumentParser(
+        prog = "bbcmd",
+        description = "Run a command on all VMs"
+    )
+
+    parser.add_argument('args', nargs = "*")
+    parser.add_argument('--shutdown', help = "Shutdown each VM when the command has finished", type = bool, default = True)
+    #parser.add_argument('--batch', help = "The number of VMs to start at a time", type = int, default = 3)
+
+    args = parser.parse_args()
+
+    #vm_datas = list(vms.values())
+    # Work through our virtual machines in batches (so we don't start them all at once).
+    #for batch_number in range(math.ceil(len(vm_datas) / args.batch) -1):
+    #   vm_batch = vm_datas[args.batch*batch_number:args.batch*batch_number+args.batch]
+
+    for vm_data in vms.values():
+        with start_vm(vm_data, shutdown_on_error = args.shutdown) as ssh:
+            ssh.run(" ".join(args.args))
+            
+            if args.shutdown:
+                ssh.run("sudo shutdown now", warn = True)
+
+
+# If we've been invoked as a program, call main().    
+if __name__ == '__main__':
+    sys.exit(main())
