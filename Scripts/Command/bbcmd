@@ -14,7 +14,7 @@ def main():
         description = "Run a command on all VMs"
     )
 
-    parser.add_argument('args', nargs = "*")
+    parser.add_argument('args', nargs = argparse.REMAINDER)
     parser.add_argument('--shutdown', help = "Shutdown each VM when the command has finished", type = bool, default = True)
     #parser.add_argument('--batch', help = "The number of VMs to start at a time", type = int, default = 3)
 
