@@ -52,11 +52,12 @@ def start_vm(vm_data, shutdown_on_error = True):
         # Some VMs (Rocky 9 in particular) take a lot of attempts to connect...
         attempt = 0
         exception = None
+
+        time.sleep(5)
         while attempt < 5:
             try:
-                # Wait a little bit for the VM to start.
-                print("Waiting for boot...")
-                time.sleep(120)
+                
+                
 
                 # Get our connection options.
                 connect_kwargs = copy.copy(vm_data['connect_kwargs'])
@@ -82,6 +83,10 @@ def start_vm(vm_data, shutdown_on_error = True):
             except ConnectionError as e:
                 attempt += 1
                 exception = e
+                
+                # Wait a little bit for the VM to start.
+                print("Waiting for boot...")
+                time.sleep(120)
         
         if exception:
             raise exception
