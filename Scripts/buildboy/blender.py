@@ -78,7 +78,10 @@ def build_blender(os_target, target = "4.4", basedir = "~/blender", branch = "bl
     # First, download batoms to a temp dir.
     with tempfile.TemporaryDirectory() as temp_dir:
         print("Downloading batoms...")
-        urllib.request.urlretrieve("https://github.com/beautiful-atoms/beautiful-atoms/archive/refs/heads/main.zip", Path(temp_dir, "batoms.zip"))
+        # Custom bugfix.
+        urllib.request.urlretrieve("https://github.com/Digichem-Project/beautiful-atoms/archive/refs/heads/feat/logging.zip", Path(temp_dir, "batoms.zip"))
+        # Official repo.
+        #urllib.request.urlretrieve("https://github.com/beautiful-atoms/beautiful-atoms/archive/refs/heads/main.zip", Path(temp_dir, "batoms.zip"))
 
         print("Extracting archive...")
         with zipfile.ZipFile(Path(temp_dir, "batoms.zip"), 'r') as zip_ref:
