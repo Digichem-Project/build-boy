@@ -56,9 +56,6 @@ def start_vm(vm_data, shutdown_on_error = True):
         time.sleep(5)
         while attempt < 5:
             try:
-                
-                
-
                 # Get our connection options.
                 connect_kwargs = copy.copy(vm_data['connect_kwargs'])
                 # The PC just turned on, give it some time to wake-up:
