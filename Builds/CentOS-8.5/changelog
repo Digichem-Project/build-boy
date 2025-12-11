@@ -1,18 +1,15 @@
-### Changes in this version (7.2.1) since 7.2.0
+### Changes in this version (7.2.2) since 7.2.1
+
+#### New features:
+ - [2025-12-05:]: switched from old utcnow() to now(datetime.timezone.utc)
 
 #### Bugfixes:
- - [2025-12-03:]: better error reporting when specifying a non-existant job ID
- - [2025-12-03:]: fixed calling resolve() on Gaussian root, which interfers with symlink spoofing
- - [2025-12-03:]: added workaround for PySCF issue #3061
-
-#### Documentation changes:
- - [2025-11-19:]: another attempt to fix github worklow for docs
- - [2025-11-19:]: fixed workflow not fetching tags
- - [2025-11-19:]: auto changelog now starts at v6
- - [2025-11-19:]: auto changelog no longer cuts off beginning of non-semantic commits
- - [2025-11-19:]: added changelog to docs (auto generated)
+ - [2025-12-11:]: added fix for machines that have slightly slow clocks
+ - [2025-12-05:]: fixed passing wrong keyword arg to parse_calculation
 
 #### Miscellaneous:
+ - [2025-12-11:]: update last modified
+ - [2025-12-10:]: update last modified
+ - [2025-12-10:]: bumped to 7.2.2
+ - [2025-12-05:]: expanded depends
  - [2025-12-03:]: update last modified
- - [2025-12-03:]: bumped to 7.2.1
- - [2025-11-19:]: update last modified
