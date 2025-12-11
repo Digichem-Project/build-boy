@@ -6,7 +6,6 @@ from contextlib import contextmanager
 from pathlib import Path
 import copy
 import time
-import fabric
 
 def expand_path(pth):
     """Perform shell-like expansion on a path."""
@@ -42,6 +41,8 @@ def update_repo(repo_path, branch = "main", upstream = "origin"):
 @contextmanager
 def start_vm(vm_data, shutdown_on_error = True):
     """Start a virtual machine, returning an SSH object that can be used to communicate with it."""
+    import fabric
+    
     try:
         # First, we need to wake up the VM.
         print("Waking VM...")
