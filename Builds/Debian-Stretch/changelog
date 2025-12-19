@@ -1,33 +1,8 @@
-### Changes in this version (7.3.0) since 7.2.2
-
-#### New features:
- - [%as:]: NMR table is now sorted by groups
- - [%as:]: added number of atoms to NMR coupling table
- - [%as:]: added distance threshold for NMR coupling (Orca and PySCF only)
- - [%as:]: added NMR bond distance to NMR table
- - [%as:]: added NMR table to report
- - [%as:]: added Turbomole NMR configs
- - [%as:]: added NMR validation function to check that atoms have been selected
- - [%as:]: added support for Turbomole NMR
- - [%as:]: added support for Gaussian NMR
- - [%as:]: added NMR support for PySCF
+### Changes in this version (7.3.1) since 7.3.0
 
 #### Bugfixes:
- - [%as:]: fixed formatting issues in NMR table
- - [%as:]: fixed NMR table overflowing sometimes
- - [%as:]: fixed crash when generating PySCF reports from saved results
- - [%as:]: fixed always adding coupling with PySCF NMR
- - [%as:]: fixed not strignying
- - [%as:]: fixed active_nmr_indices returning nothing
- - [%as:]: changed q for white space in nmr.mako to possibly solve missing ncoup section
- - [%as:]: fixed typo in nmr.mako
- - [%as:]: fixed active_nmr_indices referring to calculation
-
-#### Testing updates:
- - [%as:]: added NMR test for PySCF
+ - [%as:]: updated bundled cclib version to include missing NMR support
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: fixed typo
- - [%as:]: cleaned up debugging code
- - [%as:]: bumped to 7.3.0
+ - [%as:]: update last modified
