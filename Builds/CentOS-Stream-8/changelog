@@ -1,15 +1,33 @@
-### Changes in this version (7.2.2) since 7.2.1
+### Changes in this version (7.3.0) since 7.2.2
 
 #### New features:
- - [2025-12-05:]: switched from old utcnow() to now(datetime.timezone.utc)
+ - [2025-12-18:]: NMR table is now sorted by groups
+ - [2025-12-12:]: added number of atoms to NMR coupling table
+ - [2025-12-12:]: added distance threshold for NMR coupling (Orca and PySCF only)
+ - [2025-12-11:]: added NMR bond distance to NMR table
+ - [2025-11-28:]: added NMR table to report
+ - [2025-11-21:]: added Turbomole NMR configs
+ - [2025-11-21:]: added NMR validation function to check that atoms have been selected
+ - [2025-11-21:]: added support for Turbomole NMR
+ - [2025-11-21:]: added support for Gaussian NMR
+ - [2025-11-21:]: added NMR support for PySCF
 
 #### Bugfixes:
- - [2025-12-11:]: added fix for machines that have slightly slow clocks
- - [2025-12-05:]: fixed passing wrong keyword arg to parse_calculation
+ - [2025-12-10:]: fixed formatting issues in NMR table
+ - [2025-12-09:]: fixed NMR table overflowing sometimes
+ - [2025-12-09:]: fixed crash when generating PySCF reports from saved results
+ - [2025-12-04:]: fixed always adding coupling with PySCF NMR
+ - [2025-11-21:]: fixed not strignying
+ - [2025-11-21:]: fixed active_nmr_indices returning nothing
+ - [2025-11-21:]: changed q for white space in nmr.mako to possibly solve missing ncoup section
+ - [2025-11-21:]: fixed typo in nmr.mako
+ - [2025-11-21:]: fixed active_nmr_indices referring to calculation
+
+#### Testing updates:
+ - [2025-12-08:]: added NMR test for PySCF
 
 #### Miscellaneous:
- - [2025-12-11:]: update last modified
- - [2025-12-10:]: update last modified
- - [2025-12-10:]: bumped to 7.2.2
- - [2025-12-05:]: expanded depends
- - [2025-12-03:]: update last modified
+ - [2025-12-18:]: update last modified
+ - [2025-12-10:]: fixed typo
+ - [2025-11-28:]: cleaned up debugging code
+ - [2025-12-03:]: bumped to 7.3.0
