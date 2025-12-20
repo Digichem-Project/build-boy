@@ -1,8 +1,9 @@
-### Changes in this version (7.3.1) since 7.3.0
+### Changes in this version (7.3.2) since 7.3.1
 
 #### Bugfixes:
- - [%as:]: updated bundled cclib version to include missing NMR support
+ - [%as:]: added missing libraries for PySCF
 
 #### Miscellaneous:
  - [%as:]: update last modified
+ - [%as:]: bumped to 7.3.2
  - [%as:]: update last modified
