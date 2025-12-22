@@ -34,7 +34,7 @@ Suitable for Fedora, CentOS, CentOS Stream, Redhat, Rocky Linux, and other relat
 |--------|---------------------------|---------------------------------|
 | Rocky Linux 9 | <!-- Rocky-Linux-9 --> [Download Digichem v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-Rocky-Linux-9/digichem.7.3.2.Rocky-Linux-9-blender.tar.gz) | [Download Digichem Lite v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-Rocky-Linux-9/digichem.7.3.2.Rocky-Linux-9.tar.gz) |
 | CentOS Stream 8 | <!-- CentOS-Stream-8 --> [Download Digichem v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-CentOS-Stream-8/digichem.7.3.2.CentOS-Stream-8-blender.tar.gz) | [Download Digichem Lite v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-CentOS-Stream-8/digichem.7.3.2.CentOS-Stream-8.tar.gz) |
-| CentOS 8.5 | <!-- CentOS-8.5 --> [Download Digichem v7.3.1](https://github.com/Digichem-Project/build-boy/releases/download/7.3.1-CentOS-8.5/digichem.7.3.1.CentOS-8.5-blender.tar.gz) | [Download Digichem Lite v7.3.1](https://github.com/Digichem-Project/build-boy/releases/download/7.3.1-CentOS-8.5/digichem.7.3.1.CentOS-8.5.tar.gz) |
+| CentOS 8.5 | <!-- CentOS-8.5 --> [Download Digichem v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-CentOS-8.5/digichem.7.3.2.CentOS-8.5-blender.tar.gz) | [Download Digichem Lite v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-CentOS-8.5/digichem.7.3.2.CentOS-8.5.tar.gz) |
 | CentOS 7.9 | <!-- CentOS-7.9 --> N/A | [Download Digichem Lite v7.3.2](https://github.com/Digichem-Project/build-boy/releases/download/7.3.2-CentOS-7.9/digichem.7.3.2.CentOS-7.9.tar.gz) |
 
 ### Debian Based
