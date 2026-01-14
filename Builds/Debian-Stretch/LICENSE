@@ -1,4 +1,4 @@
-Copyright 2025 Digichem
+Copyright 2026 Digichem
 All Rights Reserved
 
 This software is proprietary. You (the user) have no permission to use or 
