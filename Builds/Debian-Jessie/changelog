@@ -1,9 +1,22 @@
-### Changes in this version (7.3.2) since 7.3.1
+### Changes in this version (7.3.3) since 7.3.2
 
 #### Bugfixes:
- - [%as:]: added missing libraries for PySCF
+ - [%as:]: fix for passing wrong argument to database in sync
+ - [%as:]: added fix for some Torque versions not supporting stream redirection (#195)
+ - [%as:]: added fix for failing to discover PBS queues (#194)
+ - [%as:]: increased server worker keep alive so longer running tasks aren't killed early
+ - [%as:]: fixed slow db result performance by removing unecessary sort on V0
+ - [%as:]: patch for mongita not supporting skip with no sort
+ - [%as:]: added performance patch to mongita to not needlessly deepcopy results before returning
+
+#### Testing updates:
+ - [%as:]: atoms:alignment_duration is no longer compared in DB tests
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped to 7.3.2
+ - [%as:]: bumped version to 7.3.3
+ - [%as:]: update last modified
+ - [%as:]: copyright to 2026
+ - [%as:]: update last modified
+ - [%as:]: modifications to build script to try and save file space
  - [%as:]: update last modified
