@@ -98,7 +98,7 @@ class Builder():
                 # As well as any assets we want included.
                 asset_dir / "CENSO/censo",
                 asset_dir / "CREST/crest",
-                asset_dir / "xTB/xTB",
+                asset_dir / "xTB/xtb",
             ]
         )
 
