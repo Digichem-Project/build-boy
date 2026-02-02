@@ -1,7 +1,5 @@
-### Changes in this version (7.4.0-pre.2) since 7.4.0-pre.1
-
-#### New features:
- - [2026-02-02:]: added new asset binaries to install script
+### Changes in this version (7.4.0-pre.3) since 7.4.0-pre.2
 
 #### Miscellaneous:
+ - [2026-02-02:]: bumped pre-release to 3
  - [2026-02-02:]: bumped pre-release to 2
