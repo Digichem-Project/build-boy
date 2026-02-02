@@ -107,7 +107,7 @@ Build-boy itself is licensed under the permissive, open-source BSD 3-clause lice
 In summary, you are free to do whatever you want to with the Build-boy code, but you cannot claim
 affiliation with Digichem.
 
-The Digichem logo and branding is Copyright Digichem 2025, you may not use them in any way (although you are welcome to look at them).
+The Digichem logo and branding is Copyright Digichem 2026, you may not use them in any way (although you are welcome to look at them).
 
 ### External libraries
 
