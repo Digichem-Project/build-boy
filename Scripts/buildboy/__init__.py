@@ -8,7 +8,7 @@ import json
 import logging
 import importlib
 
-from buildboy.util import update_repo, expand_path
+from buildboy.util import update_repo, expand_path, asset_dir
 from buildboy.blender import build_blender, grab_blender
 
 class Builder():
@@ -92,7 +92,14 @@ class Builder():
         return self.build_target(
             "~/silico",
             branch = branch,
-            freezeargs = [self.oprattle_path['dir']]
+            freezeargs = [
+                # Pass along the oprattle dir so that gets bundled.
+                self.oprattle_path['dir'],
+                # As well as any assets we want included.
+                asset_dir / "CENSO/censo",
+                asset_dir / "CREST/crest",
+                asset_dir / "xTB/xTB",
+            ]
         )
 
     def prep_repos(self, silico_branch = "build", digichem_branch = "main"):
@@ -205,7 +212,7 @@ class Builder():
         print("--------------------")
         print("Building digichem...")
         print("--------------------")
-        silico_paths = self.build_silico(branch =branch)
+        silico_paths = self.build_silico(branch = branch)
 
         print("-------------------")
         print("Building blender...")
