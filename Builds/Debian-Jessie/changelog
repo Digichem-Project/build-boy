@@ -1,22 +1,99 @@
-### Changes in this version (7.3.3) since 7.3.2
+### Changes in this version (7.4.2) since 7.3.3
+
+#### New features:
+ - [%as:]: added new asset binaries to install script
+ - [%as:]: added new assets to freeze script
+ - [%as:]: expanded available Crest definitions to include more xtb methods and solvents
+ - [%as:]: CENSO can now write a single combined report from all sub-molecules
+ - [%as:]: added calc_output_file_path to CENSO
+ - [%as:]: num_cpu and memory are now used in CENSO reports
+ - [%as:]: added inital capability to generate reports from CENSO calcs
+ - [%as:]: switched some defaults for CENSO
+ - [%as:]: CENSO will now use the first available Orca/Turbomole calculation when none are specified
+ - [%as:]: Method_target_options now support a class to match against
+ - [%as:]: expanded default supported calculation types for CENSO and CREST
+ - [%as:]: added active_directory to better keep track of calculation output
+ - [%as:]: added initial implementation of multi_molecule to allow some calculations to submit multiple molecules to a single calc
+ - [%as:]: added general support for calculation methods spawning multiple children
+ - [%as:]: added initial functionality to allow methods to spawn multiple child calcs
+ - [%as:]: added result parsing for CENSO
+ - [%as:]: CENSO can now take a conformers file from a previous CREST calc
+ - [%as:]: added initial support for Censo
+ - [%as:]: added get_result() method for CREST
+ - [%as:]: added some sensible defaults for crest
+ - [%as:]: added Solvation_calculation_mixin to Crest
+ - [%as:]: added initial config for Crest
+ - [%as:]: added initial support for submitting CREST calculations
+ - [%as:]: added better error messages for when a license has expired
 
 #### Bugfixes:
- - [%as:]: fix for passing wrong argument to database in sync
- - [%as:]: added fix for some Torque versions not supporting stream redirection (#195)
- - [%as:]: added fix for failing to discover PBS queues (#194)
- - [%as:]: increased server worker keep alive so longer running tasks aren't killed early
- - [%as:]: fixed slow db result performance by removing unecessary sort on V0
- - [%as:]: patch for mongita not supporting skip with no sort
- - [%as:]: added performance patch to mongita to not needlessly deepcopy results before returning
+ - [%as:]: added missing libuuid lib from rdkit.libs
+ - [%as:]: fixed missing lib from rdkit
+ - [%as:]: fixed not being able to describe Method_target_options that have a default set
+ - [%as:]: removed synlinks from freeze
+ - [%as:]: fixed parsing sub molecules in CENSO with solvent
+ - [%as:]: fixe crest methods being duplicates of each other
+ - [%as:]: fixed dump_func of Method_target_option
+ - [%as:]: fixed some job records not being available because the ID is the 'wrong' type
+ - [%as:]: fixed combined censo report getting lost in the scratch dir
+ - [%as:]: fixed combined CENSO report not being able to find child reports
+ - [%as:]: fixed not being able to find calc output from Turbomole CENSO calcs
+ - [%as:]: fixed not passing memory
+ - [%as:]: fixed not being able to generate Orca images from a CENSO report
+ - [%as:]: fixed using calculation.name instead of calculation.molecule_name
+ - [%as:]: added fix for CENSO orca calcs not being able to find calc output
+ - [%as:]: fixed not passing xtb_executable as absolute path in CENSO
+ - [%as:]: fixed calculation.next no longer being available for multi reports
+ - [%as:]: fixed CENSO turbomole solvent method not in lowercase
+ - [%as:]: fixed not using lower-case solvent method names in CENSO
+ - [%as:]: fixed accessing the 'engine' sup option as an attribute
+ - [%as:]: fixed not converting solvent methods for CENSO
+ - [%as:]: added missing solvent models from CENSO calcs
+ - [%as:]: fixed SLURM submissions using the previous slurm ID as the scratch folder name
+ - [%as:]: fixed missing name in si_iter_from_xyz
+ - [%as:]: fixed passing next_methods to Digichem_coords instead of prepare
+ - [%as:]: fixed not using prepare_from_calculation(s)
+ - [%as:]: fixed PySCF correlation basis sets
+ - [%as:]: fixed not submitting next calcs in CENSO
+ - [%as:]: fixed passing gen3D arg to si_iter_from_xyz
+ - [%as:]: fixed output_coords_list not accounting for charge and mult
+ - [%as:]: fixed CENSO using the input dir as the working dir
+ - [%as:]: fixed not using orca absolute path in CENSO wrapper
+ - [%as:]: added fix for method editor crash if it contains program options
+ - [%as:]: fixed log file location for CENSO
+ - [%as:]: fixed not specifying path to turbomole template include
+ - [%as:]: fixed typo on censo sub program definitions
+ - [%as:]: fixed wrong paths in Crest program
+ - [%as:]: fixed not actually returning anything from crest args()
+ - [%as:]: fixed not setting Crest calc class handle
+ - [%as:]: fixed invalid escape sequences in Silico_directory
+ - [%as:]: fixed nonsense error message for validate_performance
 
-#### Testing updates:
- - [%as:]: atoms:alignment_duration is no longer compared in DB tests
+#### Documentation changes:
+ - [%as:]: removed empty pages
 
 #### Miscellaneous:
+ - [%as:]: bumped to 7.4.2
+ - [%as:]: Bumped to 7.4.1
+ - [%as:]: bumped last modified
+ - [%as:]: set version to 7.4.0
+ - [%as:]: bumped pre-release to 3
+ - [%as:]: bumped pre-release to 2
+ - [%as:]: added pypdf to environment.yml
+ - [%as:]: bumped version to 7.4.0-pre.1
+ - [%as:]: reverted back to 3.9 in github actions
+ - [%as:]: added support for either importlib.resources or importlib_resources
+ - [%as:]: expanded depends
+ - [%as:]: replaced importlib_resources with importlib.resources
+ - [%as:]: updated workflows to 3.12
+ - [%as:]: renamed optimization to optimisation in CENSO
+ - [%as:]: fixed a few typos
+ - [%as:]: removed unused code
+ - [%as:]: removed old code commets
+ - [%as:]: moved solvation options into separate mixin
+ - [%as:]: improved available mixin classes for new calculation types
+ - [%as:]: bumped version to 7.3.4
  - [%as:]: update last modified
- - [%as:]: bumped version to 7.3.3
  - [%as:]: update last modified
- - [%as:]: copyright to 2026
- - [%as:]: update last modified
- - [%as:]: modifications to build script to try and save file space
+ - [%as:]: updates dependencies to include sphinx
  - [%as:]: update last modified
