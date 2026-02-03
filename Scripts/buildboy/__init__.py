@@ -8,7 +8,7 @@ import json
 import logging
 import importlib
 
-from buildboy.util import update_repo, expand_path
+from buildboy.util import update_repo, expand_path, asset_dir
 from buildboy.blender import build_blender, grab_blender
 
 class Builder():
@@ -92,7 +92,14 @@ class Builder():
         return self.build_target(
             "~/silico",
             branch = branch,
-            freezeargs = [self.oprattle_path['dir']]
+            freezeargs = [
+                # Pass along the oprattle dir so that gets bundled.
+                self.oprattle_path['dir'],
+                # As well as any assets we want included.
+                asset_dir / "CENSO/censo",
+                asset_dir / "CREST/crest",
+                asset_dir / "xTB/xtb",
+            ]
         )
 
     def prep_repos(self, silico_branch = "build", digichem_branch = "main"):
@@ -154,26 +161,21 @@ class Builder():
             last_commit = self.last_data.get(branch, {}).get('release_commit', "")
             self.last_version = self.last_data.get(branch, {}).get('release_version', "")
 
-        # Get changes from git
-        # First, get time of last commit.
-        last_commit_time = subprocess.run([
-            'git', 'show', '--no-patch', '--format=%ci', last_commit
-        ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
+        try:
+            # Get changes from git
+            # First, get time of last commit.
+            last_commit_time = subprocess.run([
+                'git', 'show', '--no-patch', '--format=%ci', last_commit
+            ], capture_output = True, universal_newlines = True, check = True).stdout.strip()
 
-        # TODO: This might be picking up one commit too many?
-        self.raw_changes = subprocess.run([
-            'git', 'log', '--pretty=format:%as: %s', '--since', last_commit_time
-        ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
+            # TODO: This might be picking up one commit too many?
+            self.raw_changes = subprocess.run([
+                'git', 'log', '--pretty=format:%as: %s', '--since', last_commit_time
+            ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
         
-        # This doesn't work with merge commits.
-        # self.raw_changes = subprocess.run([
-        #     'git', 'log', '--pretty=format:%as: %s', '--ancestry-path', '{}..{}'.format(
-        #         # Old version.
-        #         last_commit,
-        #         # New version.
-        #         "HEAD"
-        #     )
-        #     ], capture_output = True, universal_newlines = True, check = True).stdout.strip().split("\n")
+        except Exception as e:
+            logging.error("Could not fetch version changes", exc_info = True)
+            self.raw_changes = []
     
 
     def build(self, branch = "build", digichem_branch = "main", blender = None, download_blender = False):
@@ -205,7 +207,7 @@ class Builder():
         print("--------------------")
         print("Building digichem...")
         print("--------------------")
-        silico_paths = self.build_silico(branch =branch)
+        silico_paths = self.build_silico(branch = branch)
 
         print("-------------------")
         print("Building blender...")

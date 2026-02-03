@@ -104,3 +104,6 @@ def start_vm(vm_data, shutdown_on_error = True):
             ], universal_newlines = True, check = False)
 
         raise
+
+import buildboy
+asset_dir = Path(buildboy.__file__).parent.parent.parent / "Assets"
