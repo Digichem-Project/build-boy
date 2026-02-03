@@ -1,10 +1,9 @@
-### Changes in this version (7.4.2) since 7.4.0
+### Changes in this version (7.4.3) since 7.4.2
 
 #### Bugfixes:
+ - [%as:]: fixed sometimes not being able to generate reports with Orca CENSO calcs
+ - [%as:]: fixed using def2-mTZVPP basis set with Turbomole Censo calcs
  - [%as:]: added missing libuuid lib from rdkit.libs
- - [%as:]: fixed missing lib from rdkit
- - [%as:]: fixed not being able to describe Method_target_options that have a default set
 
 #### Miscellaneous:
- - [%as:]: bumped to 7.4.2
- - [%as:]: Bumped to 7.4.1
+ - [%as:]: bumped version to 7.4.3
