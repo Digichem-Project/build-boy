@@ -1,6 +1,53 @@
-### Changes in this version (7.4.3) since 7.3.3
+### Changes in this version (8.0.0-pre.1) since 7.0.3-pre.1
 
 #### New features:
+ - [2026-02-05:]: switched to async version of async_dir_size
+ - [2026-01-22:]: the directories/usage endpoint now returns user consumed file space
+ - [2026-01-22:]: added better error reporting when fetching a result that doesn't exist
+ - [2026-01-14:]: added default search limit to help text
+ - [2026-01-09:]: the result/all endpoint now returns all fields (not just metadata) again
+ - [2026-01-09:]: removed unsupported formula attribute from si endpoints
+ - [2026-01-09:]: added formula property to v1 molecule endpoint
+ - [2026-01-08:]: tweaked molecule conversion endpoints to deal with files directly
+ - [2026-01-07:]: get_all_results now only returns metadata
+ - [2026-01-06:]: removed jobs/files/archive endpoint as no-longer required
+ - [2026-01-06:]: added support for the gzip middleware to reduce transfer size
+ - [2026-01-05:]: better headers for compressed files
+ - [2026-01-05:]: added .sir, .si, and .sim to list of supported MIME types
+ - [2025-12-04:]: added better error reporting for molecule conversions
+ - [2025-11-12:]: added endpoints for queues/programs discover
+ - [2025-11-12:]: added is_running() method to Discover class
+ - [2025-11-12:]: added v1 endpoint for directory usage
+ - [2025-11-12:]: moved general Relationship schema model to separate file
+ - [2025-11-11:]: added missing endpoint for v1/results/{id}
+ - [2025-11-11:]: API links now use V1 prefix
+ - [2025-11-11:]: removed trailing slashes from endpoints
+ - [2025-11-11:]: API return types are now single tense
+ - [2025-11-11:]: added better detection of media-types for file endpoints, and added content-length header where appropriate
+ - [2025-11-11:]: added stat_file() method to Jobs
+ - [2025-11-11:]: added endpoints for file downloads
+ - [2025-11-11:]: limited types for Job type
+ - [2025-11-11:]: added v1 endpoints for queues
+ - [2025-11-07:]: added molecules and results routes
+ - [2025-11-07:]: added initial endpoint for V1 results
+ - [2025-11-07:]: added V1 endpoints for molecules
+ - [2025-11-07:]: tightened up allowed types for method schemas
+ - [2025-11-07:]: removed unused method endpoint
+ - [2025-11-07:]: added endpoint for fetching methods
+ - [2025-11-07:]: made method node endpoint more JSON API compliant
+ - [2025-11-06:]: improved method nodes endpoint
+ - [2025-11-05:]: started adding v1 API for methods
+ - [2025-11-04:]: added v1 endpoint for settings
+ - [2025-11-04:]: added job/matrix end point for submitting batch jobs
+ - [2025-10-28:]: initial implementation of Job API
+ - [2025-10-28:]: submit manager now returns job IDs
+ - [2025-10-28:]: added initial implementation of v1 API for jobs
+ - [2025-10-27:]: split api into versions
+ - [2026-01-07:]: added timeout_graceful_shutdown config for server
+ - [2026-02-05:]: added the no_edit property to deprecated options
+ - [2026-02-05:]: removed cubegen and formchk external options
+ - [2026-02-05:]: deprecated old report/program options in config (appropriate programs are now automatically retreived from the lib)
+ - [2026-02-05:]: added new get_program() method to library
  - [2026-02-02:]: added new asset binaries to install script
  - [2026-02-02:]: added new assets to freeze script
  - [2026-02-02:]: expanded available Crest definitions to include more xtb methods and solvents
@@ -25,8 +72,44 @@
  - [2026-01-28:]: added initial config for Crest
  - [2026-01-27:]: added initial support for submitting CREST calculations
  - [2026-01-27:]: added better error messages for when a license has expired
+ - [2025-12-18:]: NMR table is now sorted by groups
+ - [2025-12-12:]: added number of atoms to NMR coupling table
+ - [2025-12-12:]: added distance threshold for NMR coupling (Orca and PySCF only)
+ - [2025-12-11:]: added NMR bond distance to NMR table
+ - [2025-11-28:]: added NMR table to report
+ - [2025-11-21:]: added Turbomole NMR configs
+ - [2025-11-21:]: added NMR validation function to check that atoms have been selected
+ - [2025-11-21:]: added support for Turbomole NMR
+ - [2025-11-21:]: added support for Gaussian NMR
+ - [2025-11-21:]: added NMR support for PySCF
+ - [2025-12-05:]: switched from old utcnow() to now(datetime.timezone.utc)
+ - [2025-11-13:]: added better description for the auto_path option
+ - [2025-11-13:]: added support for automatically determining the scratch location
+ - [2025-11-13:]: added links dir to store spoofed progam installs
+ - [2025-11-13:]: added initial support for non-standard Gaussian installs
+ - [2025-11-10:]: added some initial groundwork for one-day supporting native mongita queries
+ - [2025-11-10:]: database search commands now accept skip & limit keywords
 
 #### Bugfixes:
+ - [2026-02-09:]: fixed 500 errors because of object ids (more work to do here)
+ - [2026-01-23:]: added missing report_path attr to Jobs
+ - [2026-01-23:]: fixed v0 job/patch endpoint
+ - [2026-01-22:]: fixed empty data returned from queues/usage
+ - [2026-01-14:]: fixed default version string
+ - [2026-01-14:]: added missing version attribute to si file schemas
+ - [2026-01-14:]: fixed jobArray over jobMatrix
+ - [2026-01-14:]: removed now uneccessary molecule.pop(formula) from endpoints
+ - [2026-01-12:]: fixed slow db result performance by removing unecessary sort
+ - [2026-01-09:]: included date[after] param in pagination links for result endpoint
+ - [2026-01-07:]: updated method code for API tests
+ - [2025-12-03:]: fixed /v1/methods/actions/parse
+ - [2025-12-03:]: fixed name not being optional in data argument of /v1/methods/actions/parse
+ - [2025-12-03:]: fixed method indices expected to be str not int
+ - [2025-11-14:]: fixed job endpoints returning wrong links
+ - [2025-11-04:]: fixed parallel destination using wrong digichem command
+ - [2026-01-07:]: added fix for server processes sometimes hanging forever on shutdown
+ - [2026-02-06:]: fixed not handling Gaussian root correctly sometimes
+ - [2026-02-05:]: removed leftover code
  - [2026-02-03:]: fixed sometimes not being able to generate reports with Orca CENSO calcs
  - [2026-02-03:]: fixed using def2-mTZVPP basis set with Turbomole Censo calcs
  - [2026-02-03:]: added missing libuuid lib from rdkit.libs
@@ -70,11 +153,83 @@
  - [2026-01-28:]: fixed not setting Crest calc class handle
  - [2026-01-28:]: fixed invalid escape sequences in Silico_directory
  - [2026-01-28:]: fixed nonsense error message for validate_performance
+ - [2026-01-14:]: fix for passing wrong argument to database in sync
+ - [2026-01-14:]: added fix for some Torque versions not supporting stream redirection (#195)
+ - [2026-01-14:]: added fix for failing to discover PBS queues (#194)
+ - [2025-12-23:]: increased server worker keep alive so longer running tasks aren't killed early
+ - [2026-01-14:]: fixed slow db result performance by removing unecessary sort on V0
+ - [2026-01-12:]: patch for mongita not supporting skip with no sort
+ - [2026-01-12:]: added performance patch to mongita to not needlessly deepcopy results before returning
+ - [2026-01-09:]: fixed needlessly recreating DB index on every open
+ - [2025-12-23:]: increased server worker keep alive so longer running tasks aren't killed early
+ - [2025-12-20:]: added missing libraries for PySCF
+ - [2025-12-19:]: updated bundled cclib version to include missing NMR support
+ - [2025-12-10:]: fixed formatting issues in NMR table
+ - [2025-12-09:]: fixed NMR table overflowing sometimes
+ - [2025-12-09:]: fixed crash when generating PySCF reports from saved results
+ - [2025-12-04:]: fixed always adding coupling with PySCF NMR
+ - [2025-11-21:]: fixed not strignying
+ - [2025-11-21:]: fixed active_nmr_indices returning nothing
+ - [2025-11-21:]: changed q for white space in nmr.mako to possibly solve missing ncoup section
+ - [2025-11-21:]: fixed typo in nmr.mako
+ - [2025-11-21:]: fixed active_nmr_indices referring to calculation
+ - [2025-12-11:]: added fix for machines that have slightly slow clocks
+ - [2025-12-05:]: fixed passing wrong keyword arg to parse_calculation
+ - [2025-12-03:]: better error reporting when specifying a non-existant job ID
+ - [2025-12-03:]: fixed calling resolve() on Gaussian root, which interfers with symlink spoofing
+ - [2025-12-03:]: added workaround for PySCF issue #3061
 
 #### Documentation changes:
+ - [2026-02-11:]: reordered docs for easier readability
+ - [2026-02-11:]: added documentation for Justus 2
  - [2026-01-19:]: removed empty pages
+ - [2025-11-19:]: another attempt to fix github worklow for docs
+ - [2025-11-19:]: fixed workflow not fetching tags
+ - [2025-11-19:]: auto changelog now starts at v6
+ - [2025-11-19:]: auto changelog no longer cuts off beginning of non-semantic commits
+ - [2025-11-19:]: added changelog to docs (auto generated)
+ - [2025-11-13:]: added documentation for logging on to Compute Canada
+
+#### Testing updates:
+ - [2026-01-08:]: added tests for converting text molecule files submitted as binary
+ - [2026-01-06:]: added test for gzip API
+ - [2026-01-05:]: added test for job files
+ - [2025-12-12:]: added test for bulk API results
+ - [2025-12-05:]: finished test for result API
+ - [2025-12-05:]: added tests for fetching results with the API
+ - [2025-12-04:]: added test for queues API
+ - [2025-12-04:]: fixed missing exception in API tests
+ - [2025-12-04:]: added tests for API molecule conversions
+ - [2025-12-04:]: added better error reporting for API tests
+ - [2025-12-03:]: added test for API v1 method parsing
+ - [2025-12-03:]: added more tests for API
+ - [2025-12-03:]: split API job tests
+ - [2025-11-17:]: added initial test for job update
+ - [2025-11-14:]: added initial test for jobs endpoint
+ - [2025-07-02:]: atoms:alignment_duration is no longer compared in DB tests
+ - [2025-12-08:]: added NMR test for PySCF
+ - [2025-11-10:]: added test for database skipping and limiting
 
 #### Miscellaneous:
+ - [2026-02-05:]: updated imports for v8.x
+ - [2026-01-14:]: minor refactor to Table dumpers; tabulate_data is now a generator
+ - [2026-01-14:]: swapped to pip rdkit over conda as more up to date
+ - [2026-01-07:]: removed unused imports
+ - [2025-12-04:]: removed unused imports
+ - [2025-11-17:]: moved api from data to server
+ - [2025-11-17:]: added hidden import for silico.data.server.app
+ - [2025-11-17:]: added some typing for Server methods
+ - [2025-11-14:]: removed unused imports in directories endpoint
+ - [2025-11-07:]: removed duplicate molecule definition from job endpoint
+ - [2025-11-07:]: removed unused imports
+ - [2026-02-05:]: bumped version to 8.0.0
+ - [2026-02-05:]: various refactoring to streamline imports
+ - [2026-02-05:]: moved job status to new file
+ - [2026-02-05:]: moved describe_record() to result
+ - [2026-02-05:]: moved get_server import in config
+ - [2026-02-11:]: added missing apt-get update
+ - [2026-02-11:]: updated lingering copyright references to 2025
+ - [2026-02-11:]: added missing apt-get update from workflows
  - [2026-02-03:]: bumped version to 7.4.3
  - [2026-02-03:]: bumped to 7.4.2
  - [2026-02-03:]: Bumped to 7.4.1
@@ -100,3 +255,25 @@
  - [2026-01-19:]: update last modified
  - [2026-01-19:]: updates dependencies to include sphinx
  - [2026-01-14:]: update last modified
+ - [2026-01-14:]: bumped version to 7.3.3
+ - [2026-01-05:]: update last modified
+ - [2026-01-05:]: copyright to 2026
+ - [2025-12-21:]: update last modified
+ - [2025-12-21:]: modifications to build script to try and save file space
+ - [2025-12-20:]: update last modified
+ - [2025-12-20:]: bumped to 7.3.2
+ - [2025-12-19:]: update last modified
+ - [2025-12-18:]: update last modified
+ - [2025-12-10:]: fixed typo
+ - [2025-11-28:]: cleaned up debugging code
+ - [2025-12-03:]: bumped to 7.3.0
+ - [2025-12-11:]: update last modified
+ - [2025-12-10:]: update last modified
+ - [2025-12-10:]: bumped to 7.2.2
+ - [2025-12-05:]: expanded depends
+ - [2025-12-03:]: bumped to 7.2.1
+ - [2025-11-19:]: update last modified
+ - [2025-11-18:]: update last modified
+ - [2025-11-17:]: bumped to v7.2.0
+ - [2025-11-13:]: update last modified
+ - [2025-11-13:]: bumped version to 7.1.0
