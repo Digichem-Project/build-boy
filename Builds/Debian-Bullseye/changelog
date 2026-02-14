@@ -1,13 +1,279 @@
-### Changes in this version (7.4.3) since 7.4.0
+### Changes in this version (8.0.0-pre.1) since 7.0.3-pre.1
+
+#### New features:
+ - [2026-02-05:]: switched to async version of async_dir_size
+ - [2026-01-22:]: the directories/usage endpoint now returns user consumed file space
+ - [2026-01-22:]: added better error reporting when fetching a result that doesn't exist
+ - [2026-01-14:]: added default search limit to help text
+ - [2026-01-09:]: the result/all endpoint now returns all fields (not just metadata) again
+ - [2026-01-09:]: removed unsupported formula attribute from si endpoints
+ - [2026-01-09:]: added formula property to v1 molecule endpoint
+ - [2026-01-08:]: tweaked molecule conversion endpoints to deal with files directly
+ - [2026-01-07:]: get_all_results now only returns metadata
+ - [2026-01-06:]: removed jobs/files/archive endpoint as no-longer required
+ - [2026-01-06:]: added support for the gzip middleware to reduce transfer size
+ - [2026-01-05:]: better headers for compressed files
+ - [2026-01-05:]: added .sir, .si, and .sim to list of supported MIME types
+ - [2025-12-04:]: added better error reporting for molecule conversions
+ - [2025-11-12:]: added endpoints for queues/programs discover
+ - [2025-11-12:]: added is_running() method to Discover class
+ - [2025-11-12:]: added v1 endpoint for directory usage
+ - [2025-11-12:]: moved general Relationship schema model to separate file
+ - [2025-11-11:]: added missing endpoint for v1/results/{id}
+ - [2025-11-11:]: API links now use V1 prefix
+ - [2025-11-11:]: removed trailing slashes from endpoints
+ - [2025-11-11:]: API return types are now single tense
+ - [2025-11-11:]: added better detection of media-types for file endpoints, and added content-length header where appropriate
+ - [2025-11-11:]: added stat_file() method to Jobs
+ - [2025-11-11:]: added endpoints for file downloads
+ - [2025-11-11:]: limited types for Job type
+ - [2025-11-11:]: added v1 endpoints for queues
+ - [2025-11-07:]: added molecules and results routes
+ - [2025-11-07:]: added initial endpoint for V1 results
+ - [2025-11-07:]: added V1 endpoints for molecules
+ - [2025-11-07:]: tightened up allowed types for method schemas
+ - [2025-11-07:]: removed unused method endpoint
+ - [2025-11-07:]: added endpoint for fetching methods
+ - [2025-11-07:]: made method node endpoint more JSON API compliant
+ - [2025-11-06:]: improved method nodes endpoint
+ - [2025-11-05:]: started adding v1 API for methods
+ - [2025-11-04:]: added v1 endpoint for settings
+ - [2025-11-04:]: added job/matrix end point for submitting batch jobs
+ - [2025-10-28:]: initial implementation of Job API
+ - [2025-10-28:]: submit manager now returns job IDs
+ - [2025-10-28:]: added initial implementation of v1 API for jobs
+ - [2025-10-27:]: split api into versions
+ - [2026-01-07:]: added timeout_graceful_shutdown config for server
+ - [2026-02-05:]: added the no_edit property to deprecated options
+ - [2026-02-05:]: removed cubegen and formchk external options
+ - [2026-02-05:]: deprecated old report/program options in config (appropriate programs are now automatically retreived from the lib)
+ - [2026-02-05:]: added new get_program() method to library
+ - [2026-02-02:]: added new asset binaries to install script
+ - [2026-02-02:]: added new assets to freeze script
+ - [2026-02-02:]: expanded available Crest definitions to include more xtb methods and solvents
+ - [2026-02-02:]: CENSO can now write a single combined report from all sub-molecules
+ - [2026-02-02:]: added calc_output_file_path to CENSO
+ - [2026-02-02:]: num_cpu and memory are now used in CENSO reports
+ - [2026-02-02:]: added inital capability to generate reports from CENSO calcs
+ - [2026-02-01:]: switched some defaults for CENSO
+ - [2026-02-01:]: CENSO will now use the first available Orca/Turbomole calculation when none are specified
+ - [2026-02-01:]: Method_target_options now support a class to match against
+ - [2026-02-01:]: expanded default supported calculation types for CENSO and CREST
+ - [2026-01-30:]: added active_directory to better keep track of calculation output
+ - [2026-01-30:]: added initial implementation of multi_molecule to allow some calculations to submit multiple molecules to a single calc
+ - [2026-01-29:]: added general support for calculation methods spawning multiple children
+ - [2026-01-29:]: added initial functionality to allow methods to spawn multiple child calcs
+ - [2026-01-29:]: added result parsing for CENSO
+ - [2026-01-28:]: CENSO can now take a conformers file from a previous CREST calc
+ - [2026-01-28:]: added initial support for Censo
+ - [2026-01-28:]: added get_result() method for CREST
+ - [2026-01-28:]: added some sensible defaults for crest
+ - [2026-01-28:]: added Solvation_calculation_mixin to Crest
+ - [2026-01-28:]: added initial config for Crest
+ - [2026-01-27:]: added initial support for submitting CREST calculations
+ - [2026-01-27:]: added better error messages for when a license has expired
+ - [2025-12-18:]: NMR table is now sorted by groups
+ - [2025-12-12:]: added number of atoms to NMR coupling table
+ - [2025-12-12:]: added distance threshold for NMR coupling (Orca and PySCF only)
+ - [2025-12-11:]: added NMR bond distance to NMR table
+ - [2025-11-28:]: added NMR table to report
+ - [2025-11-21:]: added Turbomole NMR configs
+ - [2025-11-21:]: added NMR validation function to check that atoms have been selected
+ - [2025-11-21:]: added support for Turbomole NMR
+ - [2025-11-21:]: added support for Gaussian NMR
+ - [2025-11-21:]: added NMR support for PySCF
+ - [2025-12-05:]: switched from old utcnow() to now(datetime.timezone.utc)
+ - [2025-11-13:]: added better description for the auto_path option
+ - [2025-11-13:]: added support for automatically determining the scratch location
+ - [2025-11-13:]: added links dir to store spoofed progam installs
+ - [2025-11-13:]: added initial support for non-standard Gaussian installs
+ - [2025-11-10:]: added some initial groundwork for one-day supporting native mongita queries
+ - [2025-11-10:]: database search commands now accept skip & limit keywords
 
 #### Bugfixes:
+ - [2026-02-09:]: fixed 500 errors because of object ids (more work to do here)
+ - [2026-01-23:]: added missing report_path attr to Jobs
+ - [2026-01-23:]: fixed v0 job/patch endpoint
+ - [2026-01-22:]: fixed empty data returned from queues/usage
+ - [2026-01-14:]: fixed default version string
+ - [2026-01-14:]: added missing version attribute to si file schemas
+ - [2026-01-14:]: fixed jobArray over jobMatrix
+ - [2026-01-14:]: removed now uneccessary molecule.pop(formula) from endpoints
+ - [2026-01-12:]: fixed slow db result performance by removing unecessary sort
+ - [2026-01-09:]: included date[after] param in pagination links for result endpoint
+ - [2026-01-07:]: updated method code for API tests
+ - [2025-12-03:]: fixed /v1/methods/actions/parse
+ - [2025-12-03:]: fixed name not being optional in data argument of /v1/methods/actions/parse
+ - [2025-12-03:]: fixed method indices expected to be str not int
+ - [2025-11-14:]: fixed job endpoints returning wrong links
+ - [2025-11-04:]: fixed parallel destination using wrong digichem command
+ - [2026-01-07:]: added fix for server processes sometimes hanging forever on shutdown
+ - [2026-02-06:]: fixed not handling Gaussian root correctly sometimes
+ - [2026-02-05:]: removed leftover code
  - [2026-02-03:]: fixed sometimes not being able to generate reports with Orca CENSO calcs
  - [2026-02-03:]: fixed using def2-mTZVPP basis set with Turbomole Censo calcs
  - [2026-02-03:]: added missing libuuid lib from rdkit.libs
  - [2026-02-03:]: fixed missing lib from rdkit
  - [2026-02-03:]: fixed not being able to describe Method_target_options that have a default set
+ - [2026-02-02:]: removed synlinks from freeze
+ - [2026-02-02:]: fixed parsing sub molecules in CENSO with solvent
+ - [2026-02-02:]: fixe crest methods being duplicates of each other
+ - [2026-02-02:]: fixed dump_func of Method_target_option
+ - [2026-02-02:]: fixed some job records not being available because the ID is the 'wrong' type
+ - [2026-02-02:]: fixed combined censo report getting lost in the scratch dir
+ - [2026-02-02:]: fixed combined CENSO report not being able to find child reports
+ - [2026-02-02:]: fixed not being able to find calc output from Turbomole CENSO calcs
+ - [2026-02-02:]: fixed not passing memory
+ - [2026-02-02:]: fixed not being able to generate Orca images from a CENSO report
+ - [2026-02-02:]: fixed using calculation.name instead of calculation.molecule_name
+ - [2026-02-02:]: added fix for CENSO orca calcs not being able to find calc output
+ - [2026-02-02:]: fixed not passing xtb_executable as absolute path in CENSO
+ - [2026-02-01:]: fixed calculation.next no longer being available for multi reports
+ - [2026-01-30:]: fixed CENSO turbomole solvent method not in lowercase
+ - [2026-01-30:]: fixed not using lower-case solvent method names in CENSO
+ - [2026-01-30:]: fixed accessing the 'engine' sup option as an attribute
+ - [2026-01-30:]: fixed not converting solvent methods for CENSO
+ - [2026-01-30:]: added missing solvent models from CENSO calcs
+ - [2026-01-30:]: fixed SLURM submissions using the previous slurm ID as the scratch folder name
+ - [2026-01-30:]: fixed missing name in si_iter_from_xyz
+ - [2026-01-30:]: fixed passing next_methods to Digichem_coords instead of prepare
+ - [2026-01-29:]: fixed not using prepare_from_calculation(s)
+ - [2026-01-29:]: fixed PySCF correlation basis sets
+ - [2026-01-29:]: fixed not submitting next calcs in CENSO
+ - [2026-01-29:]: fixed passing gen3D arg to si_iter_from_xyz
+ - [2026-01-29:]: fixed output_coords_list not accounting for charge and mult
+ - [2026-01-29:]: fixed CENSO using the input dir as the working dir
+ - [2026-01-29:]: fixed not using orca absolute path in CENSO wrapper
+ - [2026-01-29:]: added fix for method editor crash if it contains program options
+ - [2026-01-28:]: fixed log file location for CENSO
+ - [2026-01-28:]: fixed not specifying path to turbomole template include
+ - [2026-01-28:]: fixed typo on censo sub program definitions
+ - [2026-01-28:]: fixed wrong paths in Crest program
+ - [2026-01-28:]: fixed not actually returning anything from crest args()
+ - [2026-01-28:]: fixed not setting Crest calc class handle
+ - [2026-01-28:]: fixed invalid escape sequences in Silico_directory
+ - [2026-01-28:]: fixed nonsense error message for validate_performance
+ - [2026-01-14:]: fix for passing wrong argument to database in sync
+ - [2026-01-14:]: added fix for some Torque versions not supporting stream redirection (#195)
+ - [2026-01-14:]: added fix for failing to discover PBS queues (#194)
+ - [2025-12-23:]: increased server worker keep alive so longer running tasks aren't killed early
+ - [2026-01-14:]: fixed slow db result performance by removing unecessary sort on V0
+ - [2026-01-12:]: patch for mongita not supporting skip with no sort
+ - [2026-01-12:]: added performance patch to mongita to not needlessly deepcopy results before returning
+ - [2026-01-09:]: fixed needlessly recreating DB index on every open
+ - [2025-12-23:]: increased server worker keep alive so longer running tasks aren't killed early
+ - [2025-12-20:]: added missing libraries for PySCF
+ - [2025-12-19:]: updated bundled cclib version to include missing NMR support
+ - [2025-12-10:]: fixed formatting issues in NMR table
+ - [2025-12-09:]: fixed NMR table overflowing sometimes
+ - [2025-12-09:]: fixed crash when generating PySCF reports from saved results
+ - [2025-12-04:]: fixed always adding coupling with PySCF NMR
+ - [2025-11-21:]: fixed not strignying
+ - [2025-11-21:]: fixed active_nmr_indices returning nothing
+ - [2025-11-21:]: changed q for white space in nmr.mako to possibly solve missing ncoup section
+ - [2025-11-21:]: fixed typo in nmr.mako
+ - [2025-11-21:]: fixed active_nmr_indices referring to calculation
+ - [2025-12-11:]: added fix for machines that have slightly slow clocks
+ - [2025-12-05:]: fixed passing wrong keyword arg to parse_calculation
+ - [2025-12-03:]: better error reporting when specifying a non-existant job ID
+ - [2025-12-03:]: fixed calling resolve() on Gaussian root, which interfers with symlink spoofing
+ - [2025-12-03:]: added workaround for PySCF issue #3061
+
+#### Documentation changes:
+ - [2026-02-11:]: reordered docs for easier readability
+ - [2026-02-11:]: added documentation for Justus 2
+ - [2026-01-19:]: removed empty pages
+ - [2025-11-19:]: another attempt to fix github worklow for docs
+ - [2025-11-19:]: fixed workflow not fetching tags
+ - [2025-11-19:]: auto changelog now starts at v6
+ - [2025-11-19:]: auto changelog no longer cuts off beginning of non-semantic commits
+ - [2025-11-19:]: added changelog to docs (auto generated)
+ - [2025-11-13:]: added documentation for logging on to Compute Canada
+
+#### Testing updates:
+ - [2026-01-08:]: added tests for converting text molecule files submitted as binary
+ - [2026-01-06:]: added test for gzip API
+ - [2026-01-05:]: added test for job files
+ - [2025-12-12:]: added test for bulk API results
+ - [2025-12-05:]: finished test for result API
+ - [2025-12-05:]: added tests for fetching results with the API
+ - [2025-12-04:]: added test for queues API
+ - [2025-12-04:]: fixed missing exception in API tests
+ - [2025-12-04:]: added tests for API molecule conversions
+ - [2025-12-04:]: added better error reporting for API tests
+ - [2025-12-03:]: added test for API v1 method parsing
+ - [2025-12-03:]: added more tests for API
+ - [2025-12-03:]: split API job tests
+ - [2025-11-17:]: added initial test for job update
+ - [2025-11-14:]: added initial test for jobs endpoint
+ - [2025-07-02:]: atoms:alignment_duration is no longer compared in DB tests
+ - [2025-12-08:]: added NMR test for PySCF
+ - [2025-11-10:]: added test for database skipping and limiting
 
 #### Miscellaneous:
+ - [2026-02-05:]: updated imports for v8.x
+ - [2026-01-14:]: minor refactor to Table dumpers; tabulate_data is now a generator
+ - [2026-01-14:]: swapped to pip rdkit over conda as more up to date
+ - [2026-01-07:]: removed unused imports
+ - [2025-12-04:]: removed unused imports
+ - [2025-11-17:]: moved api from data to server
+ - [2025-11-17:]: added hidden import for silico.data.server.app
+ - [2025-11-17:]: added some typing for Server methods
+ - [2025-11-14:]: removed unused imports in directories endpoint
+ - [2025-11-07:]: removed duplicate molecule definition from job endpoint
+ - [2025-11-07:]: removed unused imports
+ - [2026-02-05:]: bumped version to 8.0.0
+ - [2026-02-05:]: various refactoring to streamline imports
+ - [2026-02-05:]: moved job status to new file
+ - [2026-02-05:]: moved describe_record() to result
+ - [2026-02-05:]: moved get_server import in config
+ - [2026-02-11:]: added missing apt-get update
+ - [2026-02-11:]: updated lingering copyright references to 2025
+ - [2026-02-11:]: added missing apt-get update from workflows
  - [2026-02-03:]: bumped version to 7.4.3
  - [2026-02-03:]: bumped to 7.4.2
  - [2026-02-03:]: Bumped to 7.4.1
+ - [2026-02-02:]: bumped last modified
+ - [2026-02-02:]: set version to 7.4.0
+ - [2026-02-02:]: bumped pre-release to 3
+ - [2026-02-02:]: bumped pre-release to 2
+ - [2026-02-02:]: added pypdf to environment.yml
+ - [2026-02-02:]: bumped version to 7.4.0-pre.1
+ - [2026-02-02:]: reverted back to 3.9 in github actions
+ - [2026-02-02:]: added support for either importlib.resources or importlib_resources
+ - [2026-02-02:]: expanded depends
+ - [2026-02-02:]: replaced importlib_resources with importlib.resources
+ - [2026-02-02:]: updated workflows to 3.12
+ - [2026-01-29:]: renamed optimization to optimisation in CENSO
+ - [2026-01-28:]: fixed a few typos
+ - [2026-01-28:]: removed unused code
+ - [2026-01-28:]: removed old code commets
+ - [2026-01-27:]: moved solvation options into separate mixin
+ - [2026-01-27:]: improved available mixin classes for new calculation types
+ - [2026-01-28:]: bumped version to 7.3.4
+ - [2026-01-28:]: update last modified
+ - [2026-01-19:]: update last modified
+ - [2026-01-19:]: updates dependencies to include sphinx
+ - [2026-01-14:]: update last modified
+ - [2026-01-14:]: bumped version to 7.3.3
+ - [2026-01-05:]: update last modified
+ - [2026-01-05:]: copyright to 2026
+ - [2025-12-21:]: update last modified
+ - [2025-12-21:]: modifications to build script to try and save file space
+ - [2025-12-20:]: update last modified
+ - [2025-12-20:]: bumped to 7.3.2
+ - [2025-12-19:]: update last modified
+ - [2025-12-18:]: update last modified
+ - [2025-12-10:]: fixed typo
+ - [2025-11-28:]: cleaned up debugging code
+ - [2025-12-03:]: bumped to 7.3.0
+ - [2025-12-11:]: update last modified
+ - [2025-12-10:]: update last modified
+ - [2025-12-10:]: bumped to 7.2.2
+ - [2025-12-05:]: expanded depends
+ - [2025-12-03:]: bumped to 7.2.1
+ - [2025-11-19:]: update last modified
+ - [2025-11-18:]: update last modified
+ - [2025-11-17:]: bumped to v7.2.0
+ - [2025-11-13:]: update last modified
+ - [2025-11-13:]: bumped version to 7.1.0
