@@ -1,19 +1,24 @@
-### Changes in this version (7.4.4) since 7.4.3
+### Changes in this version (7.5.0) since 7.4.4
+
+#### New features:
+ - [%as:]: increased duration on machine files to reduce check-out frequency
+ - [%as:]: added network:timeout config option and implemented timeout for requests
+ - [%as:]: added support for RI-J as well as RI-JK
+ - [%as:]: added initial support for PySCF density fitting (SCF only for now)
+ - [%as:]: servers now check cert age before refreshing
+ - [%as:]: The digichem version is now printed to the main log file
 
 #### Bugfixes:
- - [%as:]: fixed failing to parse Orca Censo calculations with solvents
- - [%as:]: builds for CentOS-7.9 no longer have batoms (which is unavailable) set as the default rendering engine
- - [%as:]: added missing stderr redirect for PBS
+ - [%as:]: added missing doc depends
+ - [%as:]: added workaround for PySCF #3136
+ - [%as:]: fixed duplicate dispersion property in PySCF
 
 #### Documentation changes:
- - [%as:]: reordered docs for easier readability
- - [%as:]: added documentation for Justus 2
+ - [%as:]: fixed missing link to terminal walkthrough
+ - [%as:]: fixed missing newline
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: fixed using wrong digichem-core version in workflows
- - [%as:]: bumped version to 7.4.4
- - [%as:]: added missing apt-get update
- - [%as:]: updated lingering copyright references to 2025
- - [%as:]: added missing apt-get update from workflows
- - [%as:]: bumped version to 7.4.3
+ - [%as:]: bumped version to 7.5.0
+ - [%as:]: added fixed version of libblas to depends
+ - [%as:]: update last modified
