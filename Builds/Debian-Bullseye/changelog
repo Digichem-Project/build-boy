@@ -1,19 +1,24 @@
-### Changes in this version (7.4.4) since 7.4.3
+### Changes in this version (7.5.0) since 7.4.4
+
+#### New features:
+ - [2026-04-29:]: increased duration on machine files to reduce check-out frequency
+ - [2026-04-29:]: added network:timeout config option and implemented timeout for requests
+ - [2026-04-27:]: added support for RI-J as well as RI-JK
+ - [2026-02-19:]: added initial support for PySCF density fitting (SCF only for now)
+ - [2026-04-22:]: servers now check cert age before refreshing
+ - [2026-02-18:]: The digichem version is now printed to the main log file
 
 #### Bugfixes:
- - [2026-02-16:]: fixed failing to parse Orca Censo calculations with solvents
- - [2026-02-06:]: builds for CentOS-7.9 no longer have batoms (which is unavailable) set as the default rendering engine
- - [2026-02-12:]: added missing stderr redirect for PBS
+ - [2026-04-28:]: added missing doc depends
+ - [2026-02-19:]: added workaround for PySCF #3136
+ - [2026-02-19:]: fixed duplicate dispersion property in PySCF
 
 #### Documentation changes:
- - [2026-02-11:]: reordered docs for easier readability
- - [2026-02-11:]: added documentation for Justus 2
+ - [2026-04-28:]: fixed missing link to terminal walkthrough
+ - [2026-04-28:]: fixed missing newline
 
 #### Miscellaneous:
+ - [2026-04-29:]: update last modified
+ - [2026-04-29:]: bumped version to 7.5.0
+ - [2026-02-26:]: added fixed version of libblas to depends
  - [2026-02-16:]: update last modified
- - [2026-02-16:]: fixed using wrong digichem-core version in workflows
- - [2026-02-16:]: bumped version to 7.4.4
- - [2026-02-11:]: added missing apt-get update
- - [2026-02-11:]: updated lingering copyright references to 2025
- - [2026-02-11:]: added missing apt-get update from workflows
- - [2026-02-03:]: bumped version to 7.4.3
