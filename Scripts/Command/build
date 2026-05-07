@@ -3,6 +3,7 @@ import sys
 import subprocess
 import datetime
 import os
+import argparse
 
 from buildboy.util import update_repo, expand_path, start_vm
 # These are the virtual machines we're going to be building on.
@@ -31,7 +32,16 @@ def main():
     print("")
     print("Good-evening.")
     print("The time is: " + str(datetime.datetime.now()))
+
+    # Work out which VMs we're working with.
+    parser = argparse.ArgumentParser(prog='buildboy', description='Build Digichem')
+    parser.add_argument('vms', help = "A list of VMs to build for (omit to build on all available)", nargs="*", choices=[*[vm['target'] for vm in vms.values()], []], default = [])
+    args = parser.parse_args()
+
     for vm in vms.values():
+        if len(args.vms) > 0 and vm['target'] not in args.vms:
+            continue
+
         try:
             print("--------------------------------------")
             print("-              BUILD-BOY             -")
