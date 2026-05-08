@@ -1,24 +1,11 @@
-### Changes in this version (7.5.0) since 7.4.4
-
-#### New features:
- - [%as:]: increased duration on machine files to reduce check-out frequency
- - [%as:]: added network:timeout config option and implemented timeout for requests
- - [%as:]: added support for RI-J as well as RI-JK
- - [%as:]: added initial support for PySCF density fitting (SCF only for now)
- - [%as:]: servers now check cert age before refreshing
- - [%as:]: The digichem version is now printed to the main log file
+### Changes in this version (7.5.1) since 7.5.0
 
 #### Bugfixes:
- - [%as:]: added missing doc depends
- - [%as:]: added workaround for PySCF #3136
- - [%as:]: fixed duplicate dispersion property in PySCF
-
-#### Documentation changes:
- - [%as:]: fixed missing link to terminal walkthrough
- - [%as:]: fixed missing newline
+ - [%as:]: fixed Local (parallel) calling silico resume (fixes #203)
+ - [%as:]: fixed missing sub-image labels in reports
 
 #### Miscellaneous:
  - [%as:]: update last modified
- - [%as:]: bumped version to 7.5.0
- - [%as:]: added fixed version of libblas to depends
+ - [%as:]: bumped to 7.5.1
+ - [%as:]: removed some more lingering references to silico
  - [%as:]: update last modified
