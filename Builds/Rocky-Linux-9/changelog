@@ -1,11 +1,159 @@
-### Changes in this version (7.5.1) since 7.5.0
+### Changes in this version (8.0.0-pre.4) since 8.0.0-pre.1
+
+#### New features:
+ - [2026-06-03:]: set local methods to hidden
+ - [2026-05-19:]: added error reporting when trying to submit a method that does not exist
+ - [2026-05-19:]: adjusted API for jobs to better include relationships
+ - [2026-05-08:]: added support for submitting matrices with IDs & overrides
+ - [2026-05-08:]: added initial support for supplying overrides for library methods
+ - [2026-04-28:]: switched header in emails to inverted design
+ - [2026-04-28:]: added domain to email CID
+ - [2026-04-28:]: added HTML email template
+ - [2026-04-27:]: added initial implementation of server mail
+ - [2026-04-29:]: jwt signing can now use either RSA or ECDSA keys
+ - [2026-04-29:]: increased duration on machine files to reduce check-out frequency
+ - [2026-04-29:]: added network:timeout config option and implemented timeout for requests
+ - [2026-04-27:]: added support for RI-J as well as RI-JK
+ - [2026-02-19:]: added initial support for PySCF density fitting (SCF only for now)
+ - [2026-04-24:]: added billing
+ - [2026-04-22:]: servers now check cert age before refreshing
+ - [2026-04-22:]: added more authentication levels to server endpoints
+ - [2026-04-22:]: switched JWT key auth to using server certs
+ - [2026-04-22:]: servers now check cert age before refreshing
+ - [2026-04-21:]: digichemd executable now includes server by default
+ - [2026-04-20:]: added digichemd startup script
+ - [2026-04-20:]: updated service script
+ - [2026-04-20:]: added service file for running with systemd
+ - [2026-04-20:]: server objects now write their PID to a plaintext PID file
+ - [2026-04-17:]: removed debugging
+ - [2026-04-17:]: added temp debugging to slurm calls
+ - [2026-04-15:]: added get_billing endpoint
+ - [2026-04-15:]: added supports_billing property to destinations
+ - [2026-04-14:]: SLURM account data is now returned in a proper hierarchy
+ - [2026-04-14:]: added more descriptive error message for missing db
+ - [2026-04-14:]: added initial endpoint for fetching billing
+ - [2026-04-14:]: added get_billing_account() and get_billing() methods to SLURM
+ - [2026-04-13:]: added BILLING status
+ - [2026-04-13:]: added get_share_data() method
+ - [2026-04-13:]: added support for using the submitting user's ID as the billing account
+ - [2026-04-13:]: added support for sshare command
+ - [2026-04-11:]: added better error message for when no local user credentials are available
+ - [2026-04-11:]: added db_name property to database for better error reporting
+ - [2026-04-10:]: added initial billing support to SLURM
+ - [2026-04-10:]: added get_local_user() function
+ - [2026-04-10:]: added user set and user info programs
+ - [2026-04-10:]: added ability to specify login duration
+ - [2026-04-10:]: added local user login functions
+ - [2026-04-09:]: added abiltiy for server to listen on all hosts, added port to server config, and allowed 0 for keep_alive
+ - [2026-04-08:]: greatly expanded firestore support
+ - [2026-04-08:]: added better debug info when submitting info to DB after job completion
+ - [2026-04-02:]: added better error reporting when parsing a malformed method
+ - [2026-04-02:]: improved error messages in server locking
+ - [2026-04-02:]: directory endpoint now uses user run dir
+ - [2026-04-02:]: added option to disable combined reports
+ - [2026-04-02:]: multi-user servers now use separate run dirs for each user
+ - [2026-04-02:]: added safe_access to some server endpoints
+ - [2026-03-23:]: switched firestore to use bulk_writer()
+ - [2026-03-21:]: added better interfaces for fetching results from mongita and firestore DBs
+ - [2026-03-21:]: removed unsupported unqlite
+ - [2026-03-20:]: added initial user permission protection to job DB
+ - [2026-03-20:]: added initial support for userIds in job and result database
+ - [2026-03-20:]: added users/self endpoint
+ - [2026-03-20:]: added /users/self end point to test user mechanism
+ - [2026-03-20:]: Server now issues a warning if there is no authentication enabled at all
+ - [2026-03-20:]: added authentication to all endpoints
+ - [2026-03-20:]: added better error logging for user auth and added config option to enable or disable user auth
+ - [2026-03-19:]: added initial ability to authorise users
+ - [2026-03-18:]: finished adding support for firebase for main functions
+ - [2026-03-18:]: started adding support for status keywords
+ - [2026-03-18:]: added Status_keywords type
+ - [2026-02-18:]: The digichem version is now printed to the main log file
 
 #### Bugfixes:
+ - [2026-06-03:]: added fix for servers on NFS using the same lock file across different nodes, that could leak to strange connection problems
+ - [2026-05-19:]: fixed matrix submit expecting an input field in each method
+ - [2026-05-08:]: fixed assigning to the object rather than dict in override
+ - [2026-05-08:]: fixed trying to merge calc options into destination instead
+ - [2026-05-08:]: fixed using dict as object in new jobs api
+ - [2026-05-08:]: fixed firestore not writing sub collections if no id is provided for the main doc
+ - [2026-05-08:]: fixed firestore crash if certain sub-collections aren't available
  - [2026-05-08:]: fixed Local (parallel) calling silico resume (fixes #203)
  - [2026-05-08:]: fixed missing sub-image labels in reports
+ - [2026-04-30:]: fixed 'uer' instead of 'user' typo
+ - [2026-04-30:]: fixed calculations not storing results under their associated user in the DB
+ - [2026-04-29:]: fixed typo in email template
+ - [2026-04-28:]: fixed not calling send_mail() method
+ - [2026-04-28:]: added missing doc depends
+ - [2026-02-19:]: added workaround for PySCF #3136
+ - [2026-02-19:]: fixed duplicate dispersion property in PySCF
+ - [2026-04-27:]: fixed using incompatible JWT algorithm
+ - [2026-04-21:]: fixed digichem.service trying to start before network is up
+ - [2026-04-17:]: fixed job crashed when no SLURM reason is available
+ - [2026-04-17:]: fixed BILLING status being ignored
+ - [2026-04-17:]: fixed using userID instead of user in call to get_billing_account()
+ - [2026-04-15:]: fixed validation errors on queue usage
+ - [2026-04-15:]: fixed SLURM billing
+ - [2026-04-15:]: fixed missing billing endpoints
+ - [2026-04-14:]: fixed get_billing() not fetching parents properly
+ - [2026-04-14:]: fixed using list to catch exceptions
+ - [2026-04-14:]: fixed some job endpoints not functioning
+ - [2026-04-14:]: fixed some auth errors
+ - [2026-04-14:]: added missing args param for local dbs
+ - [2026-04-14:]: fixed missing assert_user_permissions() method in some result dbs
+ - [2026-04-14:]: fixed mongita using some weird attributes
+ - [2026-04-14:]: fixed tinydb not accepting user param
+ - [2026-04-14:]: create_job_from_id is no longer restricted
+ - [2026-04-14:]: fixed schema for queues
+ - [2026-04-14:]: fixed other lingering references
+ - [2026-04-14:]: fixed wrong import for SINGLE_USER in database
+ - [2026-04-13:]: fixed slurm squeue limited to current user only
+ - [2026-04-13:]: fixed slurm cache always missing
+ - [2026-04-11:]: added missing account option
+ - [2026-04-10:]: updated lingering references
+ - [2026-04-10:]: fixed weird error handling in license info program
+ - [2026-04-09:]: fixed swapped host for local and non local servers
+ - [2026-04-08:]: fixed using wrong firestore db in tests
+ - [2026-04-02:]: fixed crash in job endpoint when streaming an empty file
+ - [2026-04-02:]: fixed wrong server settings type in api
+ - [2026-04-02:]: better handling for server reloading in config save
+ - [2026-04-02:]: fixed locking style sometimes not being correctly set to lockf
+ - [2026-04-02:]: fixed jobs
+ - [2026-04-02:]: fixed user auth not working after adding support for safe_access
+ - [2026-04-02:]: fixed 500 errors when user dir does not exist yet
+ - [2026-02-16:]: fixed failing to parse Orca Censo calculations with solvents
+ - [2026-02-06:]: builds for CentOS-7.9 no longer have batoms (which is unavailable) set as the default rendering engine
+ - [2026-02-12:]: added missing stderr redirect for PBS
+
+#### Documentation changes:
+ - [2026-04-28:]: fixed missing link to terminal walkthrough
+ - [2026-04-28:]: fixed missing newline
+
+#### Testing updates:
+ - [2026-05-07:]: added test for converting charged files with API
+ - [2026-04-15:]: moved billing test to restricted server section
+ - [2026-04-15:]: added test for billing endpoint
+ - [2026-04-14:]: added tests for restricted server setup
+ - [2026-04-14:]: fixed api tests
+ - [2026-04-08:]: added tests for firestore
+ - [2026-03-18:]: added initial tests for job DB
 
 #### Miscellaneous:
- - [2026-05-08:]: update last modified
+ - [2026-06-03:]: fixed not installing digichem8 links
+ - [2026-06-03:]: bumped to 8.0.0-pre.4
+ - [2026-06-03:]: updated billing-commands
+ - [2026-06-03:]: bumped to 8.0.0-pre.3
+ - [2026-05-08:]: temporarily reverted to setting email directly
  - [2026-05-08:]: bumped to 7.5.1
  - [2026-05-08:]: removed some more lingering references to silico
  - [2026-04-29:]: update last modified
+ - [2026-04-29:]: bumped version to 7.5.0
+ - [2026-02-26:]: added fixed version of libblas to depends
+ - [2026-04-10:]: moved user validation code out of license.py
+ - [2026-04-09:]: added pyjwt to depends
+ - [2026-04-08:]: removed unused imports
+ - [2026-03-21:]: migrated result database code out of database module into result module (it may move again)
+ - [2026-03-20:]: cleanedup unused imports in directories
+ - [2026-03-18:]: removed deprecate v0 api
+ - [2026-02-16:]: update last modified
+ - [2026-02-16:]: fixed using wrong digichem-core version in workflows
+ - [2026-02-16:]: bumped version to 7.4.4
