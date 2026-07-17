@@ -96,9 +96,11 @@ class Builder():
                 # Pass along the oprattle dir so that gets bundled.
                 self.oprattle_path['dir'],
                 # As well as any assets we want included.
-                asset_dir / "CENSO/censo",
-                asset_dir / "CREST/crest",
-                asset_dir / "xTB/xtb",
+                asset_dir / "censo",
+                asset_dir / "crest",
+                asset_dir / "xtb",
+                asset_dir / "xtb4stda",
+                asset_dir / "std2",
             ]
         )
 

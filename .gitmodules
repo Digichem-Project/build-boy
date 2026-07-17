@@ -1,0 +1,3 @@
+[submodule "Binaries"]
+	path = Binaries
+	url = https://github.com/Digichem-Project/build-static.git
