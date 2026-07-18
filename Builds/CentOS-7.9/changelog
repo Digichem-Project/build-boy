@@ -1,9 +1,81 @@
-### Changes in this version (8.0.0-pre.4) since 8.0.0-pre.3
+### Changes in this version (8.0.0-pre.7) since 8.0.0-pre.4
 
 #### New features:
+ - [2026-07-17:]: CREST, CENSO, xtb, xtb4stda, and std2 now use the pre-compiled digichem binaries by default
+ - [2026-07-16:]: added build-static files as sub-module
+ - [2026-07-15:]: increased xTB density cube step-size to 0.5
+ - [2026-07-14:]: removed the broken GFN0-xTB method
+ - [2026-07-14:]: added OMP_NUM_THREADS to slurm templates to cover numpy and other libs loading openmp too early for us to change threads
+ - [2026-07-14:]: enabled density fitting by default on most PySCF calculations
+ - [2026-07-14:]: disabled opt/freq combined jobs for PySCF as density fitting is poorly supported here
+ - [2026-07-14:]: permitted some method fields to be set in api submissions
+ - [2026-07-10:]: added library_path options for xTB, xtb4stda, and std2
+ - [2026-07-10:]: improved logging support for xTB and other programs that print info to stderr
+ - [2026-07-09:]: xtb now only writes density.cube files if a report has bene requested
+ - [2026-07-08:]: PySCF now supports ECPs
+ - [2026-07-08:]: added better clean-up options for xTB and PySCF with sTDA
+ - [2026-07-06:]: updated sTD-DFT calculations for PySCF to reduce number of orbitals and set function exchange
+ - [2026-07-06:]: pyscf now passes std2_log_file to parse if one exists
+ - [2026-07-06:]: added std2_log_file_path property to Std2_mixin
+ - [2026-07-06:]: added support for calculating sTDA states with pyscf wavefunction
+ - [2026-07-03:]: increased step size for xtb density plots
+ - [2026-07-03:]: xtb excited states now only render HOMO+3 to LUMO-3
+ - [2026-07-02:]: added support for xTB excited states
+ - [2026-07-01:]: added ability to render total density for xTB
+ - [2026-07-01:]: added ability to write xTB xcontrol
+ - [2026-07-01:]: initial calc definitions for xTB
+ - [2026-07-01:]: added support for generating images with xTB
+ - [2026-07-01:]: added initial support for xTB
+ - [2026-06-29:]: reduced general api access level to just USER, set submission endpoints as LICENSE
+ - [2026-06-18:]: profiling steps can now be given in decimals
+ - [2026-06-15:]: added option to toggle the slow spin-dipole interaction in PySCF NMR coupling
+ - [2026-06-15:]: license update is now run as a background task
+ - [2026-06-15:]: updated envs
+ - [2026-06-15:]: expanded digichemd to support env
+ - [2026-06-15:]: added function to auto update licenses
+ - [2026-06-05:]: switched default PySCF geometry solver to geometric
  - [2026-06-03:]: set local methods to hidden
 
+#### Bugfixes:
+ - [2026-07-17:]: fixed mixing up binary dirs in freeze
+ - [2026-07-17:]: fixed missing binary folder when freezing
+ - [2026-07-15:]: added missing solvent arg for xtb4stda and missing -rpa flag for std2
+ - [2026-07-15:]: XTB4STDAHOME and STD2HOME are now only set if the relevant options are given
+ - [2026-07-14:]: added missing gas phase functionals
+ - [2026-07-14:]: fixed broken single method submission api
+ - [2026-07-09:]: fixed some options bugs in xTB
+ - [2026-07-08:]: fixed PySCF not being able to mix internal and exchange basis sets
+ - [2026-07-08:]: fixed bug in PySCF write_molden() method
+ - [2026-07-07:]: fixed sometimes rendering hundreds of orbitals with xTB excited states
+ - [2026-07-07:]: fixed copying xtb input file by reading everything into memory at once
+ - [2026-07-07:]: added missing std options to xtb
+ - [2026-07-07:]: removed threshold from xtb excited states
+ - [2026-07-01:]: fixed -p instead of -P in xTB
+ - [2026-07-01:]: fixed bug in PySCF image generator
+ - [2026-06-29:]: fixed bug in mongita job db with user token
+ - [2026-06-15:]: fixed missing billing limit
+ - [2026-06-15:]: missing quote
+ - [2026-06-15:]: perms
+ - [2026-06-15:]: fixed typo
+ - [2026-06-15:]: fixed wrong router
+ - [2026-06-15:]: fixed lingering slash in endpoint
+ - [2026-06-15:]: fixed more naming problems
+ - [2026-06-15:]: fixed wrong endpoint name
+ - [2026-06-05:]: fixed PySCF optimisation not using the final SCF wavefunction, resulting in strange geometry in reports. PySCF geometry calcs now save each geometry step to an xyz file
+
+#### Testing updates:
+ - [2026-07-14:]: fixed API tests to accomodate new api
+
 #### Miscellaneous:
- - [2026-06-03:]: fixed not installing digichem8 links
- - [2026-06-03:]: bumped to 8.0.0-pre.4
- - [2026-06-03:]: updated billing-commands
+ - [2026-07-17:]: adjusted freeze script to account for new assets
+ - [2026-07-17:]: updated to latest version of build-static
+ - [2026-07-14:]: unset default xtb4stda_path
+ - [2026-07-14:]: JWT decode error is no longer printed if no token is provided at all
+ - [2026-07-14:]: bumped to v8.0.0-pre.7
+ - [2026-07-10:]: removed debugging line
+ - [2026-07-01:]: fixed minor typos in pyscf images
+ - [2026-06-29:]: bumped to 8.0.0-pre.6
+ - [2026-06-15:]: renamed license prog
+ - [2026-06-15:]: set execute bit
+ - [2026-06-05:]: bumped version to 8.0.0-pre.5
+ - [2026-06-05:]: updates to billing-commands
