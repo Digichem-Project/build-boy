@@ -110,7 +110,7 @@ class Builder():
         """
         # Get the latest version of repos that we'll need.
         update_repo(expand_path('~/silico'), silico_branch)
-        update_repo(expand_path('~/cclib'), "master")
+        update_repo(expand_path('~/cclib'), "digichem")
         update_repo(expand_path('~/configurables'))
         update_repo(expand_path('~/digichem-core'), digichem_branch)
         update_repo(expand_path('~/openprattle'))
