@@ -14,7 +14,7 @@ def do_build(vm_data):
     with start_vm(vm_data) as ssh:
         # Check for updates to the local build-boy script.
         print("Fetching updates...")
-        ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main')
+        ssh.run('cd build-boy && git fetch origin && git checkout main && git reset --hard origin/main && git submodule update')
 
         # Call the local build-boy build script.
         print("Running build...")
