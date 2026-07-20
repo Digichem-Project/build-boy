@@ -1,159 +1,81 @@
-### Changes in this version (8.0.0-pre.4) since 8.0.0-pre.2
+### Changes in this version (8.0.0-pre.7) since 8.0.0-pre.4
 
 #### New features:
+ - [%as:]: CREST, CENSO, xtb, xtb4stda, and std2 now use the pre-compiled digichem binaries by default
+ - [%as:]: added build-static files as sub-module
+ - [%as:]: increased xTB density cube step-size to 0.5
+ - [%as:]: removed the broken GFN0-xTB method
+ - [%as:]: added OMP_NUM_THREADS to slurm templates to cover numpy and other libs loading openmp too early for us to change threads
+ - [%as:]: enabled density fitting by default on most PySCF calculations
+ - [%as:]: disabled opt/freq combined jobs for PySCF as density fitting is poorly supported here
+ - [%as:]: permitted some method fields to be set in api submissions
+ - [%as:]: added library_path options for xTB, xtb4stda, and std2
+ - [%as:]: improved logging support for xTB and other programs that print info to stderr
+ - [%as:]: xtb now only writes density.cube files if a report has bene requested
+ - [%as:]: PySCF now supports ECPs
+ - [%as:]: added better clean-up options for xTB and PySCF with sTDA
+ - [%as:]: updated sTD-DFT calculations for PySCF to reduce number of orbitals and set function exchange
+ - [%as:]: pyscf now passes std2_log_file to parse if one exists
+ - [%as:]: added std2_log_file_path property to Std2_mixin
+ - [%as:]: added support for calculating sTDA states with pyscf wavefunction
+ - [%as:]: increased step size for xtb density plots
+ - [%as:]: xtb excited states now only render HOMO+3 to LUMO-3
+ - [%as:]: added support for xTB excited states
+ - [%as:]: added ability to render total density for xTB
+ - [%as:]: added ability to write xTB xcontrol
+ - [%as:]: initial calc definitions for xTB
+ - [%as:]: added support for generating images with xTB
+ - [%as:]: added initial support for xTB
+ - [%as:]: reduced general api access level to just USER, set submission endpoints as LICENSE
+ - [%as:]: profiling steps can now be given in decimals
+ - [%as:]: added option to toggle the slow spin-dipole interaction in PySCF NMR coupling
+ - [%as:]: license update is now run as a background task
+ - [%as:]: updated envs
+ - [%as:]: expanded digichemd to support env
+ - [%as:]: added function to auto update licenses
+ - [%as:]: switched default PySCF geometry solver to geometric
  - [%as:]: set local methods to hidden
- - [%as:]: added error reporting when trying to submit a method that does not exist
- - [%as:]: adjusted API for jobs to better include relationships
- - [%as:]: added support for submitting matrices with IDs & overrides
- - [%as:]: added initial support for supplying overrides for library methods
- - [%as:]: switched header in emails to inverted design
- - [%as:]: added domain to email CID
- - [%as:]: added HTML email template
- - [%as:]: added initial implementation of server mail
- - [%as:]: jwt signing can now use either RSA or ECDSA keys
- - [%as:]: increased duration on machine files to reduce check-out frequency
- - [%as:]: added network:timeout config option and implemented timeout for requests
- - [%as:]: added support for RI-J as well as RI-JK
- - [%as:]: added initial support for PySCF density fitting (SCF only for now)
- - [%as:]: added billing
- - [%as:]: servers now check cert age before refreshing
- - [%as:]: added more authentication levels to server endpoints
- - [%as:]: switched JWT key auth to using server certs
- - [%as:]: servers now check cert age before refreshing
- - [%as:]: digichemd executable now includes server by default
- - [%as:]: added digichemd startup script
- - [%as:]: updated service script
- - [%as:]: added service file for running with systemd
- - [%as:]: server objects now write their PID to a plaintext PID file
- - [%as:]: removed debugging
- - [%as:]: added temp debugging to slurm calls
- - [%as:]: added get_billing endpoint
- - [%as:]: added supports_billing property to destinations
- - [%as:]: SLURM account data is now returned in a proper hierarchy
- - [%as:]: added more descriptive error message for missing db
- - [%as:]: added initial endpoint for fetching billing
- - [%as:]: added get_billing_account() and get_billing() methods to SLURM
- - [%as:]: added BILLING status
- - [%as:]: added get_share_data() method
- - [%as:]: added support for using the submitting user's ID as the billing account
- - [%as:]: added support for sshare command
- - [%as:]: added better error message for when no local user credentials are available
- - [%as:]: added db_name property to database for better error reporting
- - [%as:]: added initial billing support to SLURM
- - [%as:]: added get_local_user() function
- - [%as:]: added user set and user info programs
- - [%as:]: added ability to specify login duration
- - [%as:]: added local user login functions
- - [%as:]: added abiltiy for server to listen on all hosts, added port to server config, and allowed 0 for keep_alive
- - [%as:]: greatly expanded firestore support
- - [%as:]: added better debug info when submitting info to DB after job completion
- - [%as:]: added better error reporting when parsing a malformed method
- - [%as:]: improved error messages in server locking
- - [%as:]: directory endpoint now uses user run dir
- - [%as:]: added option to disable combined reports
- - [%as:]: multi-user servers now use separate run dirs for each user
- - [%as:]: added safe_access to some server endpoints
- - [%as:]: switched firestore to use bulk_writer()
- - [%as:]: added better interfaces for fetching results from mongita and firestore DBs
- - [%as:]: removed unsupported unqlite
- - [%as:]: added initial user permission protection to job DB
- - [%as:]: added initial support for userIds in job and result database
- - [%as:]: added users/self endpoint
- - [%as:]: added /users/self end point to test user mechanism
- - [%as:]: Server now issues a warning if there is no authentication enabled at all
- - [%as:]: added authentication to all endpoints
- - [%as:]: added better error logging for user auth and added config option to enable or disable user auth
- - [%as:]: added initial ability to authorise users
- - [%as:]: finished adding support for firebase for main functions
- - [%as:]: started adding support for status keywords
- - [%as:]: added Status_keywords type
- - [%as:]: The digichem version is now printed to the main log file
 
 #### Bugfixes:
- - [%as:]: added fix for servers on NFS using the same lock file across different nodes, that could leak to strange connection problems
- - [%as:]: fixed matrix submit expecting an input field in each method
- - [%as:]: fixed assigning to the object rather than dict in override
- - [%as:]: fixed trying to merge calc options into destination instead
- - [%as:]: fixed using dict as object in new jobs api
- - [%as:]: fixed firestore not writing sub collections if no id is provided for the main doc
- - [%as:]: fixed firestore crash if certain sub-collections aren't available
- - [%as:]: fixed Local (parallel) calling silico resume (fixes #203)
- - [%as:]: fixed missing sub-image labels in reports
- - [%as:]: fixed 'uer' instead of 'user' typo
- - [%as:]: fixed calculations not storing results under their associated user in the DB
- - [%as:]: fixed typo in email template
- - [%as:]: fixed not calling send_mail() method
- - [%as:]: added missing doc depends
- - [%as:]: added workaround for PySCF #3136
- - [%as:]: fixed duplicate dispersion property in PySCF
- - [%as:]: fixed using incompatible JWT algorithm
- - [%as:]: fixed digichem.service trying to start before network is up
- - [%as:]: fixed job crashed when no SLURM reason is available
- - [%as:]: fixed BILLING status being ignored
- - [%as:]: fixed using userID instead of user in call to get_billing_account()
- - [%as:]: fixed validation errors on queue usage
- - [%as:]: fixed SLURM billing
- - [%as:]: fixed missing billing endpoints
- - [%as:]: fixed get_billing() not fetching parents properly
- - [%as:]: fixed using list to catch exceptions
- - [%as:]: fixed some job endpoints not functioning
- - [%as:]: fixed some auth errors
- - [%as:]: added missing args param for local dbs
- - [%as:]: fixed missing assert_user_permissions() method in some result dbs
- - [%as:]: fixed mongita using some weird attributes
- - [%as:]: fixed tinydb not accepting user param
- - [%as:]: create_job_from_id is no longer restricted
- - [%as:]: fixed schema for queues
- - [%as:]: fixed other lingering references
- - [%as:]: fixed wrong import for SINGLE_USER in database
- - [%as:]: fixed slurm squeue limited to current user only
- - [%as:]: fixed slurm cache always missing
- - [%as:]: added missing account option
- - [%as:]: updated lingering references
- - [%as:]: fixed weird error handling in license info program
- - [%as:]: fixed swapped host for local and non local servers
- - [%as:]: fixed using wrong firestore db in tests
- - [%as:]: fixed crash in job endpoint when streaming an empty file
- - [%as:]: fixed wrong server settings type in api
- - [%as:]: better handling for server reloading in config save
- - [%as:]: fixed locking style sometimes not being correctly set to lockf
- - [%as:]: fixed jobs
- - [%as:]: fixed user auth not working after adding support for safe_access
- - [%as:]: fixed 500 errors when user dir does not exist yet
- - [%as:]: fixed failing to parse Orca Censo calculations with solvents
- - [%as:]: builds for CentOS-7.9 no longer have batoms (which is unavailable) set as the default rendering engine
- - [%as:]: added missing stderr redirect for PBS
-
-#### Documentation changes:
- - [%as:]: fixed missing link to terminal walkthrough
- - [%as:]: fixed missing newline
+ - [%as:]: fixed mixing up binary dirs in freeze
+ - [%as:]: fixed missing binary folder when freezing
+ - [%as:]: added missing solvent arg for xtb4stda and missing -rpa flag for std2
+ - [%as:]: XTB4STDAHOME and STD2HOME are now only set if the relevant options are given
+ - [%as:]: added missing gas phase functionals
+ - [%as:]: fixed broken single method submission api
+ - [%as:]: fixed some options bugs in xTB
+ - [%as:]: fixed PySCF not being able to mix internal and exchange basis sets
+ - [%as:]: fixed bug in PySCF write_molden() method
+ - [%as:]: fixed sometimes rendering hundreds of orbitals with xTB excited states
+ - [%as:]: fixed copying xtb input file by reading everything into memory at once
+ - [%as:]: added missing std options to xtb
+ - [%as:]: removed threshold from xtb excited states
+ - [%as:]: fixed -p instead of -P in xTB
+ - [%as:]: fixed bug in PySCF image generator
+ - [%as:]: fixed bug in mongita job db with user token
+ - [%as:]: fixed missing billing limit
+ - [%as:]: missing quote
+ - [%as:]: perms
+ - [%as:]: fixed typo
+ - [%as:]: fixed wrong router
+ - [%as:]: fixed lingering slash in endpoint
+ - [%as:]: fixed more naming problems
+ - [%as:]: fixed wrong endpoint name
+ - [%as:]: fixed PySCF optimisation not using the final SCF wavefunction, resulting in strange geometry in reports. PySCF geometry calcs now save each geometry step to an xyz file
 
 #### Testing updates:
- - [%as:]: added test for converting charged files with API
- - [%as:]: moved billing test to restricted server section
- - [%as:]: added test for billing endpoint
- - [%as:]: added tests for restricted server setup
- - [%as:]: fixed api tests
- - [%as:]: added tests for firestore
- - [%as:]: added initial tests for job DB
+ - [%as:]: fixed API tests to accomodate new api
 
 #### Miscellaneous:
- - [%as:]: fixed not installing digichem8 links
- - [%as:]: bumped to 8.0.0-pre.4
- - [%as:]: updated billing-commands
- - [%as:]: bumped to 8.0.0-pre.3
- - [%as:]: temporarily reverted to setting email directly
- - [%as:]: bumped to 7.5.1
- - [%as:]: removed some more lingering references to silico
- - [%as:]: update last modified
- - [%as:]: bumped version to 7.5.0
- - [%as:]: added fixed version of libblas to depends
- - [%as:]: moved user validation code out of license.py
- - [%as:]: added pyjwt to depends
- - [%as:]: removed unused imports
- - [%as:]: migrated result database code out of database module into result module (it may move again)
- - [%as:]: cleanedup unused imports in directories
- - [%as:]: removed deprecate v0 api
- - [%as:]: update last modified
- - [%as:]: fixed using wrong digichem-core version in workflows
- - [%as:]: bumped version to 7.4.4
+ - [%as:]: adjusted freeze script to account for new assets
+ - [%as:]: updated to latest version of build-static
+ - [%as:]: unset default xtb4stda_path
+ - [%as:]: JWT decode error is no longer printed if no token is provided at all
+ - [%as:]: bumped to v8.0.0-pre.7
+ - [%as:]: removed debugging line
+ - [%as:]: fixed minor typos in pyscf images
+ - [%as:]: bumped to 8.0.0-pre.6
+ - [%as:]: renamed license prog
+ - [%as:]: set execute bit
+ - [%as:]: bumped version to 8.0.0-pre.5
+ - [%as:]: updates to billing-commands
