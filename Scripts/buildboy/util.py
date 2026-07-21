@@ -22,14 +22,14 @@ def update_repo(repo_path, branch = "main", upstream = "origin"):
     try:
         os.chdir(repo_path)
 
+        # Fetch first, in-case we are switching to a new branch.
+        subprocess.run([
+            'git', 'fetch', upstream
+        ], universal_newlines = True, check = True)
         # Checkout.
         # TODO: Checkout could fail if there are untracked files, but best to stop then anyway.
         subprocess.run([
             'git', 'checkout', branch
-        ], universal_newlines = True, check = True)
-        # Get the latest version from git.
-        subprocess.run([
-        'git', 'fetch', upstream
         ], universal_newlines = True, check = True)
         subprocess.run([
         'git', 'reset', '--hard', upstream+ '/' + branch
