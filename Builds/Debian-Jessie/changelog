@@ -1,81 +1,12 @@
-### Changes in this version (8.0.0-pre.7) since 8.0.0-pre.4
+### Changes in this version (8.0.0-pre.8) since 8.0.0-pre.7
 
 #### New features:
- - [%as:]: CREST, CENSO, xtb, xtb4stda, and std2 now use the pre-compiled digichem binaries by default
- - [%as:]: added build-static files as sub-module
- - [%as:]: increased xTB density cube step-size to 0.5
- - [%as:]: removed the broken GFN0-xTB method
- - [%as:]: added OMP_NUM_THREADS to slurm templates to cover numpy and other libs loading openmp too early for us to change threads
- - [%as:]: enabled density fitting by default on most PySCF calculations
- - [%as:]: disabled opt/freq combined jobs for PySCF as density fitting is poorly supported here
- - [%as:]: permitted some method fields to be set in api submissions
- - [%as:]: added library_path options for xTB, xtb4stda, and std2
- - [%as:]: improved logging support for xTB and other programs that print info to stderr
- - [%as:]: xtb now only writes density.cube files if a report has bene requested
- - [%as:]: PySCF now supports ECPs
- - [%as:]: added better clean-up options for xTB and PySCF with sTDA
- - [%as:]: updated sTD-DFT calculations for PySCF to reduce number of orbitals and set function exchange
- - [%as:]: pyscf now passes std2_log_file to parse if one exists
- - [%as:]: added std2_log_file_path property to Std2_mixin
- - [%as:]: added support for calculating sTDA states with pyscf wavefunction
- - [%as:]: increased step size for xtb density plots
- - [%as:]: xtb excited states now only render HOMO+3 to LUMO-3
- - [%as:]: added support for xTB excited states
- - [%as:]: added ability to render total density for xTB
- - [%as:]: added ability to write xTB xcontrol
- - [%as:]: initial calc definitions for xTB
- - [%as:]: added support for generating images with xTB
- - [%as:]: added initial support for xTB
- - [%as:]: reduced general api access level to just USER, set submission endpoints as LICENSE
- - [%as:]: profiling steps can now be given in decimals
- - [%as:]: added option to toggle the slow spin-dipole interaction in PySCF NMR coupling
- - [%as:]: license update is now run as a background task
- - [%as:]: updated envs
- - [%as:]: expanded digichemd to support env
- - [%as:]: added function to auto update licenses
- - [%as:]: switched default PySCF geometry solver to geometric
- - [%as:]: set local methods to hidden
+ - [%as:]: updated build-static to latest xTB versions
 
 #### Bugfixes:
+ - [%as:]: fixed oddities in SLURM
  - [%as:]: fixed mixing up binary dirs in freeze
- - [%as:]: fixed missing binary folder when freezing
- - [%as:]: added missing solvent arg for xtb4stda and missing -rpa flag for std2
- - [%as:]: XTB4STDAHOME and STD2HOME are now only set if the relevant options are given
- - [%as:]: added missing gas phase functionals
- - [%as:]: fixed broken single method submission api
- - [%as:]: fixed some options bugs in xTB
- - [%as:]: fixed PySCF not being able to mix internal and exchange basis sets
- - [%as:]: fixed bug in PySCF write_molden() method
- - [%as:]: fixed sometimes rendering hundreds of orbitals with xTB excited states
- - [%as:]: fixed copying xtb input file by reading everything into memory at once
- - [%as:]: added missing std options to xtb
- - [%as:]: removed threshold from xtb excited states
- - [%as:]: fixed -p instead of -P in xTB
- - [%as:]: fixed bug in PySCF image generator
- - [%as:]: fixed bug in mongita job db with user token
- - [%as:]: fixed missing billing limit
- - [%as:]: missing quote
- - [%as:]: perms
- - [%as:]: fixed typo
- - [%as:]: fixed wrong router
- - [%as:]: fixed lingering slash in endpoint
- - [%as:]: fixed more naming problems
- - [%as:]: fixed wrong endpoint name
- - [%as:]: fixed PySCF optimisation not using the final SCF wavefunction, resulting in strange geometry in reports. PySCF geometry calcs now save each geometry step to an xyz file
-
-#### Testing updates:
- - [%as:]: fixed API tests to accomodate new api
 
 #### Miscellaneous:
- - [%as:]: adjusted freeze script to account for new assets
- - [%as:]: updated to latest version of build-static
- - [%as:]: unset default xtb4stda_path
- - [%as:]: JWT decode error is no longer printed if no token is provided at all
- - [%as:]: bumped to v8.0.0-pre.7
- - [%as:]: removed debugging line
- - [%as:]: fixed minor typos in pyscf images
- - [%as:]: bumped to 8.0.0-pre.6
- - [%as:]: renamed license prog
- - [%as:]: set execute bit
- - [%as:]: bumped version to 8.0.0-pre.5
- - [%as:]: updates to billing-commands
+ - [%as:]: bumped to v8.0.0-pre.8; fixes for xTB parsing and PySCF ECP in builds
+ - [%as:]: updates to binaries
