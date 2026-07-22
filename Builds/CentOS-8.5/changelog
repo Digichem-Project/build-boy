@@ -1,12 +1,23 @@
-### Changes in this version (8.0.0-pre.8) since 8.0.0-pre.7
+### Changes in this version (8.0.0-pre.9) since 8.0.0-pre.8
 
 #### New features:
- - [2026-07-20:]: updated build-static to latest xTB versions
+ - [2026-07-21:]: enabled authentication for v0 api
+ - [2026-07-21:]: migrated store_in_db and poll_interval options
+ - [2026-07-21:]: migrated structure from calculation to destination
+ - [2026-07-17:]: migrated scratch options from calculation objects to destination objects
 
 #### Bugfixes:
+ - [2026-07-21:]: fixed v0 auth dependency
+ - [2026-07-21:]: removed deprecated use_username
+ - [2026-07-21:]: fixed trying to access the non-existant calculation.scratch_directory
+ - [2026-07-21:]: fixed failed to load old methods that no longer conform to the modern spec
+ - [2026-07-21:]: fixed import for configurables.Duration
+ - [2026-07-20:]: added back std2_path to Pyscf for backwards compat
  - [2026-07-20:]: fixed oddities in SLURM
- - [2026-07-17:]: fixed mixing up binary dirs in freeze
+
+#### Testing updates:
+ - [2026-07-21:]: updated tests with new codes
 
 #### Miscellaneous:
- - [2026-07-20:]: bumped to v8.0.0-pre.8; fixes for xTB parsing and PySCF ECP in builds
- - [2026-07-20:]: updates to binaries
+ - [2026-07-21:]: bumped to version 8.0.0-pre.9
+ - [2026-07-17:]: update billing commands
